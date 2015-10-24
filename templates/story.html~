@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<!--
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Generic - Spatial by TEMPLATED</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src= {{ url_for('static', filename = "js/jquery.min.js") }}></script>
+		<script src= {{ url_for('static', filename = "js/skel.min.js") }}></script>
+		<script src= {{ url_for('static', filename = "js/skel-layers.min.js") }}></script>
+		<script src= {{ url_for('static', filename = "js/init.js") }}></script>
+
+		<link rel="stylesheet" href="{{ url_for('static', filename = "css/skel.css") }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename = "css/style.css") }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename = "css/style-xlarge.css") }}" />
+
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1><strong><a href="index.html">Spatial</a></strong> by Templated</h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html">Generic</a></li>
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+
+					<header class="major special">
+						<h2>Background</h2>
+						<p>The Events Which Lead You Here</p>
+					</header>
+
+					<a href="#" class="image fit"><img src={{ url_for('static', filename = 'images/pic02.jpg') }} alt="" /></a>
+					<p>You're going to be playing the role of an Agent who runs into some unique circumstances which are going to require some equally unique talents. But I'm sure you're up for the job.</p>
+					<p>Anyway, I lied slightly when I said you were an Agent. You're currently a Novice, about to graduate from the academy. It's the morning of your last final, Biology 410. You switch on the daily announcements as you start getting ready for the day. While putting on your uniform, you hear the international portion of the announcements inform you that there are celebrations in Korea today, as the nations of North and South Korea finally reunited last night. Next door, however, another outbreak of MRSA has appeared in Russia, which continues to concern the international community. You think to yourself that you should consider paying more attention to the global news, since you didn't know the Koreans were considering merging. The MRSA situation you were well aware of, since there have been deadly cases near you as well. As you pack your backpack to head out the door, the announcements end by reminding you that next weekend is graduation. Everyone is invited to attend "the initiation of the government's next class of premier Agents".</p>
+					<p>You stop by the dining hall and meet up with your friend Kevin. You both get a bowl of whole grain cereal and some strawberries, kindly provided by the National Food Committee. Current class grades for Biology 410 were released last night, so you do a quick calculation to realize you'll need to receive a perfect score on this exam, including the bonus question, to get the grade you want. The two of you go over all of your notes one last time then head over to the exam room. You make your way through the regular portion of the exam, fairly confident that you haven't missed any. The bonus question is below; answer it to continue.</p>
+					
+					<p>
+Congratulations, Agent: you've graduated from the academy! With your short but impressive resume, you've landed a job immediately. Of course, it does help that you're being employed by The Congressman. The Congressman is a friend, and you two go way back to before he earned his nickname...one which he deserved even before running for the office he now holds. As he has to go to Japan for a couple weeks, he tells you to talk to Anita, his other employee. Anita graduated from the academy as well, at the end of your first year there. She was at the top of her class, if you remember correctly. Over the next couple of weeks, you stay busy working with Anita on a number of nondescript projects. The Friday before The Congressman gets back, you ask Anita how she likes working for him. She says it's great, that something exciting is almost always going on, and that he's a good boss. She has to leave early today but says that over the weekend she would like for you to analyze an image for her. There have been reports lately of a high number of difficult births in the area. Anita knows some people and has gotten her hands on some of the lab data from these cases. Specifically, she has some images of HUVE cells. She says to just send her an email at anita.2011academy@gmail.com with the word "Reminder" in the body of the email, and she'll send you the image and more specific instructions.</p>
+
+					<p>You stop by the dining hall and meet up with your friend Kevin. You both get a bowl of whole grain cereal and some strawberries, kindly provided by the National Food Committee. Current class grades for Biology 410 were released last night, so you do a quick calculation to realize you'll need to receive a perfect score on this exam, including the bonus question, to get the grade you want. The two of you go over all of your notes one last time then head over to the exam room. You make your way through the regular portion of the exam, fairly confident that you haven't missed any. The bonus question is below; answer it to continue.</p>
+					
+					<p>You stop by the dining hall and meet up with your friend Kevin. You both get a bowl of whole grain cereal and some strawberries, kindly provided by the National Food Committee. Current class grades for Biology 410 were released last night, so you do a quick calculation to realize you'll need to receive a perfect score on this exam, including the bonus question, to get the grade you want. The two of you go over all of your notes one last time then head over to the exam room. You make your way through the regular portion of the exam, fairly confident that you haven't missed any. The bonus question is below; answer it to continue.</p>
+
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook"></a></li>
+						<li><a href="#" class="icon fa-twitter"></a></li>
+						<li><a href="#" class="icon fa-instagram"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li>
+						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+					</ul>
+				</div>
+			</footer>
+
+	</body>
+</html>
