@@ -16,9 +16,9 @@
 		<script src= {{ url_for('static', filename = "js/skel-layers.min.js") }}></script>
 		<script src= {{ url_for('static', filename = "js/init.js") }}></script>
 
-			<link rel="stylesheet" href="{{ url_for('static', filename = "css/skel.css") }}" />
-			<link rel="stylesheet" href="{{ url_for('static', filename = "css/style.css") }}" />
-			<link rel="stylesheet" href="{{ url_for('static', filename = "css/style-xlarge.css") }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename = "css/skel.css") }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename = "css/style.css") }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename = "css/style-xlarge.css") }}" />
 
 	</head>
 	<body class="landing">
@@ -29,8 +29,9 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="{{ url_for('story')}}">Story</a></li>
-						<li><a href="elements.html">Elements</a></li>
+						<li><a href="{{ url_for('story.html')}}">Story</a></li>
+						<li><a href="{{ url_for('about.html')}}">About</a></li>
+						<li><a href="{{ url_for('elements.html')}}">Elements</a></li>
 					</ul>
 				</nav>
 			</header>

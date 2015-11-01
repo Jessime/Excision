@@ -19,7 +19,13 @@
 		<link rel="stylesheet" href="{{ url_for('static', filename = "css/skel.css") }}" />
 		<link rel="stylesheet" href="{{ url_for('static', filename = "css/style.css") }}" />
 		<link rel="stylesheet" href="{{ url_for('static', filename = "css/style-xlarge.css") }}" />
-
+		<style type="text/css">
+			.email {
+			font-family: Courier;
+			color: grey
+			font-size:20px;
+			}
+		</style>
 	</head>
 	<body>
 
@@ -46,15 +52,59 @@
 
 					<a href="#" class="image fit"><img src={{ url_for('static', filename = 'images/pic02.jpg') }} alt="" /></a>
 					<p>You're going to be playing the role of an Agent who runs into some unique circumstances which are going to require some equally unique talents. But I'm sure you're up for the job.</p>
+					<h3>An Exam</h3>
 					<p>Anyway, I lied slightly when I said you were an Agent. You're currently a Novice, about to graduate from the academy. It's the morning of your last final, Biology 410. You switch on the daily announcements as you start getting ready for the day. While putting on your uniform, you hear the international portion of the announcements inform you that there are celebrations in Korea today, as the nations of North and South Korea finally reunited last night. Next door, however, another outbreak of MRSA has appeared in Russia, which continues to concern the international community. You think to yourself that you should consider paying more attention to the global news, since you didn't know the Koreans were considering merging. The MRSA situation you were well aware of, since there have been deadly cases near you as well. As you pack your backpack to head out the door, the announcements end by reminding you that next weekend is graduation. Everyone is invited to attend "the initiation of the government's next class of premier Agents".</p>
 					<p>You stop by the dining hall and meet up with your friend Kevin. You both get a bowl of whole grain cereal and some strawberries, kindly provided by the National Food Committee. Current class grades for Biology 410 were released last night, so you do a quick calculation to realize you'll need to receive a perfect score on this exam, including the bonus question, to get the grade you want. The two of you go over all of your notes one last time then head over to the exam room. You make your way through the regular portion of the exam, fairly confident that you haven't missed any. The bonus question is below; answer it to continue.</p>
+
+					<h3>A New Job</h3>
 					
 					<p>
 Congratulations, Agent: you've graduated from the academy! With your short but impressive resume, you've landed a job immediately. Of course, it does help that you're being employed by The Congressman. The Congressman is a friend, and you two go way back to before he earned his nickname...one which he deserved even before running for the office he now holds. As he has to go to Japan for a couple weeks, he tells you to talk to Anita, his other employee. Anita graduated from the academy as well, at the end of your first year there. She was at the top of her class, if you remember correctly. Over the next couple of weeks, you stay busy working with Anita on a number of nondescript projects. The Friday before The Congressman gets back, you ask Anita how she likes working for him. She says it's great, that something exciting is almost always going on, and that he's a good boss. She has to leave early today but says that over the weekend she would like for you to analyze an image for her. There have been reports lately of a high number of difficult births in the area. Anita knows some people and has gotten her hands on some of the lab data from these cases. Specifically, she has some images of HUVE cells. She says to just send her an email at anita.2011academy@gmail.com with the word "Reminder" in the body of the email, and she'll send you the image and more specific instructions.</p>
 
-					<p>You stop by the dining hall and meet up with your friend Kevin. You both get a bowl of whole grain cereal and some strawberries, kindly provided by the National Food Committee. Current class grades for Biology 410 were released last night, so you do a quick calculation to realize you'll need to receive a perfect score on this exam, including the bonus question, to get the grade you want. The two of you go over all of your notes one last time then head over to the exam room. You make your way through the regular portion of the exam, fairly confident that you haven't missed any. The bonus question is below; answer it to continue.</p>
+					<p class="email"><b>You:</b><br> Hi Anita!<br>Here's a reminder.</p>					
+					<p class="email"><b>Anita:</b><br>Thanks for reminding me!<br>Here's the attachment I promised. I got a bit farther than I expected. All I need you to do is confirm my computer's count for how many whole nuclei are in the image. Just email me your answer whenever you get it!<br>Best,<br>Anita</p>
+					<p class="email"><b>You:</b><br> 98</p>
+					<p class="email"><b>Anita:</b><br>Great, I got 98 as well. But did you actually look at the image? Do you see any other interesting results when you play with the photo?</p>
+					<p class="email"><b>You:</b><br> He's dangerous</p>
+					<p class="email"><b>Anita:</b><br>Whoa! That's not language you should throw around lightly. Delete this email and take that somewhere else.</p>
 					
-					<p>You stop by the dining hall and meet up with your friend Kevin. You both get a bowl of whole grain cereal and some strawberries, kindly provided by the National Food Committee. Current class grades for Biology 410 were released last night, so you do a quick calculation to realize you'll need to receive a perfect score on this exam, including the bonus question, to get the grade you want. The two of you go over all of your notes one last time then head over to the exam room. You make your way through the regular portion of the exam, fairly confident that you haven't missed any. The bonus question is below; answer it to continue.</p>
+					<p>When you arrive at the Justice Center and locate The Congressman's associate, he hands you a file. The file, he says, contains a single nucleotide sequence. The issue is that it's a horribly ambiguous sequence, one of the kind sequenced from patients who have that new metabolic disease that seems to become more common each year. Usually, The Congressman's program is capable of making sense of these sequences. This one is not working though, for whatever reason. If you could give it a look, that would be great.<br>When you are finished helping, you're finished for the day. You can stop by the bookstore to do some browsing.</p>
+
+					<h3>A Murder</h3>
+
+					<p>Congrats, Agent! You figured out what was wrong with that sequence, and the associate is back to doing his analysis. Unfortunately, you and The Congressman have a murder mystery to solve. Someone was killed on The Congressman's flight back from Japan. The story that The Congressman tells makes it seem like everything happened rather quickly and there was a decent amount of commotion involved. The end result is that one man was poisoned and is now dead. The upside is that, besides having the roster for the flight, you found a piece of the criminal's DNA at the crime scene. How the criminal got away while on a plane remains a mystery....<br><br>AATAGCTGGCCTTGTCGTGGCGGCTCGTTTGTT<br><br>What's even better is that Anita has already done a decent amount of work for you. She's compiled a list of suspect's and gotten some DNA for each of them in a file. She was just about to see if there were any matches when she was called off to another project.who_dun_it.py is a Python script that has the suspect's names and DNA loaded. Don't worry, you don't have to have Python installed on your computer. You can make the file open as a normal text document. Then, just go to https://trinket.io/, copy and paste the code, hit the run button, and see who the killer was.Okay, fine, it's not quite that easy. There's one line of the script that needs to be changed. Hint: it isn't any of the lines of the suspects DNA or names. Can you see what's missing?<br><br>Once you know who did it, you'll report back to the Congressman and see if he has left you any messages back at Base. <br><br>The killer was: Herman</p>
+
+					<h3>An Acquaintance</h3>
+
+					<p>Upon talking to The Congressman, you realize that you know Herman. Though far from your best friend, Herman was a buddy of yours at the academy--at least until second year, when Herman dropped out. Herman had plenty of talent but was a pretty strange guy, so you understood why he might have decided that the academy life wasn't for him. But a weird personality doesn't necessarily make a killer, and you're convinced that Herman didn't do it. So where should you start? You've been completely out of touch with Herman since he dropped out. One thing you can think of that might be relevant is that Herman loved robotics and genomics. He was always walking around reading a book on one of those subjects. Also, he sometimes went by the name Arius. It was probably some inside joke between Herman and himself which you were never privy to. You get the funny feeling that something might be going on here and if you just look around you might find a trace of Herman/Arius.</p>
+
+					<h3>At Herman's House</h3>
+
+					<p class="email"><hr>Dear Friend,<br><br>Things are not as they seem. If you are who I think you are, you'll be able to translate the code below.<br><br>Stay wary,<br>Arius<br><br>P.S. This may not translate perfectly, since I am in a rush. But if you translate it, all necessary information will be available to enter into WorkRoom.<br><br>
+athaaygargargaycaygarytnccn
+ttyathaaygayatggar
+athcaygcngtngarcayathgaygaygaraay
+gcnwsnaaratgtayttymgnathgaraaygaywsn
+athgayathgayaayacnaarathytnytncayathatg
+acncaygaraargartayathwsn
+aaygartggtgygcnaaygaytay<hr></p>
+
+					<p>The code reads 
+INEEDHELP
+FINDME
+IHAVEHIDDEN
+ASKMYFRIENDS
+IDIDNTKILLHIM
+THEKEYIS
+NEWCANDY</p>
+
+					<p>As you step into the room, a few things start to come together. Herman had more than just a passing interest in robots. There's a set of six of them sitting in here. It would appear that these are the "friends" that Herman mentioned in his note.
+You call The Congressman for advice. He suggests you question the robots to see what you can find. He says he'll have Anita send you some resources.
+These robots look like they still need a lot of work. They're roughly humanoid, but they are all missing at least one appendage and one is no more than a decapitated head. The one thing that they all have in common is a cord running from the base of their "skull", which leads to a computer. You're still feeling a bit spooked, but these things are your only lead, so you'd better get working!</p>
+
+					<p class="email"><b>Anita:</b><br>Good Luck! I don't need to tell you that this is important. It seems as if you should interact with the robots at the bottom of the code. I've linked an additional resource below:<br><br>
+http://stackoverflow.com/questions/3786881/what-is-a-method-in-python</p>
+
 
 				</div>
 			</section>
