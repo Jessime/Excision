@@ -5,9 +5,12 @@ Created on Fri Oct 23 18:52:28 2015
 @author: jessime
 """
 
-from flask import Flask, render_template
+from flask import Flask, render_template, send_file
 
 app = Flask(__name__)
+
+GOOGLE_ID = '683188869719-rh2ggaee3jovi6vni5k0rebj51o4u1mv.apps.googleusercontent.com'
+GOOGLE_SECRET = 'VxRSb62WkhQdse6z7BPe3mR-'
 
 @app.route("/")
 def main():
@@ -24,6 +27,17 @@ def about():
 @app.route('/elements')
 def elements():
     return render_template('elements.html')
+
+@app.route('/launch')
+def launch():
+    return render_template('launch.html')
+
+@app.route('/pollution_npy', methods=['GET','POST'])
+def pollution_npy():
+    return send_file('data/pollution_npy.zip',
+                     mimetype='application/zip',
+                     attachment_filename='pollution_npy.zip',
+                     as_attachment=True)
     
 if __name__ == "__main__":
     app.run(debug=True)
