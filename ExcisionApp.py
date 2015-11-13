@@ -5,7 +5,7 @@ Created on Fri Oct 23 18:52:28 2015
 @author: jessime
 """
 
-from flask import Flask, render_template, send_file, request
+from flask import Flask, render_template, send_file, request, Response
 
 app = Flask(__name__)
 
@@ -32,9 +32,9 @@ def elements():
 def launch():
     if request.method == 'POST':
         if request.form['p-value'] == '0.1':
-            print 'whoot!'
+            return Response('whoot!')
         else:
-            print 'poo...'
+            return Response('whoot!')
     return render_template('launch.html')
 
 @app.route('/pollution_npy')

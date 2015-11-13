@@ -894,6 +894,29 @@
 				background-color: #f21040;
 			}
 
+		input[type="submit"].pdapa,
+		input[type="reset"].pdapa,
+		input[type="button"].pdapa,
+		.button.pdapa {
+			height: 4.75em;
+			padding: 0 2.55em;
+			background-color: #f32853;
+		}
+
+			input[type="submit"].pdapa:hover,
+			input[type="reset"].pdapa:hover,
+			input[type="button"].pdapa:hover,
+			.button.pdapa:hover {
+				background:url(../images/orb.png) no-repeat;
+			}
+
+			input[type="submit"].pdapa:active,
+			input[type="reset"].pdapa:active,
+			input[type="button"].pdapa:active,
+			.button.pdapa:active {
+				background:url(../images/orb2.png) no-repeat;
+			}
+
 		input[type="submit"].disabled, input[type="submit"]:disabled,
 		input[type="reset"].disabled,
 		input[type="reset"]:disabled,
@@ -1054,7 +1077,7 @@
 	#banner {
 		padding: 16em 0 13em 0;
 		background-attachment: fixed;
-		background-image: url("images/overlay.png"), url("../images/excision.png");
+		background-image: url("images/overlay.png"), url("../images/banner.jpg");
 		background-position: center top;
 		background-size: cover;
 		line-height: 1.75;
@@ -1102,7 +1125,7 @@
 
 		.wrapper.style3 {
 			background-attachment: fixed;
-			background-image: url("images/overlay.png"), url("../images/excision.png");
+			background-image: url("images/overlay.png"), url("../images/banner.jpg");
 			background-position: center center;
 			background-size: cover;
 		}

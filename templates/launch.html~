@@ -68,11 +68,14 @@
 					<form method="post" action="#">
 						<div class="row uniform 50%">
 							<div class="6u 12u$(xsmall)">
-								<input type="text" name="name" id="name" value="" placeholder="Name" />
+								<input type="text" name="p-value" id="name" value="" placeholder="Enter the p-value" />
 
 							</div>
 						</div>
 					</form>
+					<ul class="actions">
+						<li><a href="{{ url_for('pollution_npy')}}" class="button pdapa big"></a></li>
+					</ul>
 				</div>
 
 			</section>
