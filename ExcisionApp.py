@@ -13,7 +13,7 @@ GOOGLE_ID = '683188869719-rh2ggaee3jovi6vni5k0rebj51o4u1mv.apps.googleuserconten
 GOOGLE_SECRET = 'VxRSb62WkhQdse6z7BPe3mR-'
 
 @app.route("/")
-def main():
+def index():
     return render_template('index.html')
 
 @app.route('/story')
@@ -31,10 +31,7 @@ def elements():
 @app.route('/launch', methods=['GET','POST'])
 def launch():
     if request.method == 'POST':
-        if request.form['p-value'] == '0.1':
-            print 'whoot!'
-        else:
-            print 'poo...'
+        pass
     return render_template('launch.html')
 
 @app.route('/pollution_npy')
@@ -43,6 +40,6 @@ def pollution_npy():
                      mimetype='application/zip',
                      attachment_filename='pollution_npy.zip',
                      as_attachment=True)
-    
+
 if __name__ == "__main__":
     app.run(debug=True)

@@ -28,7 +28,7 @@
 				<h1><strong><a href="index.html">EXCISION 2</a></strong> by Jessime Kirk</h1>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html">Home</a></li>
+						<li><a href="{{ url_for('index')}}">Home</a></li>
 						<li><a href="{{ url_for('story')}}">Story</a></li>
 						<li><a href="{{ url_for('about')}}">About</a></li>
 						<li><a href="{{ url_for('elements')}}">Elements</a></li>
@@ -39,7 +39,7 @@
 		<!-- Banner -->
 			<section id="banner">
 				<h2>EXCISION 2</h2>
-				<p> THE PURSUIT OF KNOWLEDGE. <br /> AN INTRODUCTION TO PYTHON AND COMPUTATIONAL BIOLOGY</p>
+				<p> APPLIED BIOINFORMATICS AND COMPUTATIONAL BIOLOGY WITH PYTHON.</p>
 				<ul class="actions">
 					<li><a href="{{ url_for('launch')}}" class="button special big">Launch</a></li>
 				</ul>
