@@ -1,6 +1,6 @@
 # Excision
 
-Python 201. Applied Bioinformatics and Computational Biology
+Applied Bioinformatics and Computational Biology with Python.
 
 # Usage
 

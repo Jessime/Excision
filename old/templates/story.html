@@ -31,12 +31,12 @@
 
 		<!-- Header -->
 			<header id="header">
-				<h1><strong><a href="index.html">Spatial</a></strong> by Templated</h1>
+				<h1><strong>EXCISION 2</strong> by Jessime Kirk</h1>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="generic.html">Generic</a></li>
-						<li><a href="elements.html">Elements</a></li>
+						<li><a href="{{ url_for('index')}}">Home</a></li>
+						<li><a href="{{ url_for('story')}}">Story</a></li>
+						<li><a href="{{ url_for('about')}}">About</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -46,11 +46,11 @@
 				<div class="container">
 
 					<header class="major special">
-						<h2>Background</h2>
+						<h2>Story</h2>
 						<p>The Events Which Lead You Here</p>
 					</header>
 
-					<a href="#" class="image fit"><img src={{ url_for('static', filename = 'images/pic02.jpg') }} alt="" /></a>
+					<a href="#" class="image fit"><img src={{ url_for('static', filename = 'images/workshop2-2.png') }} alt="" /></a>
 					<p>You're going to be playing the role of an Agent who runs into some unique circumstances which are going to require some equally unique talents. But I'm sure you're up for the job.</p>
 					<h3>An Exam</h3>
 					<p>Anyway, I lied slightly when I said you were an Agent. You're currently a Novice, about to graduate from the academy. It's the morning of your last final, Biology 410. You switch on the daily announcements as you start getting ready for the day. While putting on your uniform, you hear the international portion of the announcements inform you that there are celebrations in Korea today, as the nations of North and South Korea finally reunited last night. Next door, however, another outbreak of MRSA has appeared in Russia, which continues to concern the international community. You think to yourself that you should consider paying more attention to the global news, since you didn't know the Koreans were considering merging. The MRSA situation you were well aware of, since there have been deadly cases near you as well. As you pack your backpack to head out the door, the announcements end by reminding you that next weekend is graduation. Everyone is invited to attend "the initiation of the government's next class of premier Agents".</p>
