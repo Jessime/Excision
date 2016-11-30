@@ -71,3 +71,6 @@ target/
 
 #Spyder
 .spyproject/
+
+#Results
+results/
