@@ -9,9 +9,6 @@ from flask import Flask, render_template, send_file, request
 
 app = Flask(__name__)
 
-GOOGLE_ID = '683188869719-rh2ggaee3jovi6vni5k0rebj51o4u1mv.apps.googleusercontent.com'
-GOOGLE_SECRET = 'VxRSb62WkhQdse6z7BPe3mR-'
-
 @app.route("/")
 def index():
     return render_template('index.html')
