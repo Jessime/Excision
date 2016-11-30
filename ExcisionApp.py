@@ -13,10 +13,6 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/story')
-def story():
-    return render_template('story.html')
-
 @app.route('/about')
 def about():
     return render_template('about.html')
@@ -25,11 +21,23 @@ def about():
 def elements():
     return render_template('elements.html')
 
+
 @app.route('/launch', methods=['GET','POST'])
 def launch():
     if request.method == 'POST':
         pass
     return render_template('launch.html')
+
+@app.route('/story')
+def story():
+    return render_template('story.html')
+
+@app.route('/tutorial')
+def tutorial():
+    return render_template('tutorial.html')
+
+
+
 
 @app.route('/pollution_npy')
 def pollution_npy():

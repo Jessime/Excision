@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>EXCISION 2</title>
+		<title>Generic - Spatial by TEMPLATED</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -24,13 +24,13 @@
 
 		<!-- Header -->
 			<header id="header">
-				<h1><strong><a href="index.html">Excision 2</a></strong> by Jessime Kirk</h1>
+				<h1><strong>EXCISION 2</strong> by Jessime Kirk</h1>
 				<nav id="nav">
 					<ul>
 						<li><a href="{{ url_for('index')}}">Home</a></li>
 						<li><a href="{{ url_for('story')}}">Story</a></li>
 						<li><a href="{{ url_for('about')}}">About</a></li>
-						<li><a href="{{ url_for('elements')}}">Elements</a></li>
+						<li><a href="{{ url_for('tutorial')}}">Tutorial</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -40,15 +40,15 @@
 				<div class="container">
 
 					<header class="major special">
-						<h2>Story Title</h2>
-						<p>What you're going to learn this chapter</p>
+						<h2>Tutorial</h2>
+						<p>A brief walkthrough of usage.</p>
 					</header>
 
-					<a href="#" class="image fit"><img src={{ url_for('static', filename = 'images/pic01.jpg') }} alt="" /></a>
-
-					<p>It </p>
-
-
+					<a href="#" class="image fit"><img src={{ url_for('static', filename = 'images/pic02.jpg') }} alt="" /></a>
+					<p>The tasks that follow should give you an introduction to how to progress through levels. Each of these should take anywhere from a few seconds to a few minutes. If you're having difficulty with something, feel free to submit an <a href="https://github.com/Jessime/Excision/issues">issue on Github</a>. If you're repeatedly having with these tasks, it might be worthwile to pause for a bit and refresh your basic Python skills before moving on with Excision. We'll walk through our hello_world.py example together, then they'll be some practice problems for you to try. Imagine you're given the following task:</p>
+                    <blockquote> Create a program that writes "HelloWorld!" to Excision/results/tutorial/hello.txt (without the quotes, but with a newline character).</blockquote>
+                    <p>Take a second to make sure you could do that. You need to know where you installed Excision and how to write to a file. Virtually all of the programs you write will dump their output to the Excision/results directory. <a href="https://github.com/Jessime/Excision/examples/hello_world.py">Here's how I accomplished the task.</a> Notice that I'm using UNIX paths. I'll continue that convention throughout Excision. If you're on Windows, make sure to use Windows paths.
+                    </p>
 				</div>
 			</section>
 
