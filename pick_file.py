@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 Created on Mon Nov 28 23:15:47 2016
@@ -13,18 +13,21 @@ class SelectScript(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.initUI()
+        self.file = self.initUI()
 
 
     def initUI(self):
         fname = QFileDialog.getOpenFileName(self, 'Select Script')
         if fname[0]:
-            print(fname[0])
             return fname[0]
 
+def pick():
+    """Pick a file."""
+    #Creating the app is necessary to avoid "Must construct a QApplication before a QWidget" error.
+    app = QApplication(sys.argv)
+    picker = SelectScript()
+    picker.close()
+    return picker.file
 
 if __name__ == '__main__':
-
-    app = QApplication(sys.argv)
-    ex = SelectScript()
-    ex.close()
+    pick()
