@@ -45,27 +45,73 @@
 					</header>
 
 					<a href="#" class="image fit"><img src={{ url_for('static', filename = 'images/pic02.jpg') }} alt="" /></a>
-					<p>The tasks that follow should give you an introduction to how to progress through levels. Each of these should take anywhere from a few seconds to a few minutes. If you're having difficulty with something, feel free to submit an <a href="https://github.com/Jessime/Excision/issues">issue on Github</a>. If you're repeatedly having with these tasks, it might be worthwile to pause for a bit and refresh your basic Python skills before moving on with Excision. We'll walk through our hello_world.py example together, then they'll be some practice problems for you to try.</p>
-                    <H2>Hello World!</H2>
-                    <p>Imagine you're given the following task:</p>
-                    <blockquote> Create a program that writes "Hello World!" to Excision/results/tutorial/hello.txt (without the quotes, but with a newline character).</blockquote>
-                    <p>Take a second to make sure you could do that. You need to know where you installed Excision and how to write to a file. Virtually all of the programs you write will dump their output to the Excision/results directory. <a href="https://github.com/Jessime/Excision/blob/master/examples/hello_world.py">Here's how I accomplished the task.</a> Notice that I'm using UNIX paths. I'll continue that convention throughout Excision. If you're on Windows, make sure to use Windows paths. The bioinformatics equivalent of "Hello World!" is finding GC content...</p>
-                    <H2>GC Content</H2>
-                    Try this:
-                    <blockquote>
-                        Create a program that takes a nucleotide sequence as an arguments and writes the GC content to Excision/results/tutorial/gc.txt to the nearest whole percent. <br><br>
-                        <b>Example:</b> <br>
-                        $ ./gc_calc.py ATATGCGC<br><br>
-                        <b> Result:</b><br>
-                        50%
-                    </blockquote>
-                    <p>Once you've written this script, you can test it out with the 'Submit' button. Just to see what happens, you should make sure to submit an incorrect script first.</p>
-				<form action="" method="post">
-					<input type="submit" value="Submit" class="special" name="tutorial_gc">
-				</form>
-				<form action="" method="post">
-					<input type="submit" value="Submit" class="special" name="tutorial2">
-				</form>
+					<p>
+                             The tasks that follow should give you an introduction to how to progress through levels.
+                             Each of these should take anywhere from a few seconds to a few minutes.
+                             If you're having difficulty with something, feel free to submit an <a href="https://github.com/Jessime/Excision/issues">issue on Github</a>.
+                             If you're repeatedly having with these tasks, it might be worthwile to pause for a bit and refresh your basic Python skills before moving on with Excision.
+                             We'll walk through our hello_world.py example together, then they'll be some practice problems for you to try.
+                             </p>
+                        <H2>Hello World!</H2>
+                        <p>Imagine you're given the following task:</p>
+                        <blockquote> Create a program that writes "Hello World!" to Excision/results/tutorial/hello.txt (without the quotes, but with a newline character).</blockquote>
+                        <p>
+                            Take a second to make sure you could do that.
+                            You need to know where you installed Excision and how to write to a file.
+                            Virtually all of the programs you write will dump their output to the Excision/results directory.
+                            <a href="https://github.com/Jessime/Excision/blob/master/examples/hello_world.py">Here's how I accomplished the task.</a>
+                            Notice that I'm using UNIX paths.
+                            I'll continue that convention throughout Excision.
+                            If you're on Windows, make sure to use Windows paths.
+                            The bioinformatics equivalent of "Hello World!" is finding GC content...</p>
+                        <H2>Submitting Results</H2>
+                        Try this:
+                        <blockquote>
+                            Create a program that takes a nucleotide sequence as an arguments and writes the GC content to Excision/results/tutorial/gc.txt to the nearest whole percent. <br><br>
+                            <b>Example:</b> <br>
+                            $ ./gc_calc.py ATATGCGC<br><br>
+                            <b> Result:</b><br>
+                            50%
+                        </blockquote>
+                        <p>
+                            Once you've written this script, you can test it out with the 'Submit' button.
+                            Just to see what happens, you should make sure to submit an incorrect script first.
+                        </p>
+        				<form action="" method="post">
+        					<input type="submit" value="Submit" class="special" name="tutorial_gc">
+                                 {% if syntax_error is not none%}
+                                     <div>
+                                         <p>Unfortunately, your code didn't finish running. The error was:
+                                         <pre><code>{{syntax_error}}</code></pre></p>
+                                    </div>
+                                {% endif %}
+
+                                 {% if semantics_error is not none %}
+                                     <div>
+                                         <p>Your code finished running, but it doesn't appear to have worked properly.
+                                         <pre><code>{{semantics_error}}</code></pre></p>
+                                    </div>
+                                 {% endif %}
+        				</form>
+                        <H2>Hints</H2>
+                        <p>
+                            Besides a submit button, the other thing you'll see at each question is/are hint(s).
+                            Hint's will give you little prompts on how to go about solving the problem at hand.
+                            Hints aren't free though.
+                            Each hint will require you to solve a secondary problem.
+                            These problems will be small, generally just a couple of lines of code.
+                            So, it'll be up to you whether you think taking the time to solve the hint is worthwhile.
+                            In general, the hints are less likely to be strictly bioinformatics related.
+                            Instead, they'll focus on introducing you to new parts of Python and its ecosystem that might come in handy farther down the road.
+                            <br><br>
+                            Let's try another problem.
+                            This one is a bit harder, so it might be worthwhile to solve the hints.
+                            Even if you know how to solve this task, take a second to make sure you know what to expect from hints.
+                        </p>
+
+                        <form action="" method="post">
+                            <input type="submit" value="Submit" class="special" name="tutorial2">
+                        </form>
 				</div>
 			</section>
 
