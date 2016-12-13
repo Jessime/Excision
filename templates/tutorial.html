@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Spatial by TEMPLATED</title>
+		<title>Tutorial</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -69,7 +69,7 @@
                         <blockquote>
                             Create a program that takes a nucleotide sequence as an arguments and writes the GC content to Excision/results/tutorial/gc.txt to the nearest whole percent. <br><br>
                             <b>Example:</b> <br>
-                            $ ./gc_calc.py ATATGCGC<br><br>
+                            <code>$ ./gc_calc.py ATATGCGC</code><br><br>
                             <b> Result:</b><br>
                             50%
                         </blockquote>
@@ -95,11 +95,11 @@
         				</form>
                         <H2>Hints</H2>
                         <p>
-                            Besides a submit button, the other thing you'll see at each question is/are hint(s).
+                            Besides a submit button, the other thing you'll see at each question are hint(s).
                             Hint's will give you little prompts on how to go about solving the problem at hand.
                             Hints aren't free though.
                             Each hint will require you to solve a secondary problem.
-                            These problems will be small, generally just a couple of lines of code.
+                            These problems will be small, generally just a few of lines of code.
                             So, it'll be up to you whether you think taking the time to solve the hint is worthwhile.
                             In general, the hints are less likely to be strictly bioinformatics related.
                             Instead, they'll focus on introducing you to new parts of Python and its ecosystem that might come in handy farther down the road.
@@ -108,7 +108,73 @@
                             This one is a bit harder, so it might be worthwhile to solve the hints.
                             Even if you know how to solve this task, take a second to make sure you know what to expect from hints.
                         </p>
-
+                        <hr />
+                        <p>
+                            <b>Task:</b> Write a function called <code>squared_sum</code>.
+                            It should take a list as a parameter and returns a float.
+                            <code>squared_sum</code> should find the sum of squares of the list.
+                        </p>
+                        <form action="" method="post">
+                            <input type="submit" value="Hint #1" class="button" name="tutorial_hint1">
+                        </form>
+                        <p>
+                            <!-- Needs to be hidden -->
+                            This is a multi-part hint:
+                            <ol>
+                                <li>
+                                    Notice the form of this task, as opposed to the main questions.
+                                    Code for hints will generally require you to write a function instead of a script.
+                                </li>
+                                <li>
+                                    Besides the concept of hints, the second purpose of this question is to introduce you to the concept of using modules.
+                                    You can easily without importing anything. But the line <code>import numpy as np</code> will make the question significantly easier.
+                                    You'll want to import some module in virtually every follwoing question.
+                                </li>
+                            </ol>
+                        </p>
+                        <hr />
+                        <p>
+                            <b>Task:</b> Write a function called <code>seen</code>.
+                            It should take two lists as parameters and return a third list.
+                            The returned list should contain only the unique items in the second list.
+                            That is, the elements that are in the second list but not the first list.
+                            If there are redundant items in the second list (i.e. [1, 1]), only include that item in the third list once.
+                        </p>
+                        <form action="" method="post">
+                            <input type="submit" value="Hint #2" class="button" name="tutorial_hint1">
+                        </form>
+                        <p>
+                            <!-- Hide -->
+                            We'll introduce other ways to read data files, but numpy provides some basic help.
+                            Read up on <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html"><code>np.loadtxt</code></a> to get your data as an array.
+                            Once you have the array, you have access to the power of numpy.
+                            There are a lot of things which can be done with arrays.
+                            Some of the most common features are well introduced in the <a href="https://docs.scipy.org/doc/numpy/user/quickstart.html">quickstart</a> of the offical numpy documentation.
+                            The function that will help you most at the moment is <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html#numpy.sum"><code>sum</code></a>.
+                        </p>
+                        <hr />
+                        <blockquote>
+                            Create a program that reads a csv file of numbers.
+                            Find sum of the largest row or column.
+                            Write the result, to the nearest integer, in Excision/results/tutorial/sum.txt.<br><br>
+                            <b>Notes:</b><br>
+                            The correct answer is guaranteed to be unique.
+                            So you don't have to worry about dealing with a tie.
+                            <br>
+                            <br>
+                            <b>Example:</b> <br>
+                            Contents of /path/to/numbers.csv:
+                            <br>
+                                5,1,8,7<br>
+                                4,5,7,8<br>
+                                8,7,1,6<br>
+                                3,7,6,8<br>
+                            <br>
+                            <br>
+                            <code>$ ./row_col_max.py /path/to/numbers.csv</code><br><br>
+                            <b> Result:</b><br>
+                            29
+                        </blockquote>
                         <form action="" method="post">
                             <input type="submit" value="Submit" class="special" name="tutorial2">
                         </form>
