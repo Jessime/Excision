@@ -41,8 +41,8 @@
 
 					<header class="major special">
 						<h2>Tutorial</h2>
-						<p>A brief walkthrough of usage.</p>
-					</header>
+                        <p>A brief walkthrough of usage.</p>
+                    </header>
 
 					<a href="#" class="image fit"><img src={{ url_for('static', filename = 'images/pic02.jpg') }} alt="" /></a>
 					<p>
@@ -52,9 +52,12 @@
                              If you're repeatedly having with these tasks, it might be worthwile to pause for a bit and refresh your basic Python skills before moving on with Excision.
                              We'll walk through our hello_world.py example together, then they'll be some practice problems for you to try.
                              </p>
-                        <H2>Hello World!</H2>
+                        <H2>1. Hello World!</H2>
                         <p>Imagine you're given the following task:</p>
-                        <blockquote> Create a program that writes "Hello World!" to Excision/results/tutorial/hello.txt (without the quotes, but with a newline character).</blockquote>
+                        <blockquote>
+                            <b>Problem:</b><br>
+                            Create a program that writes "Hello World!" to Excision/results/tutorial/hello.txt (without the quotes, but with a newline character).
+                        </blockquote>
                         <p>
                             Take a second to make sure you could do that.
                             You need to know where you installed Excision and how to write to a file.
@@ -64,9 +67,10 @@
                             I'll continue that convention throughout Excision.
                             If you're on Windows, make sure to use Windows paths.
                             The bioinformatics equivalent of "Hello World!" is finding GC content...</p>
-                        <H2>Submitting Results</H2>
-                        Try this:
+                        <H2>2. Submitting Scripts</H2>
+                        Try completing this problem:
                         <blockquote>
+                            <b>Problem:</b><br>
                             Create a program that takes a nucleotide sequence as an arguments and writes the GC content to Excision/results/tutorial/gc.txt to the nearest whole percent. <br><br>
                             <b>Example:</b> <br>
                             <code>$ ./gc_calc.py ATATGCGC</code><br><br>
@@ -79,21 +83,21 @@
                         </p>
         				<form action="" method="post">
         					<input type="submit" value="Submit" class="special" name="tutorial_gc">
-                                 {% if syntax_error is not none%}
+                                 {% if syntax_error1 is not none%}
                                      <div>
                                          <p>Unfortunately, your code didn't finish running. The error was:
-                                         <pre><code>{{syntax_error}}</code></pre></p>
+                                         <pre><code>{{syntax_error1}}</code></pre></p>
                                     </div>
                                 {% endif %}
 
-                                 {% if semantics_error is not none %}
+                                 {% if semantics_error1 is not none %}
                                      <div>
                                          <p>Your code finished running, but it doesn't appear to have worked properly.
-                                         <pre><code>{{semantics_error}}</code></pre></p>
+                                         <pre><code>{{semantics_error1}}</code></pre></p>
                                     </div>
                                  {% endif %}
         				</form>
-                        <H2>Hints</H2>
+                        <H2>3. Hints</H2>
                         <p>
                             Besides a submit button, the other thing you'll see at each question are hint(s).
                             Hint's will give you little prompts on how to go about solving the problem at hand.
@@ -117,8 +121,8 @@
                         <form action="" method="post">
                             <input type="submit" value="Hint #1" class="button" name="tutorial_hint1">
                         </form>
+                        {% if hint_solved1 %}
                         <p>
-                            <!-- Needs to be hidden -->
                             This is a multi-part hint:
                             <ol>
                                 <li>
@@ -132,6 +136,7 @@
                                 </li>
                             </ol>
                         </p>
+                        {% endif %}
                         <hr />
                         <p>
                             <b>Task:</b> Write a function called <code>seen</code>.
@@ -143,8 +148,8 @@
                         <form action="" method="post">
                             <input type="submit" value="Hint #2" class="button" name="tutorial_hint1">
                         </form>
+                        {% if hint_solved2 %}
                         <p>
-                            <!-- Hide -->
                             We'll introduce other ways to read data files, but numpy provides some basic help.
                             Read up on <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html"><code>np.loadtxt</code></a> to get your data as an array.
                             Once you have the array, you have access to the power of numpy.
@@ -152,8 +157,10 @@
                             Some of the most common features are well introduced in the <a href="https://docs.scipy.org/doc/numpy/user/quickstart.html">quickstart</a> of the offical numpy documentation.
                             The function that will help you most at the moment is <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html#numpy.sum"><code>sum</code></a>.
                         </p>
+                        {% endif %}
                         <hr />
                         <blockquote>
+                            <b>Problem:</b><br>
                             Create a program that reads a csv file of numbers.
                             Find sum of the largest row or column.
                             Write the result, to the nearest integer, in Excision/results/tutorial/sum.txt.<br><br>
@@ -176,7 +183,7 @@
                             29
                         </blockquote>
                         <form action="" method="post">
-                            <input type="submit" value="Submit" class="special" name="tutorial2">
+                            <input type="submit" value="Submit" class="special" name="tutorial_sum">
                         </form>
 				</div>
 			</section>
