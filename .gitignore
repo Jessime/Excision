@@ -72,5 +72,6 @@ target/
 #Spyder
 .spyproject/
 
-#Results
+#My stuff
 results/
+my_submissions/

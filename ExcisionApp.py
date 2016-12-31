@@ -6,11 +6,19 @@ Created on Fri Oct 23 18:52:28 2015
 """
 
 import sys
+import markdown
 
-from flask import Flask, render_template, request
+from flask import Flask, Markup, render_template, request
+
 
 from pick_file import pick
 from state import Tutorial, Data
+from level_markdown import split
+
+def markup_str(string):
+    """Prepares a markdown formatted string for insertion into jinja template."""
+    markup = Markup(markdown.markdown(string))
+    return markup
 
 app = Flask(__name__)
 
@@ -31,7 +39,14 @@ def elements():
 def launch():
     if request.method == 'POST':
         pass
-    return render_template('launch.html')
+    infile = '/home/jessime/Code/Excision/static/story/level1.md'
+    sections = split(infile)
+    sections = {k:markup_str(v) if ('title' not in k) else v for k,v in sections.items()}
+    sections['hint_solved1'] = True
+    sections['hint_solved2'] = True
+    sections['hint_solved3'] = True
+
+    return render_template('level_content.html', **sections)
 
 @app.route('/story')
 def story():
@@ -42,7 +57,6 @@ def tutorial():
     if request.method == 'POST':
         Tutorial.script = pick()
         Tutorial.process_post(next(request.form.keys()))
-        #return redirect(url_for('.tutorial', error=error))
     return render_template('tutorial.html',
                            syntax_error1=Tutorial.syntax_error1,
                            semantics_error1=Tutorial.semantics_error1,

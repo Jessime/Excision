@@ -1,0 +1,55 @@
+{% extends "base_level.html" %}
+{% block level_content %}
+<header class="major special">
+    <h2> {{title}} </h2>
+    <p> {{subtitle}} </p>
+</header>
+
+<!--
+    An image section should go here.
+-->
+
+{{story}}
+
+{% if hint_solved1 is not none %}
+{{task1}}
+
+<form action="" method="post">
+    <input type="submit" value="Hint #1" class="button" name="tutorial_hint1">
+</form>
+
+{% if hint_solved2 %}
+{{hint1}}
+{% endif %}
+{% endif %}
+
+{% if hint_solved2 is not none %}
+{{task2}}
+
+<form action="" method="post">
+    <input type="submit" value="Hint #2" class="button" name="tutorial_hint2">
+</form>
+
+{% if hint_solved2 %}
+{{hint2}}
+{% endif %}
+{% endif %}
+
+{% if hint_solved3 is not none %}
+{{task3}}
+
+<form action="" method="post">
+    <input type="submit" value="Hint #3" class="button" name="tutorial_hint3">
+</form>
+
+{% if hint_solved3 %}
+{{hint3}}
+{% endif %}
+{% endif %}
+
+{{problem | safe}}
+
+<form action="" method="post">
+    <input type="submit" value="Submit" class="special" name="tutorial_sum">
+</form>
+{% endblock %}
