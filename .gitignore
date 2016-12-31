@@ -68,6 +68,7 @@ target/
 
 #Backups
 *~
+*.swp
 
 #Spyder
 .spyproject/
