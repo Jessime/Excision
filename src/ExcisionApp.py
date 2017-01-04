@@ -39,7 +39,7 @@ def elements():
 def launch():
     if request.method == 'POST':
         pass
-    infile = '/home/jessime/Code/Excision/static/story/level1.md'
+    infile = 'static/story/level1.md'
     sections = split(infile)
     sections = {k:markup_str(v) if ('title' not in k) else v for k,v in sections.items()}
     sections['hint_solved1'] = True
