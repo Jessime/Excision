@@ -34,7 +34,6 @@ def about():
 def elements():
     return render_template('elements.html')
 
-
 @app.route('/launch', methods=['GET','POST'])
 def launch():
     if request.method == 'POST':
@@ -56,14 +55,9 @@ def story():
 def tutorial():
     if request.method == 'POST':
         Tutorial.script = pick()
-        Tutorial.process_post(next(request.form.keys()))
-    return render_template('tutorial.html',
-                           syntax_error1=Tutorial.syntax_error1,
-                           semantics_error1=Tutorial.semantics_error1,
-                           syntax_error2=Tutorial.syntax_error2,
-                           semantics_error2=Tutorial.semantics_error2,
-                           hint_solved1=Tutorial.hint_solved1,
-                           hint_solved2=Tutorial.hint_solved2)
+        if Tutorial.script is not None:
+            Tutorial.process_post(next(request.form.keys()))
+    return render_template('tutorial.html', **vars(Tutorial))
 
 if __name__ == "__main__":
     if sys.version_info[0] != 3:

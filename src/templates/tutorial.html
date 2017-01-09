@@ -46,10 +46,10 @@
 
 					<a href="#" class="image fit"><img src={{ url_for('static', filename = 'images/pic02.jpg') }} alt="" /></a>
 					<p>
-                             The tasks that follow should give you an introduction to how to progress through levels.
+                             What follows should give you an introduction to how to progress through levels.
                              Each of these should take anywhere from a few seconds to a few minutes.
                              If you're having difficulty with something, feel free to submit an <a href="https://github.com/Jessime/Excision/issues">issue on Github</a>.
-                             If you're repeatedly having with these tasks, it might be worthwile to pause for a bit and refresh your basic Python skills before moving on with Excision.
+                             If you're repeatedly having with these problems, it might be worthwile to pause for a bit and refresh your basic Python skills before moving on with Excision.
                              We'll walk through our hello_world.py example together, then they'll be some practice problems for you to try.
                              </p>
                         <H2>1. Hello World!</H2>
@@ -60,13 +60,19 @@
                         </blockquote>
                         <p>
                             Take a second to make sure you could do that.
-                            You need to know where you installed Excision and how to write to a file.
+                            You need to know:
+                            <ol>
+                                <li> where you installed Excision 
+                                <li> how to write to a file
+                                <li> what a newline character is
+                            </ol>
                             Virtually all of the programs you write will dump their output to the Excision/results directory.
-                            <a href="https://github.com/Jessime/Excision/blob/master/examples/hello_world.py">Here's how I accomplished the task.</a>
+                            <a href="https://github.com/Jessime/Excision/blob/master/src/examples/hello_world.py">Here's how I solved the problem.</a>
                             Notice that I'm using UNIX paths.
                             I'll continue that convention throughout Excision.
                             If you're on Windows, make sure to use Windows paths.
-                            The bioinformatics equivalent of "Hello World!" is finding GC content...</p>
+                            <br><br>
+                            A slightly more difficult problem is the bioinformatics equivalent of "Hello World!": finding GC content...</p>
                         <H2>2. Submitting Scripts</H2>
                         Try completing this problem:
                         <blockquote>
@@ -92,23 +98,32 @@
 
                                  {% if semantics_error1 is not none %}
                                      <div>
-                                         <p>Your code finished running, but it doesn't appear to have worked properly.
+                                         <p>Your code finished running.
                                          <pre><code>{{semantics_error1}}</code></pre></p>
                                     </div>
                                  {% endif %}
         				</form>
                         <H2>3. Hints</H2>
                         <p>
-                            Besides a submit button, the other thing you'll see at each question are hint(s).
-                            Hint's will give you little prompts on how to go about solving the problem at hand.
+                            Besides a submit button, the other thing you'll see at each question are hints.
+                            Hints will give you little prompts on how to go about solving the problem at hand.
                             Hints aren't free though.
-                            Each hint will require you to solve a secondary problem.
-                            These problems will be small, generally just a few of lines of code.
-                            So, it'll be up to you whether you think taking the time to solve the hint is worthwhile.
+                            Each hint will require you to solve a secondary task.
+                            These tasks will be small, generally just a few of lines of code.
+                            So, it'll be up to you whether you think taking the time to solve for the hint is worthwhile.
                             In general, the hints are less likely to be strictly bioinformatics related.
                             Instead, they'll focus on introducing you to new parts of Python and its ecosystem that might come in handy farther down the road.
-                            <br><br>
-                            Let's try another problem.
+                        </p>
+                        <p>
+                            Another difference with hints is that you don't have to separate them into their own documents.
+                            If you want to have all the code for all of your hints in a single file, that's fine.
+                            Or you can put all of the hints for a single level in a file. 
+                            However you want to do it is fine. 
+                            Just make sure that, when you submit a file, a function with the proper name exists.
+                            It doesn't matter what else is in the file.
+                        </p>
+                        <p>
+                            Now let's try another problem.
                             This one is a bit harder, so it might be worthwhile to solve the hints.
                             Even if you know how to solve this task, take a second to make sure you know what to expect from hints.
                         </p>

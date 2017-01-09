@@ -30,9 +30,13 @@ We'll introduce other ways to read data files, but numpy provides some basic hel
 
 ---
 
-**Task:** T3
+**Task:** Write `threshold`, a function which takes an `ndarray` and any real number (call this parameter `limit`). `threshold` returns a modified `ndarray` where all elements in the array which are less than the `limit` parameter are set to 0.
 
-A3
+One of the benefits of using numpy is it can make your code orders of magnitude faster than pure Python. This speed benifit is often lost by users who use for loops as a way to iterate over their arrays. If you're looking for speed, avoid combining numpy arrays and for loops.
+
+To understand how you can index an array without a for loop, check out the [advanced indexing](https://docs.scipy.org/doc/numpy/user/quickstart.html#fancy-indexing-and-index-tricks) portion of the numpy quickstart guide. 
+
+As a test to make sure you understand these concepts, make sure you can write `threshold` in a couple of short lines of code (including the return statement). 
 
 ---
 
