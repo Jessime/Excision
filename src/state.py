@@ -50,14 +50,15 @@ class Tutorial():
     def tutorial_hint1(self):
         new = self.temp_copy(self)
         try:
-            user_import = importlib.import_module(new)
+            user_import = importlib.import_module(new.split('.')[0])
             result = user_import.squared_sum([1,2])
-            print()
-            print('HEY LOOOK AT ME!!!')
-            print(result)
-            print()
+            if result == 5:
+                self.hint_solved1 = True
+                
         except Exception:
             print(traceback.format_exc())
+        
+        self.temp_del(self, new)
             
     def tutorial_hint2(self):
         pass
