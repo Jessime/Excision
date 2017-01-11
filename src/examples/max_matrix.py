@@ -14,7 +14,7 @@ def row_col_max(infile):
     matrix = np.loadtxt(infile, delimiter=',')
     max_val = max(matrix.sum(0).max(), matrix.sum(1).max())
 
-    out = '/home/jessime/Code/Excision/results/tutorial/sum.txt'
+    out = '/home/jessime/Code/Excision/src/results/tutorial/sum.txt'
     with open(out, 'w') as outfile:
         outfile.write(str(int(max_val)))
 

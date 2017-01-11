@@ -9,6 +9,7 @@ import os
 import subprocess as sp
 import importlib
 import traceback
+import numpy as np
 
 from shutil import copyfile
 
@@ -37,22 +38,53 @@ class Tutorial():
             else:
                 with open('results/tutorial/gc.txt') as infile:
                     result = infile.read()
-                    if not result:
-                        self.semantics_error1 = 'There is nothing in the file you created.'
-                    elif result != '42%\n':
-                        self.semantics_error1 = 'Your answer is not correct.'
-                    else:
-                        self.semantics_error1 = 'Good job! There was no error!'
-
+                if not result:
+                    self.semantics_error1 = 'There is nothing in the file you created.'
+                elif result != '42%\n':
+                    self.semantics_error1 = 'Your answer is not correct.'
+                else:
+                    self.semantics_error1 = 'Good job! There was no error!'
+    
     def tutorial_sum(self):
-        pass
-
+        print(-1)
+        sum_txt = 'results/tutorial/sum.txt'
+        if os.path.isfile(sum_txt):
+            os.remove(sum_txt)
+        
+        #generate temp data
+        rand = np.random.randint(-10, 10, [10, 10])
+        max_val = max(rand.sum(0).max(), rand.sum(1).max())
+        rand_file = 'results/sum_rand.txt'
+        np.savetxt(rand_file, rand, delimiter=',')
+        
+        cmd = 'python {} {}'.format(self.script, rand_file)
+        try:
+            sp.run(cmd.split(), stderr=sp.PIPE, check=True)
+        except sp.CalledProcessError as e:
+            self.syntax_error2 = e.stderr.decode("utf-8")
+        print(self.syntax_error2)
+        if self.syntax_error2 is None:
+            if not os.path.isfile(sum_txt):
+                print(2)
+                self.semantics_error2 = 'Your program did not produce a file in the proper location.'
+            else:
+                with open(sum_txt) as infile:
+                    result = infile.read().strip()
+                    print(max_val, result)
+                if not result:
+                    self.semantics_error2 = 'There is nothing in the file you created.'
+                elif result != str(max_val):
+                    self.semantics_error2 = 'Your answer is not correct.'
+                else:
+                    self.semantics_error2 = 'Good job! There was no error!'
+                        
     def tutorial_hint1(self):
         new = self.temp_copy(self)
         try:
             user_import = importlib.import_module(new.split('.')[0])
-            result = user_import.squared_sum([1,2])
-            if result == 5:
+            result1 = user_import.squared_sum([1, 2, 3])
+            result2 = user_import.squared_sum([-1, 3])
+            if result1 == 14 and result2 == 10:
                 self.hint_solved1 = True
                 
         except Exception:
@@ -61,8 +93,18 @@ class Tutorial():
         self.temp_del(self, new)
             
     def tutorial_hint2(self):
-        pass
-    
+        new = self.temp_copy(self)
+        try:
+            user_import = importlib.import_module(new.split('.')[0])
+            result1 = user_import.seen([1, 2, 3], [1,2,3,4,4,5, 'what'])
+            result2 = user_import.seen(['s', 9], ['s', 9])
+            if set(result1) == set(['what', 4, 5]) and result2 == []:
+                self.hint_solved2 = True
+                
+        except Exception:
+            print(traceback.format_exc())    
+        self.temp_del(self, new)
+
     def temp_copy(self):
         """Creates a copy of a user file into the src dir to be imported"""
         

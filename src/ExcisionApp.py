@@ -8,7 +8,7 @@ Created on Fri Oct 23 18:52:28 2015
 import sys
 import markdown
 
-from flask import Flask, Markup, render_template, request
+from flask import Flask, Markup, render_template, redirect, request
 
 
 from pick_file import pick
@@ -57,6 +57,9 @@ def tutorial():
         Tutorial.script = pick()
         if Tutorial.script is not None:
             Tutorial.process_post(next(request.form.keys()))
+        if Tutorial.semantics_error2 == 'Good job! There was no error!':
+            return redirect('launch')
+
     return render_template('tutorial.html', **vars(Tutorial))
 
 if __name__ == "__main__":

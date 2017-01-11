@@ -103,6 +103,10 @@
                                     </div>
                                  {% endif %}
         				</form>
+                        <p>
+                            <b>Note: </b> Usually, correctly submitting a problem will reroute you to the next level.
+                            That's not going to happen here, but you can expect it in the future.
+                        </p>
                         <H2>3. Hints</H2>
                         <p>
                             Besides a submit button, the other thing you'll see at each question are hints.
@@ -161,7 +165,7 @@
                             If there are redundant items in the second list (i.e. [1, 1]), only include that item in the third list once.
                         </p>
                         <form action="" method="post">
-                            <input type="submit" value="Hint #2" class="button" name="tutorial_hint1">
+                            <input type="submit" value="Hint #2" class="button" name="tutorial_hint2">
                         </form>
                         {% if hint_solved2 %}
                         <p>
@@ -199,6 +203,18 @@
                         </blockquote>
                         <form action="" method="post">
                             <input type="submit" value="Submit" class="special" name="tutorial_sum">
+                                 {% if syntax_error2 is not none%}
+                                     <div>
+                                         <p>Unfortunately, your code didn't finish running. The error was:
+                                         <pre><code>{{syntax_error2}}</code></pre></p>
+                                    </div>
+                                 {% endif %}
+                                 {% if semantics_error2 is not none %}
+                                     <div>
+                                         <p>Your code finished running.
+                                         <pre><code>{{semantics_error2}}</code></pre></p>
+                                    </div>
+                                 {% endif %}
                         </form>
 				</div>
 			</section>
