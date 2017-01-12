@@ -39,8 +39,9 @@ def launch():
     if request.method == 'POST':
         pass
     infile = 'static/story/level1.md'
+    no_markup = {'title', 'subtitle', 'img'}
     sections = split(infile)
-    sections = {k:markup_str(v) if ('title' not in k) else v for k,v in sections.items()}
+    sections = {k:markup_str(v) if (k not in no_markup) else v for k,v in sections.items()}
     sections['hint_solved1'] = True
     sections['hint_solved2'] = True
     sections['hint_solved3'] = True

@@ -4,6 +4,7 @@ Decisions
 File parsing with a touch of statistics
 --------
 
+images/pic03.jpg
 
 It’s Sunday evening and you’re sitting in your house staring at the computer. You can’t figure out what to do. You’ve got work in the morning, so you really shouldn’t stay up much later. But you feel like if you just sit quietly for a little bit longer you might get the inspiration you’ve been looking for. It should be so simple; all you have to do is put yourself in their shoes. What would you need if you were in their position? But the words on the screen are doing nothing to make you think like them. Maybe if you were just a little more… what’s the word? Sociopathic. 
 

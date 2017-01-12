@@ -1,17 +1,20 @@
-T
+Oregon Trail
 =====
 
-Sub
+An introduction to arrays
 --------
 
+images/pic03.jpg
 
-You walk into the office Monday morning and make an announcement. A team is going to head out to the Theraptrix plant as soon as they can get their bags packed. You'll head the expedition with Anita, who you've promoted to lead the investigation against Gene Corp.
+You walk into the office Monday morning and make an announcement. A team is going to head out to the Theraptrix plant as soon as they can get their bags packed. You'll lead the expedition with Anita, who you've promoted to coordinate the investigation against Gene Corp.
 
-Your plane touches down in Klamath Falls Airport near Medford Oregon, and an hour later you’re grabbing a sandwich with Anita at a local place called Sherry’s Shack. Sherry, somewhat of a minor celebrity in these parts, serves lunch to you herself. She tries to strike up a bit of a conversation since the restaurant isn’t busy this late in the afternoon. You and Anita are also using the Shack as an operations base, so you're thankful when Sherry quickly picks up on the tension and moves on to the few other customers currently in the diner. 
+Within the hour, you've boarded the jet. And by the time you're in the air, you and Anita are deep in conversation, trying to play out possible long-term senarios. You've ask Anita about her thoughts on the Konrads. Rumor has it that the current CEO of Gene Corp is nothing more than a figure head. It's a pair of Polish twins, the Konrads, running the ship as COO and CTO. Anita replies that she's been researching the possibility of playing the twins off one another, in an effort to distract Gene Corp's leadership while the Agency is building their case.  
+
+Your plane touches down in Klamath Falls Airport near Medford Oregon, and  you head straight to a local place called Sherry's Shack where you can grab a sandwhich. Sherry, somewhat of a minor celebrity in these parts, serves lunch to you herself. She tries to strike up a bit of a conversation since the restaurant isn’t busy this late in the afternoon. You and Anita are also using the Shack as an operations base, so you're thankful when Sherry quickly picks up on the tension and moves on to the few other customers currently in the diner. 
 
 The goal for today is simple: gain access to Theraptrix's file system, particularly their projects directory. The path to achieving this goal is less simple. After all, while the current plan isn't strictly illegal, it definitely isn't by the books. If you offically issue a warrant for the data, they'll just delete it before you can get to it. Instead, you're going to have a member of your team join each of the factory tours given today. Each team member will sneak in an extremely low power digital thermometer past Theraptrix's device detector. The good news is that the thermometers are inconspicuous enough to not trigger alarms, and are capable of creating a 2D map of temperatures in the building. The bad news is, these devices are so low power that they aren't particularly reliable. That's why you're sending in multiple agents (that and the fact that agents now have the option to abort if necessary, without ruining the mission). The consensus of the devices, however, should provide a literal heatmap of the building.This means you'll be able to find the server room by finding which location is hottest. 
 
-Anita and you can use the rest of the day for planning your next move **Edit: plan on the plane ride!**, as soon as you write this program. Down time is rarely in excess, so you'd better get writing!
+Anita and you can use the rest of the day for additional planning, as soon as you write this program. Down time is rarely in excess, so you'd better get writing!
 
 ---
 
