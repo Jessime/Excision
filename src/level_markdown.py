@@ -5,6 +5,7 @@ Created on Fri Dec 30 02:18:10 2016
 @author: jessime
 
 """
+import os
 
 def split(infile):
     """
@@ -28,6 +29,7 @@ def split(infile):
             elif i == 6:
                 sections['img'] = line
 
+            #TODO Clean up
             #Story
             elif i == 8:
                 current_section_title = 'story'
@@ -95,5 +97,15 @@ def split(infile):
 
     return sections
     
-def cat():
-    pass
+def cat_story():
+    level_files = [f for f in os.listdir('static/story/') if f.startswith('level')]
+    
+    with open('static/story/full_story.md', 'w') as outfile:
+        for lf in sorted(level_files):
+            sections = split(os.path.join('static/story', lf))
+            outfile.write('{}'.format(sections['title']))
+            outfile.write('=====\n\n')
+            outfile.write('{}'.format(sections['subtitle']))
+            outfile.write('-----\n\n')
+            outfile.write('{}\n'.format(sections['story']))
+    

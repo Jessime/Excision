@@ -6,15 +6,20 @@ Analyzing structured data (Part I)
 
 images/pic03.jpg
 
-Great, you've got the location of the servers.
-You gain access to the folders. 
-There are only two files left; you must have trigger an alarm.
-five_prime_colossus.pdb (which is empty).
-ENCFF239FSU.bed
+All portions of the mission have been going exactly as planned. You've got the location of the servers. Joe, the last field agent to go on a tour of the Theraptrix plant, swipes an employee access card on his way to the "restroom". Within four minutes, he's ducked inside the server room, inserted the 512 GB micro flashdrive he'd hidden in his shoe, copied the contents of one of the server disks, and returned to politely inform the employee that they must have dropped their badge on the ground at some point. It would have been ideal to access to more data, of course, but this flashdrive will have to do.
+
+It doesn't do. Joe was lucky to have gotten out of there at all, because you must have triggered some sort of alarm. Your best guess is that the Theraptrix security system doesn't allow unauthorized USBs. Upon looking at the contents of the USB and realizing that you've gained approximately 512 GB of pure garbage, you do three things. First, you make backup copies of the only two files which appear to be of any consequence. Second, you disconnect from Sherry's free WiFi and wipe your own system. Third, you pack up your team and leave Oregon. 
+
+
+All this work for two files. And not even that. The first file, entitled five_prime_colossus.pdb, now only contains a single line:
+
+HEADER    TRANSPORT PROTEIN                       22-JUL-15   5A
+
+The second file, ENCFF239FSU.bed, appears to contain genomic coordinates. Given that this is your only lead for the moment, you'd better find a way to connect ENCFF239FSU.bed with the pdb file you found. 
 
 ---
 
-**Task:** Write `is_nucleic_acid`, which given a string, returns a bool indicating whether the string is a valid representation of a [nucleic acid](https://en.wikipedia.org/wiki/Nucleic_acid_notation).
+**Task:** Write `is_nucleic_acid`, which given a string, returns a bool indicating whether the string is a valid representation of a case insensitive [nucleic acid](https://en.wikipedia.org/wiki/Nucleic_acid_notation) sequence.
 
 A1
 
