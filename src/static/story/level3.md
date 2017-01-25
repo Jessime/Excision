@@ -1,7 +1,7 @@
 T
 =====
 
-Sub
+Analyzing structured data (Part I)
 --------
 
 images/pic03.jpg
@@ -14,19 +14,19 @@ ENCFF239FSU.bed
 
 ---
 
-**Task:** T1
+**Task:** Write `is_nucleic_acid`, which given a string, returns a bool indicating whether the string is a valid representation of a [nucleic acid](https://en.wikipedia.org/wiki/Nucleic_acid_notation).
 
 A1
 
 ---
 
-**Task:** T2
+**Task:** Also write `has_digit`, which given a list of strings, returns a filtered list of strings. The filtered list should only contain the strings from the original list that have at least one number in the string. 
 
 A2
 
 ---
 
-**Task:** T3
+**Task:** `intersects` should take two lists as parameters and return a bool. The lists, `region1` and `region2`, will each contain two positive integers representing start and stop positions. The bool, then, will indicate whether the `region1` and `region2` intersect (i.e. overlap) in any capacity.
 
 A3
 
@@ -45,7 +45,16 @@ A3
 >
 >Contents of `f.txt`:
 >
->>" "
+>>chr1	230125030	230174106	ENST00000454058.2	0	+  
+>>chr1	29913143	29915337	ENST00000623731.1	0	+  
+>>chr1	61801712	61803634	ENST00000624542.1	0	+  
+>>chr1	23567063	23573122	ENST00000454863.3	0	-  
+>>chr1	82587312	82588411	ENST00000575085.1	0	+  
+>>chr1	127401725	127470569	ENST00000509671.1	0	+  
+>>chr3	86481942	86496996	ENST00000460586.1	0	+  
+>>chr1	53947623	53974950	ENST00000558866.4	0	+  
+>
+> **Warning:** While this example is space separated, the real `ENCFF239FSU.bed` file will be separated with tab characters (i.e. \t). 
 >
 >**Execution:**
 >
@@ -53,4 +62,9 @@ A3
 >
 >**Result:**
 >
->R
+>> chr1  230125030  230174106  ENST00000454058.2  0  +  49076  
+>> chr1   29913143   29915337  ENST00000623731.1  0  +   2194  
+>> chr1   61801712   61803634  ENST00000624542.1  0  +   1922  
+>> chr1  127401725  127470569  ENST00000509671.1  0  +  68844  
+>> chr3   86481942   86496996  ENST00000460586.1  0  +  15054  
+>> chr1   53947623   53974950  ENST00000558866.4  0  +  27327
