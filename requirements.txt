@@ -1,0 +1,4 @@
+flask
+numpy
+markdown
+pyqt5
