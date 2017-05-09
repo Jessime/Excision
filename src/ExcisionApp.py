@@ -15,6 +15,8 @@ from pick_file import pick
 from state import Tutorial, Data
 from level_markdown import split
 
+from webbrowser import open_new_tab
+
 def markup_str(string):
     """Prepares a markdown formatted string for insertion into jinja template."""
     markup = Markup(markdown.markdown(string))
@@ -66,4 +68,6 @@ def tutorial():
 if __name__ == "__main__":
     if sys.version_info[0] != 3:
         assert False, 'Python version must be 3.x'
-    app.run(debug=True)
+    url = 'http://127.0.0.1:5000'
+    open_new_tab(url)
+    app.run(debug=False)
