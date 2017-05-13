@@ -71,9 +71,10 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="#overview" class="mdl-layout__tab">Story</a>
-          <a href="#features" class="mdl-layout__tab">About</a>
-          <a href="#features" class="mdl-layout__tab is-active">Tutorial</a>
+          <a href="{{ url_for('index')}}" class="mdl-layout__tab">Home</a>
+          <a href="{{ url_for('story')}}" class="mdl-layout__tab">Story</a>
+          <a href="{{ url_for('about')}}" class="mdl-layout__tab">About</a>
+          <a href="{{ url_for('tutorial')}}" class="mdl-layout__tab is-active">Tutorial</a>
         </div>
       </header>
       <main class="mdl-layout__content">
@@ -87,12 +88,12 @@
             <div class="mdl-card image mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
                 <h4>Introduction</h4>
-                What follows should give you an introduction to what you might expect as you progress through the game.
-                Each of these should take you just a few minutes, though if you have to look up how to do something, it might take longer.
+                What follows will give you an introduction to what you can expect as you progress through the game.
+                Each part of the tutorial should take you just a few minutes, though if you have to look up how to do something it might take longer.
                 Googling is fine, even in the tutorial, so do as much research as you need.
                 If you're having difficulty with something, feel free to submit an <a href="https://github.com/Jessime/Excision/issues">issue on Github</a>.
-                If you're repeatedly having trouble with these problems, it might be worthwile to pause for a bit and refresh your basic Python skills before moving on with Excision.
-                We will walk through our hello_world.py example together, then there will be some practice problems for you to try.
+                If you're repeatedly having trouble with these problems, it might be worthwile to pause for a bit and refresh your fundamental Python skills before moving on with Excision.
+                We will walk through an example problem together; then, there will be some practice problems for you to try.
               </div>
             </div>
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
@@ -107,16 +108,16 @@
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card image mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
-                <h4>Hello World!</h4>
+                <h4>Hello, World!</h4>
                 Imagine you're given the following task:<br><br>
-                <b>Create a program that writes "Hello World!" to Excision/results/tutorial/hello.txt (without the quotes, but with a newline character).<br><br></b>
+                <b>Create a program that writes "Hello, World!" to Excision/results/tutorial/hello.txt (without the quotes, but with a newline character).<br><br></b>
                 <p>
                     Take a second to make sure you could do that.
-                    You need to know:
+                    You need to know...
                     <ol>
-                        <li> where you installed Excision
-                        <li> how to write to a file
-                        <li> what a newline character is
+                        <li> where you installed Excision,
+                        <li> how to write a string to a file, and
+                        <li> what a newline character is.
                     </ol>
                     Virtually all of the programs you write will dump their output to the Excision/results directory.
                     <a href="https://github.com/Jessime/Excision/blob/master/src/examples/hello_world.py">Here's how I solved the problem.</a>
@@ -124,7 +125,7 @@
                     I'll continue that convention throughout Excision.
                     If you're on Windows, make sure to use Windows paths.
                     <br><br>
-                    The bioinformatics equivalent of "Hello World!" is slightly more difficult. Let's calculate the GC content of a nucleotide sequence...
+                    The bioinformatics equivalent of "Hello, World!" is slightly more difficult. Let's calculate the GC content of a nucleotide sequence...
                 </p>
               </div>
             </div>
