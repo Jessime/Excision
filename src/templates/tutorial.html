@@ -110,14 +110,14 @@
               <div class="mdl-card__supporting-text">
                 <h4>Hello, World!</h4>
                 Imagine you're given the following task:<br><br>
-                <b>Create a program that writes "Hello, World!" to Excision/results/tutorial/hello.txt (without the quotes, but with a newline character).<br><br></b>
+                <b>Create a program that writes "Hello, World!" to Excision/results/tutorial/hello.txt (without the quotes).<br><br></b>
                 <p>
                     Take a second to make sure you could do that.
                     You need to know...
                     <ol>
                         <li> where you installed Excision,
                         <li> how to write a string to a file, and
-                        <li> what a newline character is.
+                        <li> how to close a file properly.
                     </ol>
                     Virtually all of the programs you write will dump their output to the Excision/results directory.
                     <a href="https://github.com/Jessime/Excision/blob/master/src/examples/hello_world.py">Here's how I solved the problem.</a>
@@ -143,13 +143,15 @@
               <div class="mdl-card__supporting-text">
                 <h4>Submitting Scripts</h4>
                 Try completing this problem:<br><br>
-                <b>Create a program that takes a nucleotide sequence as an arguments and writes the GC content to Excision/results/tutorial/gc.txt to the nearest whole percent.</b><br><br>
-                Hopefully this is easy for you. Below is an example of how you might execute this program on the command line with a tiny sample sequence.<br><br>
-                <b>Example:</b> <br><br>
+                <b>Create a program that takes a nucleotide sequence as an argument and writes the GC content to Excision/results/tutorial/gc.txt to the nearest whole percent.</b><br><br>
+                Below is an example of how you might execute this program on the command line with a tiny sample sequence.<br><br>
+                <h5>Example</h5>
                 <code>$ ./gc_calc.py ATATGCGC</code><br><br>
-                After executing your code with the sequence shown above, you should be able to navigate to the output file location and find the following contents.<br><br>
+                After executing your code with the sequence shown above, your output file should show your result.<br><br>
                 <b> Result:</b><br><br>
-                50%<br><br>
+                <pre>
+                  <p>50%</p>
+                </pre>
                 <p>
                   Once you've written this script, you can test it out with the 'Submit Task' button below.
                   Just to see what happens, you should make sure to submit an incorrect script first.
@@ -225,7 +227,7 @@
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card image mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
-                <h4>Problem</h4>
+                <h3>Problem</h3>
                 <p>You have three files, all of which are in FASTA format.
                 1. <code>data/1/reference.fa</code> contains a single sequence. This sequence is what is expected if no mutations are present in a sample.
                 2. <code>data/1/control.fa</code> contains ~50 sequences of the same region of the genome as the reference sequence.
@@ -241,11 +243,11 @@
                 <p>The error rates in both files will satisfy all of the necessary assumptions for a Student's t-test.</p>
                 </li>
                 </ol>
-                <p><strong>Example:</strong></p>
+                <h5>Example</h5>
                 <p>Contents of <code>reference.fa</code>:</p>
                 <pre>
                 <p>>reference_sequence<br>CAGGTCACTT</p>
-              </pre>
+                </pre>
                 <p>Contents of <code>control.fa</code>:</p>
                 <pre>
                 <p>>c1<br />CAGGTCCCTT<br />>c2<br />CACGCCACTT<br />>c3<br />TAGGTCACTT</p>
@@ -257,7 +259,10 @@
                 <p><strong>Execution:</strong></p>
                 <p><code>$ ./mutations.py /path/to/reference.fa /path/to/control.fa /path/to/theraprix.fa</code></p>
                 <p><strong>Result:</strong></p>
-                <p>0.1011</p>              </div>
+                <pre>
+                  <p>0.1011</p>
+                </pre>
+              </div>
               <div class="mdl-card__actions mdl-card--border">
                 <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                   Solve Problem
