@@ -59,6 +59,9 @@
       z-index: 900;
     }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type=text/javascript> $SCRIPT_ROOT = {{ request.script_root|tojson|safe }}</script>
+</head>
   </head>
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -88,12 +91,14 @@
             <div class="mdl-card image mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
                 <h3>Introduction</h3>
-                What follows will give you an introduction to what you can expect as you progress through the game.
-                Each part of the tutorial should take you just a few minutes, though if you have to look up how to do something it might take longer.
-                Googling is fine, even in the tutorial, so do as much research as you need.
-                If you're having difficulty with something, feel free to submit an <a href="https://github.com/Jessime/Excision/issues">issue on Github</a>.
-                If you're repeatedly having trouble with these problems, it might be worthwile to pause for a bit and refresh your fundamental Python skills before moving on with Excision.
-                We will walk through an example problem together; then, there will be some practice problems for you to try.
+                <p>
+                  What follows will give you an introduction to what you can expect as you progress through the game.
+                  Each part of the tutorial should take you just a few minutes, though if you have to look up how to do something it might take longer.
+                  Googling is fine, even in the tutorial, so do as much research as you need.
+                  If you're having difficulty with something, feel free to submit an <a href="https://github.com/Jessime/Excision/issues">issue on Github</a>.
+                  If you're repeatedly having trouble with these problems, it might be worthwile to pause for a bit and refresh your fundamental Python skills before moving on with Excision.
+                  We will walk through an example problem together; then, there will be some practice problems for you to try.
+                <p>
               </div>
             </div>
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
@@ -143,10 +148,10 @@
               <div class="mdl-card__supporting-text">
                 <h3>Submitting Scripts</h3>
                 <p>Try completing this problem:</p>
-                <p><b>Create a program that takes a nucleotide sequence as an argument and writes the GC content to Excision/results/tutorial/gc.txt to the nearest whole percent.</b></p>
+                <p><b>Create a program that takes a nucleotide sequence as an argument and writes the GC content (to the nearest whole percent) to Excision/results/tutorial/gc.txt.</b></p>
                 <p>Below is a sample sequence, how you could execute your program on the command line, and the result that you should expect from your program given this sample sequence.</p>
                 <h5>Example</h5>
-                <p>We want to know the GC content of "ATATGCGC".</p>
+                <p>We want to know the GC content of 'ATATGCGC'.</p>
                 <p><b>Execution:</b></p>
                 <p><code>$ ./gc_calc.py ATATGCGC</code></p>
                 <p>After executing your code with the sequence shown above, your output file should show your result.</p>
@@ -155,7 +160,7 @@
                   <p>50%</p>
                 </pre>
                 <p>
-                  Once you've written this script, you can test it out with the 'Submit Task' button below.
+                  Once you've written this script, you can test it out with the 'Submit Problem' button below.
                   Just to see what happens, you should make sure to submit an incorrect script first.
                 </p>
                 <p>
@@ -170,7 +175,7 @@
               </div>
               <div class="mdl-card__actions mdl-card--border">
                 <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  Submit Task
+                  Submit Problem
                 </a>
               </div>
             </div>
@@ -186,35 +191,27 @@
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card image mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
-                <h3>Hints</h3>
+                <h3>Tasks and Hints</h3>
                 <p>
-                    Besides a submit button, the other thing you'll see at each question are hints.
-                    Hints will give you little prompts on how to go about solving the problem at hand.
-                    Hints aren't free though.
-                    Each hint will require you to solve a secondary task.
-                    These tasks will be small, generally just a few of lines of code.
-                    So, it'll be up to you whether you think taking the time to solve for the hint is worthwhile.
-                    In general, the hints are less likely to be strictly bioinformatics related.
-                    Instead, they'll focus on introducing you to new parts of Python and its ecosystem that might come in handy farther down the road.
+                    There will be optional tasks available below the main problem for each level.
+                    Your reward for solving each task is a hint to assist you in your completion of the main problem.
+                    The tasks will be small (generally just a few of lines of code)
+                    so it'll be up to you to decide whether taking the time to solve for the hint is worthwhile.
+                    In general, the tasks are less bioinformatics-related than the main problems.
+                    Instead, they'll focus on introducing you to new parts of Python and its ecosystem that might come in handy further down the road.
                 </p>
                 <p>
-                    Another difference with hints is that you don't have to separate them into their own documents.
-                    If you want to have all the code for all of your hints in a single file, that's fine.
-                    Or you can put all of the hints for a single level in a file.
-                    However you want to do it is fine.
-                    Just make sure that, when you submit a file, a function with the proper name exists.
-                    It doesn't matter what else is in the file.
+                    Another difference between the tasks and the problems is that tasks only require you to write a function instead of an executable file.
+                    A successful task submission includes a correct function named according to the task instructions.
+                    Everything else in the submission is ignored; thus, you can include as many functions in a single document as you'd like, resubmitting the document for multiple tasks.
+                    Alternatively, you can create a new document for each function.
+                    The choice is yours.
                 </p>
                 <p>
-                    Now let's try another problem.
-                    This one is a bit harder, so it might be worthwhile to solve the hints.
-                    Even if you know how to solve this task, take a second to make sure you know what to expect from hints.
+                    Now, let's try another problem.
+                    This one is a bit harder, so it might be worthwhile to solve the tasks.
+                    Even if you already know how to solve this problem, solve at least one tasks so you know what to expect from both tasks and hints.
                 </p>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  Submit Task
-                </a>
               </div>
             </div>
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
@@ -284,10 +281,48 @@
             <div class="mdl-card image mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
                 <h3>Task</h3>
-                <p>Create a new .py file that contains a single function. Call that function <code>evens_mean</code>. <code>evens_mean</code> should accept a single parameter. You can call the parameter anything you want, but <code>num_list</code> is a decent choice, since the parameter will be a list of numbers (floats, ints, or both). <code>evens_mean</code> should iterate over <code>num_list</code> and calculate the mean of all the even elements. <code>even_means</code> should then return the calculated mean value.</p>
+                <p>
+                  Create a new .py file that contains a single function.
+                  Call that function <code>evens_mean</code>.
+                  <code>evens_mean</code> should accept a single parameter.
+                  You can call the parameter anything you want, but <code>num_list</code> is a decent choice, since the parameter will be a list of numbers (floats, ints, or both).
+                  <code>evens_mean</code> should iterate over <code>num_list</code> and calculate the mean of all the even elements.
+                  <code>even_means</code> should then return the calculated mean value.
+                </p>
               </div>
+              <div id="hint1" class="mdl-card__actions reveal mdl-card--border">
+                <p><b>Hint:</b></p>
+                <p>
+                  This is a multi-part hint:
+                  <ol>
+                    <li>
+                      Notice the form of this task, as opposed to the main questions.
+                      Code for hints will generally require you to write a function instead of a script.
+                    </li>
+                    <li>
+                      Besides the concept of hints, the second purpose of this question is to introduce you to the concept of using modules.
+                      You can solve this question without importing anything. But the line <code>import numpy as np</code> will make the question significantly easier.
+                      You'll want to import some module in virtually every following question.
+                    </li>
+                  </ol>
+                </p>
+              </div>
+              <script>
+                $(document).ready(function() {
+                  $('#tutorial_hint1').click(function() {
+                    $.getJSON($SCRIPT_ROOT + '/hey',
+                    {button : "tutorial_hint1"},
+                    function(data){
+                      console.log(data.result);
+                      if(data.result){
+                        $('#hint1').slideDown());
+                      };
+                    };
+                  });
+                });
+              </script>
               <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                <a id="tutorial_hint1" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                   Submit Task
                 </a>
               </div>
@@ -313,8 +348,26 @@
                   If there are redundant items in the second list (i.e. [1, 1]), only include that item in the third list once.
                 </p>
               </div>
+              <div id="hint2" class="mdl-card__actions reveal mdl-card--border ">
+                <p><b>Hint:</b></p>
+                <p>
+                    We'll introduce other ways to read data files, but numpy provides some basic help.
+                    Read up on <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html"><code>np.loadtxt</code></a> to get your data as an array.
+                    Once you have the array, you have access to the power of numpy.
+                    There are a lot of things which can be done with arrays.
+                    Some of the most common features are well introduced in the <a href="https://docs.scipy.org/doc/numpy/user/quickstart.html">quickstart</a> of the offical numpy documentation.
+                    The function that will help you most at the moment is <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html#numpy.sum"><code>sum</code></a>.
+                </p>
+              </div>
+              <script>
+                $(document).ready(function() {
+                    $('#hint2_submit').click(function() {
+                      $('#hint2').slideDown();
+                    });
+                });
+              </script>
               <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                <a id="hint2_submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                   Submit Task
                 </a>
               </div>
