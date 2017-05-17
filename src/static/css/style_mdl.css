@@ -100,6 +100,7 @@ html, body {
   margin-bottom: 20px;
 }
 .mdl-demo.mdl-demo .mdl-card__supporting-text code {
+  font-family:  Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, serif;
   color: #5d5d60;
   background-color: #dedfe8;
   padding: 2px 2px;

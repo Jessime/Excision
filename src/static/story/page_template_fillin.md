@@ -10,43 +10,59 @@ story
 
 ---
 
-**Task:** T1
+### Problem
 
-A1
+P
+
+**Notes:**
+
+N
+
+**Example:**
+
+
+Contents of `f.txt`:
+
+```
+Contents
+```
+
+**Execution:**
+
+`$ ./f.py a1`
+
+**Result:**
+
+```
+R
+```
 
 ---
 
-**Task:** T2
+### Task
 
-A2
+T1
 
----
+#### Hint
 
-**Task:** T3
-
-A3
+H1
 
 ---
 
->**Problem:**
->
->P
->
->**Notes:**
->
->N
->
->**Example:**
->
->
->Contents of `f.txt`:
->
->>" "
->
->**Execution:**
->
->`$ ./f.py a1`
->
->**Result:**
->
->R
+### Task
+
+T2
+
+#### Hint
+
+H2
+
+---
+
+### Task
+
+T3
+
+#### Hint
+
+H3
