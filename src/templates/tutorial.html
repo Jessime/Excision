@@ -173,8 +173,24 @@
                     That's not going to happen here, but you can expect it in the future.
                 </p>
               </div>
+              <div id="gc_reveal" class="mdl-card__actions reveal mdl-card--border">
+                <p><b>Good job! Your answer to this problem was correct!</b></p>
+              </div>
+              <script>
+                $(document).ready(function() {
+                  $('#tutorial_gc').click(function() {
+                    $.getJSON($SCRIPT_ROOT + '/tutorial_button',
+                    {button : "tutorial_gc"},
+                    function(data){
+                      if(data.result){
+                        $('#gc_reveal').slideDown();
+                      };
+                    });
+                  });
+                });
+              </script>
               <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                <a id="tutorial_gc" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                   Submit Problem
                 </a>
               </div>
@@ -195,7 +211,7 @@
                 <p>
                     There will be optional tasks available below the main problem for each level.
                     Your reward for solving each task is a hint to assist you in your completion of the main problem.
-                    The tasks will be small (generally just a few of lines of code)
+                    The tasks will be small (generally just a few of lines of code),
                     so it'll be up to you to decide whether taking the time to solve for the hint is worthwhile.
                     In general, the tasks are less bioinformatics-related than the main problems.
                     Instead, they'll focus on introducing you to new parts of Python and its ecosystem that might come in handy further down the road.
@@ -210,7 +226,7 @@
                 <p>
                     Now, let's try another problem.
                     This one is a bit harder, so it might be worthwhile to solve the tasks.
-                    Even if you already know how to solve this problem, solve at least one tasks so you know what to expect from both tasks and hints.
+                    Even if you already know how to solve this problem, solve at least one task so you know what to expect from both tasks and hints.
                 </p>
               </div>
             </div>
@@ -262,8 +278,21 @@
                   <p>0.1011</p>
                 </pre>
               </div>
+              <script>
+                $(document).ready(function() {
+                  $('#tutorial_sum').click(function() {
+                    $.getJSON($SCRIPT_ROOT + '/tutorial_button',
+                    {button : "tutorial_sum"},
+                    function(data){
+                      if(data.result){
+                        window.location.replace($SCRIPT_ROOT + '/launch');
+                    };
+                    });
+                  });
+                });
+              </script>
               <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                <a id="tutorial_sum" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                   Solve Problem
                 </a>
               </div>
@@ -309,20 +338,19 @@
               </div>
               <script>
                 $(document).ready(function() {
-                  $('#tutorial_hint1').click(function() {
-                    $.getJSON($SCRIPT_ROOT + '/hey',
-                    {button : "tutorial_hint1"},
+                  $('#tutorial_task1').click(function() {
+                    $.getJSON($SCRIPT_ROOT + '/tutorial_button',
+                    {button : "tutorial_task1"},
                     function(data){
-                      console.log(data.result);
                       if(data.result){
-                        $('#hint1').slideDown());
+                        $('#hint1').slideDown();
                       };
-                    };
+                    });
                   });
                 });
               </script>
               <div class="mdl-card__actions mdl-card--border">
-                <a id="tutorial_hint1" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                <a id="tutorial_task1" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                   Submit Task
                 </a>
               </div>
@@ -361,13 +389,19 @@
               </div>
               <script>
                 $(document).ready(function() {
-                    $('#hint2_submit').click(function() {
-                      $('#hint2').slideDown();
+                  $('#tutorial_task2').click(function() {
+                    $.getJSON($SCRIPT_ROOT + '/tutorial_button',
+                    {button : "tutorial_task2"},
+                    function(data){
+                      if(data.result){
+                        $('#hint2').slideDown();
+                      };
                     });
+                  });
                 });
               </script>
               <div class="mdl-card__actions mdl-card--border">
-                <a id="hint2_submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                <a id="tutorial_task2" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                   Submit Task
                 </a>
               </div>
