@@ -1,200 +1,82 @@
-<!DOCTYPE HTML>
-<!--
-	Spatial by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
-	<head>
-		<title>EXCISION 2</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<script src= {{ url_for('static', filename = "js/jquery.min.js") }}></script>
-		<script src= {{ url_for('static', filename = "js/skel.min.js") }}></script>
-		<script src= {{ url_for('static', filename = "js/skel-layers.min.js") }}></script>
-		<script src= {{ url_for('static', filename = "js/init.js") }}></script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Excision 2</title>
 
-		<link rel="stylesheet" href="{{ url_for('static', filename = "css/skel.css") }}" />
-		<link rel="stylesheet" href="{{ url_for('static', filename = "css/style.css") }}" />
-		<link rel="stylesheet" href="{{ url_for('static', filename = "css/style-xlarge.css") }}" />
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="images/android-desktop.png">
 
-	</head>
-	<body class="landing">
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+  <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
 
-		<!-- Header -->
-			<header id="header" class="alt">
-				<h1><strong><a href="{{ url_for('index')}}">EXCISION 2</a></strong> by Jessime Kirk</h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="{{ url_for('story')}}">Story</a></li>
-						<li><a href="{{ url_for('about')}}">About</a></li>
-						<li><a href="{{ url_for('tutorial')}}">Tutorial</a></li>
-						<li><a href="{{ url_for('elements')}}">Elements</a></li>
-					</ul>
-				</nav>
-			</header>
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
 
-		<!-- Banner -->
-			<section id="banner">
-				<h2>EXCISION 2</h2>
-				<p> APPLIED BIOINFORMATICS AND COMPUTATIONAL BIOLOGY WITH PYTHON</p>
-				<ul class="actions">
-					<li><a href="{{ url_for('launch')}}" class="button special big">Launch</a></li>
-				</ul>
-			</section>
+  <link rel="shortcut icon" href="images/favicon.png">
 
-			<!-- One -->
-				<section id="one" class="wrapper style1">
-					<div class="container 75%">
-						<div class="row 200%">
-							<div class="6u 12u$(medium)">
-								<header class="major">
-									<h2>Maecenas luctus lectus</h2>
-									<p>Perspiciatis doloremque recusandae dolor</p>
-								</header>
-							</div>
-							<div class="6u$ 12u$(medium)">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ea mollitia corporis id, distinctio sunt veritatis officiis dolore reprehenderit deleniti voluptatibus harum magna, doloremque alias quisquam minus, eaque. Feugiat quod, nesciunt! Iste quos ipsam, iusto sit esse.</p>
-								<p>Dolorum aspernatur maxime libero ratione quidem distinctio, placeat fugiat laborum voluptatum enim neque soluta vel sunt id ex veritatis. Labore rerum, odit sapiente, alias mollitia magnam exercitationem modi amet earum quia atque ipsum voluptas asperiores quas laboriosam.</p>
-							</div>
-						</div>
-					</div>
-				</section>
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!--
+  <link rel="canonical" href="http://www.example.com/">
+  -->
 
-			<!-- Two -->
-				<section id="two" class="wrapper style2 special">
-					<div class="container">
-						<header class="major">
-							<h2>Fusce ultrices fringilla</h2>
-							<p>Maecenas vitae tellus feugiat eleifend</p>
-						</header>
-						<div class="row 150%">
-							<div class="6u 12u$(xsmall)">
-								<div class="image fit captioned">
-									<img src= {{ url_for('static', filename = 'images/pic02.jpg') }} alt="" />
-									<h3>Lorem ipsum dolor sit amet.</h3>
-								</div>
-							</div>
-							<div class="6u$ 12u$(xsmall)">
-								<div class="image fit captioned">
-									<img src= {{ url_for('static', filename = 'images/pic03.jpg') }} alt="" />
-									<h3>Illum, maiores tempora cupid?</h3>
-								</div>
-							</div>
-						</div>
-						<ul class="actions">
-							<li><a href="#" class="button special big">Nulla luctus</a></li>
-							<li><a href="#" class="button big">Sed vulputate</a></li>
-						</ul>
-					</div>
-				</section>
-
-			<!-- Three -->
-				<section id="three" class="wrapper style1">
-					<div class="container">
-						<header class="major special">
-							<h2>WHO WE ARE</h2>
-							<p></p>
-						</header>
-						<div class="feature-grid">
-							<div class="feature">
-								<div class="image rounded"><img src= {{ url_for('static', filename = 'images/pic04.jpg') }} alt="" /></div>
-								<div class="content">
-									<header>
-										<h4>Jessime Kirk</h4>
-										<p>PhD Student, UNC Chapel Hill</p>
-									</header>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore esse tenetur accusantium porro omnis, unde mollitia totam sit nesciunt consectetur.</p>
-								</div>
-							</div>
-							<div class="feature">
-								<div class="image rounded"><img src= {{ url_for('static', filename = 'images/pic05.jpg') }} alt="" /></div>
-								<div class="content">
-									<header>
-										<h4>Recusandae nemo</h4>
-										<p>Ratione maiores a, commodi</p>
-									</header>
-									<p>Animi mollitia optio culpa expedita. Dolorem alias minima culpa repellat. Dolores, fuga maiores ut obcaecati blanditiis, at aperiam doloremque.</p>
-								</div>
-							</div>
-							<div class="feature">
-								<div class="image rounded"><img src= {{ url_for('static', filename = 'images/pic06.jpg') }} alt="" /></div>
-								<div class="content">
-									<header>
-										<h4>Laudantium fugit</h4>
-										<p>Possimus ex reprehenderit eaque</p>
-									</header>
-									<p>Maiores iusto inventore fugit architecto est iste expedita commodi sed, quasi feugiat nam neque mollitia vitae omnis, ea natus facere.</p>
-								</div>
-							</div>
-							<div class="feature">
-								<div class="image rounded"><img src= {{ url_for('static', filename = 'images/pic07.jpg') }} alt="" /></div>
-								<div class="content">
-									<header>
-										<h4>Porro aliquam</h4>
-										<p>Quaerat, excepturi eveniet laboriosam</p>
-									</header>
-									<p>Vitae earum unde, autem labore voluptas ex, iste dolorum inventore natus consequatur iure similique obcaecati aut corporis hic in! Porro sed.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-			<!-- Five -->
-				<section id="five" class="wrapper style1">
-					<div class="container 75%">
-						<div class="row 200%">
-							<div class="6u 12u$(medium)">
-								<header class="major">
-									<h2>Additional Resources</h2>
-									<p>Here are some other great places to learn about Python and Bioinformatics!</p>
-								</header>
-							</div>
-							<div class="6u$ 12u$(medium)">
-                                        <ul>
-                                            <li><a href="https://www.reddit.com/r/learnpython/">/r/learnpython</a>: Ask any level of Python question here!</li>
-                                            <li><a href="https://www.reddit.com/r/Python">/r/Python</a>: Learn more about what's going on in the Python community. (But don't ask learning questions here.)</li>
-                                            <li><a href="https://www.reddit.com/r/bioinformatics">/r/bioinformatics</a>: Not a super active sub, but contains a lot of useful bioinformatics information.</li>
-                                            <li><a href="http://rosalind.info/problems/locations/">Rosalind</a>: An amazing set of bioinformatics questions. Exision2 was heavily inspired by Rosalind.</li>
-                                            <li><a href="https://www.biostars.org/">Biostars</a>: A huge collection of bioinformatics questions have been answered here.</li>
-                                        </ul>
-							</div>
-						</div>
-					</div>
-				</section>
-
-			<!-- Four -->
-				<section id="four" class="wrapper style3 special">
-					<div class="container">
-						<header class="major">
-							<h2>Aenean elementum ligula</h2>
-							<p>Feugiat sed lorem ipsum magna</p>
-						</header>
-						<ul class="actions">
-            					<li><a href="{{ url_for('launch')}}" class="button special big">Launch</a></li>
-						</ul>
-					</div>
-				</section>
-
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<ul class="icons">
-						<li><a href="#" class="icon fa-facebook"></a></li>
-						<li><a href="https://github.com/Jessime/Excision" class="icon fa-github"></a></li>
-						<li><a href="#" class="icon fa-instagram"></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled</li>
-						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
-					</ul>
-				</div>
-			</footer>
-
-	</body>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-pink.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename = "css/style_mdl.css") }}">
+  <style>
+  #view-source {
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    z-index: 900;
+  }
+  </style>
+</head>
+  <body>
+    <!-- Uses a transparent header that draws on top of the layout's background -->
+    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row home">
+          <!-- Title -->
+          <span class="mdl-layout-title">Excision</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link home" href="{{ url_for('tutorial')}}">Tutorial</a>
+            <a class="mdl-navigation__link home" href="{{ url_for('about')}}">About</a>
+            <a class="mdl-navigation__link home" href="{{ url_for('story')}}">Story</a>
+            <a class="mdl-navigation__link home" href="{{ url_for('launch')}}">Launch</a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Title</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div style=" height: 100%;  text-align: center;">
+          <button onclick="location.href='{{ url_for('launch')}}'" style="top: 20%; height: 72px; font-size: 28;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">
+            Launch
+          </button>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>

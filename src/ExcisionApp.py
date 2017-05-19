@@ -13,7 +13,7 @@ from flask import Flask, Markup, render_template, redirect, request
 
 from pick_file import pick
 from state import Tutorial, Data
-from level_markdown import split
+from level_markdown import parse
 
 from webbrowser import open_new_tab
 
@@ -42,7 +42,7 @@ def launch():
         pass
     infile = 'static/story/level1.md'
     no_markup = {'title', 'subtitle', 'img'}
-    sections = split(infile)
+    sections = parse(infile)
     sections = {k:markup_str(v) if (k not in no_markup) else v for k,v in sections.items()}
     sections['hint_solved1'] = True
     sections['hint_solved2'] = True
@@ -70,4 +70,4 @@ if __name__ == "__main__":
         assert False, 'Python version must be 3.x'
     url = 'http://127.0.0.1:5000'
     open_new_tab(url)
-    app.run(debug=False)
+    app.run(debug=True)
