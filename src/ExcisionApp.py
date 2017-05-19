@@ -70,4 +70,4 @@ if __name__ == "__main__":
         assert False, 'Python version must be 3.x'
     url = 'http://127.0.0.1:5000'
     open_new_tab(url)
-    app.run(debug=False)
+    app.run(debug=True)
