@@ -8,7 +8,7 @@ Created on Fri Oct 23 18:52:28 2015
 import sys
 import markdown
 
-from flask import Flask, Markup, render_template, redirect, request
+from flask import Flask, Markup, render_template, redirect, request, jsonify
 
 
 from pick_file import pick
@@ -54,15 +54,17 @@ def launch():
 def story():
     return render_template('story.html')
 
-@app.route('/tutorial', methods=['GET', 'POST'])
-def tutorial():
-    if request.method == 'POST':
-        Tutorial.script = pick()
-        if Tutorial.script is not None:
-            Tutorial.process_post(next(request.form.keys()))
-        if Tutorial.semantics_error2 == 'Good job! There was no error!':
-            return redirect('launch')
+@app.route('/tutorial_button')
+def tutorial_button():
+    result = False
+    Tutorial.script = pick()
+    if Tutorial.script is not None:
+        result = Tutorial.process_request(request.args['button'])
+    print('result: ', result)
+    return jsonify(result=result)
 
+@app.route('/tutorial')
+def tutorial():
     return render_template('tutorial.html', **vars(Tutorial))
 
 if __name__ == "__main__":
