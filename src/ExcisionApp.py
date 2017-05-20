@@ -8,14 +8,14 @@ Created on Fri Oct 23 18:52:28 2015
 import sys
 import markdown
 
+from webbrowser import open_new_tab
 from flask import Flask, Markup, render_template, redirect, request, jsonify
-
+from pprint import pprint
 
 from pick_file import pick
 from state import Tutorial, Data
 from level_markdown import parse
 
-from webbrowser import open_new_tab
 
 def markup_str(string):
     """Prepares a markdown formatted string for insertion into jinja template."""
@@ -43,6 +43,7 @@ def launch():
     infile = 'static/story/level1.md'
     no_markup = {'title', 'subtitle', 'img'}
     sections = parse(infile)
+    #pprint(sections)
     sections = {k:markup_str(v) if (k not in no_markup) else v for k,v in sections.items()}
     sections['hint_solved1'] = True
     sections['hint_solved2'] = True

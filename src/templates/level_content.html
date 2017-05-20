@@ -1,55 +1,211 @@
 {% extends "base_level.html" %}
 {% block level_content %}
-<header class="major special">
-    <h2> {{title}} </h2>
-    <p> {{subtitle}} </p>
+<header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+  <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+  </div>
+  <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+    {{title}}{{subtitle}}
+  </div>
+  <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+  </div>
+  <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+    <a href="{{ url_for('index')}}" class="mdl-layout__tab">Home</a>
+    <a href="{{ url_for('story')}}" class="mdl-layout__tab">Story</a>
+    <a href="{{ url_for('about')}}" class="mdl-layout__tab">About</a>
+    <a href="{{ url_for('tutorial')}}" class="mdl-layout__tab is-active">Tutorial</a>
+  </div>
 </header>
-
-
-<a href="#" class="image fit"><img src={{ url_for('static', filename = img) }} alt="" /></a>
-
-
-{{story}}
-
-{% if hint_solved1 is not none %}
-{{task1}}
-
-<form action="" method="post">
-    <input type="submit" value="Hint #1" class="button" name="tutorial_hint1">
-</form>
-
-{% if hint_solved2 %}
-{{hint1}}
-{% endif %}
-{% endif %}
-
-{% if hint_solved2 is not none %}
-{{task2}}
-
-<form action="" method="post">
-    <input type="submit" value="Hint #2" class="button" name="tutorial_hint2">
-</form>
-
-{% if hint_solved2 %}
-{{hint2}}
-{% endif %}
-{% endif %}
-
-{% if hint_solved3 is not none %}
-{{task3}}
-
-<form action="" method="post">
-    <input type="submit" value="Hint #3" class="button" name="tutorial_hint3">
-</form>
-
-{% if hint_solved3 %}
-{{hint3}}
-{% endif %}
-{% endif %}
-
-{{problem | safe}}
-
-<form action="" method="post">
-    <input type="submit" value="Submit" class="special" name="tutorial_sum">
-</form>
+<main class="mdl-layout__content">
+  <div class="mdl-layout__tab-panel is-active" id="overview">
+    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+      <div class="mdl-img mdl-cell mdl-cell--12-col">
+        <img src={{image}}>
+      </div>
+    </section>
+    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+      <div class="mdl-card image mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__supporting-text">
+          {{story}}
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
+        <li class="mdl-menu__item">Lorem</li>
+        <li class="mdl-menu__item" disabled>Ipsum</li>
+        <li class="mdl-menu__item">Dolor</li>
+      </ul>
+    </section>
+    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+      <div class="mdl-card image mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__supporting-text">
+          {{problem}}
+        </div>
+        <script>
+          $(document).ready(function() {
+            $('#tutorial_sum').click(function() {
+              $.getJSON($SCRIPT_ROOT + '/tutorial_button',
+              {button : "tutorial_sum"},
+              function(data){
+                if(data.result){
+                  window.location.replace($SCRIPT_ROOT + '/launch');
+              };
+              });
+            });
+          });
+        </script>
+        <div class="mdl-card__actions mdl-card--border">
+          <a id="tutorial_sum" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Solve Problem
+          </a>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
+        <li class="mdl-menu__item">Lorem</li>
+        <li class="mdl-menu__item" disabled>Ipsum</li>
+        <li class="mdl-menu__item">Dolor</li>
+      </ul>
+    </section>
+    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+      <div class="mdl-card image mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__supporting-text">
+          {{task1}}
+        </div>
+        <div id="hint1" class="mdl-card__actions reveal mdl-card--border">
+          {{hint1}}
+        </div>
+        <script>
+          $(document).ready(function() {
+            $('#tutorial_task1').click(function() {
+              $.getJSON($SCRIPT_ROOT + '/tutorial_button',
+              {button : "tutorial_task1"},
+              function(data){
+                if(data.result){
+                  $('#hint1').slideDown();
+                };
+              });
+            });
+          });
+        </script>
+        <div class="mdl-card__actions mdl-card--border">
+          <a id="tutorial_task1" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Submit Task
+          </a>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
+        <li class="mdl-menu__item">Lorem</li>
+        <li class="mdl-menu__item" disabled>Ipsum</li>
+        <li class="mdl-menu__item">Dolor</li>
+      </ul>
+    </section>
+    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+      <div class="mdl-card image mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__supporting-text">
+          {{task2}}
+        </div>
+        <div id="hint2" class="mdl-card__actions reveal mdl-card--border ">
+          {{hint2}}
+        </div>
+        <script>
+          $(document).ready(function() {
+            $('#tutorial_task2').click(function() {
+              $.getJSON($SCRIPT_ROOT + '/tutorial_button',
+              {button : "tutorial_task2"},
+              function(data){
+                if(data.result){
+                  $('#hint2').slideDown();
+                };
+              });
+            });
+          });
+        </script>
+        <div class="mdl-card__actions mdl-card--border">
+          <a id="tutorial_task2" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Submit Task
+          </a>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
+        <li class="mdl-menu__item">Lorem</li>
+        <li class="mdl-menu__item" disabled>Ipsum</li>
+        <li class="mdl-menu__item">Dolor</li>
+      </ul>
+    </section>
+    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+      <div class="mdl-card image mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__supporting-text">
+          {{task3}}
+        </div>
+        <div id="hint3" class="mdl-card__actions reveal mdl-card--border ">
+          {{hint3}}
+        </div>
+        <script>
+          $(document).ready(function() {
+            $('#tutorial_task3').click(function() {
+              $.getJSON($SCRIPT_ROOT + '/tutorial_button',
+              {button : "tutorial_task3"},
+              function(data){
+                if(data.result){
+                  $('#hint3').slideDown();
+                };
+              });
+            });
+          });
+        </script>
+        <div class="mdl-card__actions mdl-card--border">
+          <a id="tutorial_task3" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Submit Task
+          </a>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
+        <li class="mdl-menu__item">Lorem</li>
+        <li class="mdl-menu__item" disabled>Ipsum</li>
+        <li class="mdl-menu__item">Dolor</li>
+      </ul>
+    </section>
+    <section class="section--footer mdl-color--white mdl-grid">
+      <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+        <div class="section__circle-container__circle mdl-color--accent section__circle--small"></div>
+      </div>
+      <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+        <h5>Lorem ipsum dolor sit amet</h5>
+        Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
+      </div>
+      <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+        <div class="section__circle-container__circle mdl-color--accent section__circle--small"></div>
+      </div>
+      <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+        <h5>Lorem ipsum dolor sit amet</h5>
+        Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
+      </div>
+    </section>
+  </div>
+  <footer class="mdl-mega-footer">
+    <div class="mdl-mega-footer--bottom-section">
+      <div class="mdl-logo">
+        More Information
+      </div>
+      <ul class="mdl-mega-footer--link-list">
+        <li><a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Privacy and Terms</a></li>
+      </ul>
+    </div>
+  </footer>
+</main>
 {% endblock %}

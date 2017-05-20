@@ -242,40 +242,30 @@
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card image mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
-                <h3>Problem</h3>
-                <p>You have three files, all of which are in FASTA format.
-                1. <code>data/1/reference.fa</code> contains a single sequence. This sequence is what is expected if no mutations are present in a sample.
-                2. <code>data/1/control.fa</code> contains ~50 sequences of the same region of the genome as the reference sequence.
-                3. <code>data/1/theraptrix.fa</code> is the file recovered yesterday. It contains another ~50 sequence from people who may have been exposed to illegally dumped waste.</p>
-                <p>Write a program that, using these three files, calculates the p-value of the difference in mutation rates between <code>control.fa</code> and <code>theraptrix.fa</code>. Output the p-value, to 4 decimal places, to <code>results/1.txt</code>.</p>
+                <h3>Problem:</h3>
+                <p>
+                  Create a program that reads a csv file of numbers.
+                  Find the largest sum of any row or column.
+                  Write the result, to the nearest integer, in <code>Excision/results/tutorial/sum.txt</code>.
+                </p>
                 <p><strong>Notes:</strong></p>
-                <p>To make things easy, you can make the following assumptions:</p>
-                <ol>
-                <li>
-                <p>There are only single nucleotide polymorphisms (SNPs) mutations present in the dataset. And all sequences will be the same length. You can compare mutations on a nucleotide by nucleotide basis, without length normalization.</p>
-                </li>
-                <li>
-                <p>The error rates in both files will satisfy all of the necessary assumptions for a Student's t-test.</p>
-                </li>
-                </ol>
-                <h5>Example</h5>
-                <p>Contents of <code>reference.fa</code>:</p>
-                <pre>
-                <p>>reference_sequence<br>CAGGTCACTT</p>
-                </pre>
-                <p>Contents of <code>control.fa</code>:</p>
-                <pre>
-                <p>>c1<br />CAGGTCCCTT<br />>c2<br />CACGCCACTT<br />>c3<br />TAGGTCACTT</p>
-                </pre>
-                <p>Contents of <code>theraptrix.fa</code>:</p>
-                <pre>
-                <p>>OR1<br/>CAAATCACTA<br/>>OR2<br/>CACGCCACTT<br />>OR3<br />CGGGTCACGT </p>
-                </pre>
+                <p>
+                  The correct answer is guaranteed to be unique.
+                  So you don't have to worry about dealing with a tie.
+                </p>
+                <h5>Example:</h5>
+                <p>Contents of /path/to/numbers.csv:</p>
+                <p>
+                    5,1,8,7<br>
+                    4,5,7,8<br>
+                    8,7,1,6<br>
+                    3,7,6,8<br>
+                </p>
                 <p><strong>Execution:</strong></p>
-                <p><code>$ ./mutations.py /path/to/reference.fa /path/to/control.fa /path/to/theraprix.fa</code></p>
-                <p><strong>Result:</strong></p>
+                <p><code>$ ./row_col_max.py /path/to/numbers.csv</code></p>
+                <p><strong> Result:</strong></p>
                 <pre>
-                  <p>0.1011</p>
+                  <p>29</p>
                 </pre>
               </div>
               <script>

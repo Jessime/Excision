@@ -8,15 +8,17 @@ Created on Fri Dec 30 02:18:10 2016
 import os
 
 def _head(data):
-    line_map = {0: 'title', 2: 'subtitle', 4: 'img'}
-    data = data.split()
+    line_map = {0: 'title', 3: 'subtitle', 6: 'img'}
+    data = data.split('\n')
     sections = {v:data[k] for k,v in line_map.items()}
+    sections['story'] = '\n'.join(data[8:])
     return sections
 
 def _task(sections, data, i):
-    task_hint = data.split('#### Hint\n')
-    sections['task{}'.format(i)] = task_hint[0].strip('### Task\n')
-    sections['hint{}'.format(i)] = task_hint[1].strip()
+    splitter = '#### Hint\n'
+    task_hint = data.split(splitter)
+    sections['task{}'.format(i)] = task_hint[0]
+    sections['hint{}'.format(i)] = splitter + task_hint[1].strip()
     return sections
 
 def parse(infile):

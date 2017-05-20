@@ -18,7 +18,7 @@ P
 
 N
 
-**Example:**
+##### Example
 
 
 Contents of `f.txt`:
