@@ -33,14 +33,35 @@ def parse(infile):
         sections = _task(sections, intermediate_sections['task{}'.format(i)], i)
     return sections
 
-def cat_story():
-    level_files = [f for f in os.listdir('static/story/') if f.startswith('level')]
+class Cat():
 
-    with open('static/story/full_story.md', 'w') as outfile:
-        for lf in sorted(level_files):
-            sections = parse(os.path.join('static/story', lf))
-            outfile.write('{}'.format(sections['title']))
-            outfile.write('=====\n\n')
-            outfile.write('{}'.format(sections['subtitle']))
-            outfile.write('-----\n\n')
-            outfile.write('{}\n'.format(sections['story']))
+    def __init__(self):
+        self.level_files = [f for f in os.listdir('static/story/') if f.startswith('level')]
+        self.outpath_base = 'static/story/{}.md'
+
+    def concatenate(self, section_names, outfile):
+        """Concatenates all levels of specific sections of the game into a single file.
+
+        Parameters
+        ----------
+        section_names : [str]
+            Keys for sections to store from each level markdown file.
+        outfile : str
+            Location of new markdown file.
+        """
+        with open(self.outpath_base.format(outfile), 'w') as outfile:
+            for lf in sorted(self.level_files):
+                sections = parse(os.path.join('static/story', lf))
+                outfile.write('{}'.format(sections['title']) + '\n=====\n\n')
+                outfile.write('{}'.format(sections['subtitle'])+ '\n-----\n\n')
+                for sn in section_names:
+                    outfile.write('{}\n'.format(sections[sn]))
+
+    def story(self, outfile='full_story'):
+        self.concatenate(['story'], outfile)
+
+    def tasks(self, outfile='all_tasks'):
+        self.concatenate(['task1', 'task2', 'task3'], outfile)
+
+    def problems(self, outfile='all_problems'):
+        self.concatenate(['problem'], outfile)

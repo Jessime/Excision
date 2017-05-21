@@ -74,6 +74,8 @@ class Tutorial():
                     self.semantics_error2 = 'Your answer is not correct.'
 
         result = (self.semantics_error2 is None) and (self.syntax_error2 is None)
+        print('semantics_error2: ', self.semantics_error2)
+        print('syntax_error2: ', self.syntax_error2)
         return result
 
     def tutorial_task1(self):

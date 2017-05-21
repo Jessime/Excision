@@ -4,6 +4,7 @@ Decisions
 File parsing with a touch of statistics
 --------
 
+images/banner.jpg
 
 It's Sunday evening and you're sitting in your house staring at the computer. You can't figure out what to do. You've got work in the morning, so you really shouldn't stay up much later. But you feel like if you just sit quietly for a little bit longer you might get the inspiration you've been looking for. It should be so simple; all you have to do is put yourself in their shoes. What would you need if you were in their position? But the words on the screen are doing nothing to make you think like them. Maybe if you were just a little more… what's the word? Sociopathic.
 
@@ -22,9 +23,9 @@ With a sigh, you decide to let the numbers make the choice. Yesterday, your team
 ### Problem
 
  You have three files, all of which are in FASTA format.
- 1. `data/1/reference.fa` contains a single sequence. This sequence is what is expected if no mutations are present in a sample.
- 2. `data/1/control.fa` contains ~50 sequences of the same region of the genome as the reference sequence.
- 3. `data/1/theraptrix.fa` is the file recovered yesterday. It contains another ~50 sequence from people who may have been exposed to illegally dumped waste.
+ 1. `reference.fa` contains a single sequence. This sequence is what is expected if no mutations are present in a sample.
+ 2. `control.fa` contains ~50 sequences of the same region of the genome as the reference sequence.
+ 3. `theraptrix.fa` is the file recovered yesterday. It contains another ~50 sequence from people who may have been exposed to illegally dumped waste.
 
  Write a program that, using these three files, calculates the p-value of the difference in mutation rates between `control.fa` and `theraptrix.fa`. Output the p-value, to 4 decimal places, to `results/1.txt`.
 
@@ -35,6 +36,8 @@ To make things easy, you can make the following assumptions:
 1. There are only single nucleotide polymorphisms (SNPs) mutations present in the dataset. And all sequences will be the same length. You can compare mutations on a nucleotide by nucleotide basis, without length normalization.
 
 2. The error rates in both files will satisfy all of the necessary assumptions for a Student's t-test.
+
+All of the files mentioned above can be found in the `Excision/src/static/data/1/` directory.
 
 ##### Example
 
@@ -101,6 +104,7 @@ Make function called `make_lookup`. `make_lookup` should take two lists `names` 
 Here's a small example:
 
 `names = ['seq1', 'seq2']`
+
 `seqs = ['AGTC', 'AAAA']`
 
 The dictionary that should be returned by `make_lookup` would look like:
