@@ -106,6 +106,7 @@ html, body {
   padding: 2px 2px;
 }
 .mdl-demo.mdl-demo .mdl-card__supporting-text pre {
+  display: flex;
   white-space: pre-wrap;
   color: #5d5d60;
   background-color: #dedfe8;

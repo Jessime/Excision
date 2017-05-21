@@ -4,13 +4,12 @@ Decisions
 File parsing with a touch of statistics
 --------
 
-images/pic03.jpg
 
 It's Sunday evening and you're sitting in your house staring at the computer. You can't figure out what to do. You've got work in the morning, so you really shouldn't stay up much later. But you feel like if you just sit quietly for a little bit longer you might get the inspiration you've been looking for. It should be so simple; all you have to do is put yourself in their shoes. What would you need if you were in their position? But the words on the screen are doing nothing to make you think like them. Maybe if you were just a little more… what's the word? Sociopathic.
 
 Despite having a thousand things on your plate, the weekend hasn't been productive as a whole. Sure, you have taken care of a few technical details, getting some operational systems up and running, but you have bigger fish to fry. It can be difficult ramping up a large undertaking like this, true, but that really isn't a good enough excuse when you have people depending on you. Come Monday, how are you going to explain to your team that they'll be waiting even longer for their assignments because your constant indecision forced you to marathon two seasons of House of Cards this weekend instead of doing your job? It isn't acceptable. You take a deep breath and mentally gear up to go over the facts one more time.
 
-The past year of your life has catapulted you from a Novice at the Academy to the head director of the Agency, making you far and away the youngest director in the storied history of the institution. The circumstances which lead to your rise were decidedly unpleasant and have left you with a laundry list of equally unpleasant tasks to resolve. Namely, the full weight of the Agency has found itself pitted against Gene Corporation, which is currently one of the largest organizations on the planet. Gene Corp has a wonderful public image known for quite literally ‘healing the sick and curing the blind'. While the technologies they have created have revolutionized several areas of life, you've seen their dark underbelly first hand. Just last week your team found some decently solid evidence that one of Gene Corp's subsidiaries, Theraptrix has been bribing the environmental officers in Oregon for years. They have been using the freedom they bought to pump waste chemicals directly into the air instead of following waste treatment and filtering protocol.
+The past year of your life has catapulted you from a Novice at the Academy to the head director of the Agency, making you far and away the youngest director in the storied history of the institution. The circumstances which lead to your rise were decidedly unpleasant and have left you with a laundry list of equally unpleasant tasks to resolve. Namely, the full weight of the Agency has found itself pitted against Gene Corporation, which is currently one of the largest organizations on the planet. Gene Corp has a wonderful public image known for quite literally 'healing the sick and curing the blind'. While the technologies they have created have revolutionized several areas of life, you've seen their dark underbelly first hand. Just last week your team found some decently solid evidence that one of Gene Corp's subsidiaries, Theraptrix has been bribing the environmental officers in Oregon for years. They have been using the freedom they bought to pump waste chemicals directly into the air instead of following waste treatment and filtering protocol.
 
 Bribery and industrial waste may or may not seem like fact-of-life issues when dealing with large corporations, but there's also the evidence that Life/Better, LLC (another child company of Gene Corp) has been illegally testing neurotropic drugs on pregnant women. Oh, and there was the incident when Gene Corp used an artificial intelligence system system to assassinate your mentor and attempted to take over the world. Besides Theraptrix and Life/Better, LLC, Gene Corp has another 47 companies under its name.
 
@@ -42,32 +41,26 @@ To make things easy, you can make the following assumptions:
 
 Contents of `reference.fa`:
 
-```
-\>reference_sequence  
-CAGGTCACTT
-```
+    >reference_sequence  
+    CAGGTCACTT
 
 Contents of `control.fa`:
 
-```
-\>c1  
-CAGGTCCCTT  
-\>c2  
-CACGCCACTT  
-\>c3  
-TAGGTCACTT  
-```
+    >c1  
+    CAGGTCCCTT  
+    >c2  
+    CACGCCACTT  
+    >c3  
+    TAGGTCACTT  
 
 Contents of `theraptrix.fa`:
 
-```
-\>OR1  
-CAAATCACTA  
-\>OR2  
-CACGCCACTT  
-\>OR3  
-CGGGTCACGT
-```
+    >OR1  
+    CAAATCACTA  
+    >OR2  
+    CACGCCACTT  
+    >OR3  
+    CGGGTCACGT
 
 **Execution:**
 
@@ -75,9 +68,7 @@ CGGGTCACGT
 
 **Result:**
 
-```
-0.1011
-```
+    0.1011
 
 ---
 

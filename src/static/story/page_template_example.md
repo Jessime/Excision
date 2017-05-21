@@ -26,9 +26,7 @@ This field may contain several parts. If your task involves reading a text file,
 
 Contents of file.txt:
 
-```
-Hello from file.txt"
-```
+    Hello from file.txt
 
 **Execution:**
 
@@ -36,9 +34,7 @@ Hello from file.txt"
 
 **Result:**
 
-```
-The resulting output of the program you just wrote and executed when using the example data.
-```
+    The resulting output of the program you just wrote and executed when using the example data.
 
 ---
 

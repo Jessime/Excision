@@ -23,9 +23,9 @@ N
 
 Contents of `f.txt`:
 
-```
-Contents
-```
+
+    Contents
+
 
 **Execution:**
 
@@ -33,9 +33,8 @@ Contents
 
 **Result:**
 
-```
-R
-```
+    Result
+
 
 ---
 
