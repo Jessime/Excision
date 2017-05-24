@@ -1,7 +1,7 @@
 T
 =====
 
-Sub
+Image processing and analysis
 --------
 
 img
@@ -12,33 +12,35 @@ story
 
 ### Problem
 
-Write a .py file that takes a folder path name to a sequence of .png image files as input. This function should store the image data as grayscale in the folder path for every frame and apply several image processing steps. First, apply a median filter using a 5x5 pixel window to filter out the background noise. Then, mask the image by setting the lower 50% of pixel values across the image sequence to zero. Using this processed image sequence, calculate the total area (nanometers) of the remaining object(s) in the image sequence for every frame and return it as a list.
+Write a .py file that takes a folder path name to a sequence of .png image files as input. This function should store the image data in the folder path as grayscale for every frame and apply several image processing steps. First, apply a median filter to each frame using a 5x5 pixel window to filter out the background noise. Then, mask the image by setting the lower 50% of pixel values across the image sequence to zero. Using this processed image sequence, calculate the total area (nanometers) of the remaining object(s) in the image sequence for every frame and return it as a list.
 
 **Notes:**
 
-Pixel to nanometer conversion: width/height of 1 pixel = 0.XX nanometers
+Pixel to nanometer conversion: width/height of 1 pixel = 0.15 nanometers
+
+The path to the images is `Excision/src/static/data/5/ims/`
 
 
 ##### Example
 
-Contents of `/ims/`
+Directory structure of `path/to/ims/`
 
         /path/to/ims/
-        ├── sim_000.png/
-        ├── sim_001.png/
-        ├── sim_002.png/
+        ├── sim_0.png
+        ├── sim_1.png
+        ├── sim_2.png
 
-Contents of `sim_000.png`
+Contents of `sim_0.png`
 
-images/level5_ims_md/sim_000.png
+images/level5_ims_md/sim_0.png
 
-Contents of `sim_001.png`
+Contents of `sim_1.png`
 
-images/level5_ims_md/sim_001.png
+images/level5_ims_md/sim_1.png
 
-Contents of `sim_002.png`
+Contents of `sim_2.png`
 
-images/level5_ims_md/sim_002.png
+images/level5_ims_md/sim_2.png
 
 
 **Execution:**
@@ -47,7 +49,7 @@ images/level5_ims_md/sim_002.png
 
 **Result:**
 
-    []
+    [21.15, 43.7175, 106.7175]
 
 
 ---
@@ -56,17 +58,11 @@ images/level5_ims_md/sim_002.png
 
 An RGB image at its most basic form is a 3D array of size height x width x 3. The height and width are representative of the image size, and the 3 represents the R, G, or B channel values of a pixel at a given coordinate index. Alternatively, a grayscale image only has one channel to indicate color, therefore it is typically stored in a 2D array. When converting an RGB image to a grayscale image, the 3 color channels must be collapsed into a single channel to indicate the pixel value. There are three common techniques for performing this operation. For a given pixel in an RGB image, its respective grayscale value can be calculated by one of the following:  
 
-1. Averaging Method:
-Average the R, G, and B components.
-(R + G + B)/3  2)
+1. **Averaging Method:** Average the R, G, and B components: <pre>(R + G + B)/3  )</pre>
 
-2. Lightness Method:
-Average only the highest value of the three channels with the lowest value of the three channels.
-((max(R, G, B) + min(R, G, B))/2  3)
+2. **Lightness Method:** Average only the highest value of the three channels with the lowest value of the three channels: <pre>((max(R, G, B) + min(R, G, B))/2  )</pre>
 
-3. Luminosity Method
-Using a pre-formulated equation to calculate a weighted average accounting for human perceptions of color. Humans typically are more sensitive to light in the green spectrum, so this channel is weighted more in this calculation. Different weighting values have been disputed over the years 
-0.3*R + 0.59*G + 0.11*B  
+3. **Luminosity Method:** Using a pre-formulated equation to calculate a weighted average accounting for human perceptions of color. Humans typically are more sensitive to light in the green spectrum, so this channel is weighted more in this calculation. Different weighting values have been disputed over the years : <pre> 0.3R + 0.59G + 0.11B </pre>  
 
 Create a function that takes in a 3D array of size height x width x 3 representing R, G, B channels as input and returns a 2D array of size height x width containing the grayscale component calculated using the luminosity method formula above.
 
