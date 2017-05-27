@@ -30,4 +30,4 @@ def pick():
     return picker.file
 
 if __name__ == '__main__':
-    pick()
+    print(pick())

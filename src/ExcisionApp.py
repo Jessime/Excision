@@ -7,12 +7,13 @@ Created on Fri Oct 23 18:52:28 2015
 
 import sys
 import markdown
+import subprocess as sp
 
 from webbrowser import open_new_tab
 from flask import Flask, Markup, render_template, redirect, request, jsonify
 from pprint import pprint
 
-from pick_file import pick
+#from pick_file import pick
 from state import Tutorial, Data
 from level_markdown import parse
 
@@ -58,7 +59,9 @@ def story():
 @app.route('/tutorial_button')
 def tutorial_button():
     result = False
-    Tutorial.script = pick()
+    cmd = 'python pick_file.py'.split()
+    p = sp.Popen(cmd, stdout=sp.PIPE)
+    Tutorial.script = p.communicate()[0].decode('utf-8').strip()
     if Tutorial.script is not None:
         result = Tutorial.process_request(request.args['button'])
     print('result: ', result)
