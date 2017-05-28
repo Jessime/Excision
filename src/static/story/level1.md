@@ -77,28 +77,6 @@ Contents of `theraptrix.fa`:
 
 ### Task
 
-Create a new .py file that contains a single function. Call that function `evens_mean`. `evens_mean` should accept a single parameter. You can call the parameter anything you want, but `num_list` is a decent choice, since the parameter will be a list of numbers (floats, ints, or both). `evens_mean` should iterate over `num_list` and calculate the mean of all the even elements. `even_means` should then return the calculated mean value.
-
-#### Hint
-
-H1
-
----
-
-### Task
-
-Write a function `headers`, which takes the contents of a FASTA file as a string and returns a list of all of the sequence headers in the file, without the initial '>' included.
-
-As a side note, it's fine if you want to write `headers` in the same file as `evens_mean`. Or you can have it in its own file. Whatever makes you feel more organized.
-
-#### Hint
-
-H2
-
----
-
-### Task
-
 Make a function called `make_lookup`. `make_lookup` should take two lists `names` and `seqs` as parameters, and return a dictionary where each element of `names` is a key and each element of `seqs` is a corresponding value.
 
 Here's a small example:
@@ -113,6 +91,31 @@ The dictionary that should be returned by `make_lookup` would look like this:
 
 #### Hint
 
-You don't need a dictionary for this problem. Instead, this task's goal is to make sure you're aware of the built-in [`zip`](https://docs.python.org/3.6/library/functions.html#zip) function. Here's a nice [example](http://stackoverflow.com/questions/13704860/zip-lists-in-python/13704903#13704903) of how `zip` works.
+You don't need a dictionary for this problem. Instead, this task's goal is to make sure you understand the built-in [`zip`](https://docs.python.org/3.6/library/functions.html#zip) function. Here's a nice [example](http://stackoverflow.com/questions/13704860/zip-lists-in-python/13704903#13704903) of how `zip` works.
 
 Bonus hint! Here's some documentation on how to do a [t-test](https://docs.scipy.org/doc/scipy-0.18.1/reference/generated/scipy.stats.ttest_ind.html#scipy.stats.ttest_ind) in Python.
+
+---
+
+### Task
+
+Write a function `headers`, which takes the contents of a FASTA file as a string and returns a list of all of the sequence headers in the file, without the initial '>' included.
+
+As a side note, it's fine if you want to write `headers` in the same file as `evens_mean`. Or you can have it in its own file. Whatever makes you feel more organized.
+
+#### Hint
+
+There are many ways to measure how similar or different two strings are. The way described in the problem is known as [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance). You need to find the hamming distances between the samples and the reference.
+
+---
+
+### Task
+
+Create a new .py file that contains a single function. Call that function `evens_mean`. `evens_mean` should accept a single parameter. You can call the parameter anything you want, but `num_list` is a decent choice, since the parameter will be a list of numbers (floats, ints, or both). `evens_mean` should iterate over `num_list` and calculate the mean of all the even elements. `evens_mean` should then return the calculated mean value.
+
+#### Hint
+
+There are a couple 'best practices' in python that will make your code easier to write and reason about:
+
+1. List comprehensions are a cleaner way to write for loops. [This tutorial](http://treyhunner.com/2015/12/python-list-comprehensions-now-in-color/) uses colors to explain the relationship between the two structures.
+2. Use the `with` statement to open and read files. [This example](https://docs.quantifiedcode.com/python-anti-patterns/maintainability/not_using_with_to_open_files.html) shows what you're *not* supposed to do, and then how to correct it.
