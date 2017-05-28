@@ -187,9 +187,11 @@
                     $.getJSON($SCRIPT_ROOT + '/tutorial_button',
                     {button : "tutorial_gc"},
                     function(data){
-                      if(data.result){
+                      if(data.success){
                         $('#gc_reveal').slideDown();
-                      };
+                      } else{
+                        alert(data.error);
+                      }
                     });
                   });
                 });
@@ -277,9 +279,11 @@
                     $.getJSON($SCRIPT_ROOT + '/tutorial_button',
                     {button : "tutorial_sum"},
                     function(data){
-                      if(data.result){
+                      if(data.success){
                         window.location.replace($SCRIPT_ROOT + '/launch');
-                    };
+                    } else{
+                      alert(data.error);
+                    }
                     });
                   });
                 });
@@ -332,9 +336,11 @@
                     $.getJSON($SCRIPT_ROOT + '/tutorial_button',
                     {button : "tutorial_task1"},
                     function(data){
-                      if(data.result){
+                      if(data.success){
                         $('#hint1').slideDown();
-                      };
+                      } else{
+                        alert(data.error);
+                      }
                     });
                   });
                 });
@@ -382,9 +388,11 @@
                     $.getJSON($SCRIPT_ROOT + '/tutorial_button',
                     {button : "tutorial_task2"},
                     function(data){
-                      if(data.result){
+                      if(data.success){
                         $('#hint2').slideDown();
-                      };
+                      } else {
+                        alert(data.error);
+                      }
                     });
                   });
                 });

@@ -15,14 +15,14 @@ from shutil import copyfile
 
 class Tutorial():
     script = None
-    syntax_error1 = None
-    semantics_error1 = None
+    error1 = None
     hint_solved1 = False
     hint_solved2 = False
     syntax_error2 = None
     semantics_error2 = None
 
     def tutorial_gc(self):
+        error = None
         gc_txt = '../results/tutorial/gc.txt'
         if os.path.isfile(gc_txt):
             os.remove(gc_txt)
@@ -31,22 +31,23 @@ class Tutorial():
         try:
             sp.run(cmd.split(), stderr=sp.PIPE, check=True)
         except sp.CalledProcessError as e:
-            self.syntax_error1 = e.stderr.decode("utf-8")
-        if self.syntax_error1 is None:
+            error = e.stderr.decode("utf-8")
+        if error is None:
             if not os.path.isfile(gc_txt):
-                self.semantics_error1 = 'Your program did not produce a file in the proper location.'
+                error = 'Your program did not produce a file in the proper location.'
             else:
                 with open(gc_txt) as infile:
                     result = infile.read()
                 if not result:
-                    self.semantics_error1 = 'There is nothing in the file you created.'
+                    error = 'There is nothing in the file you created.'
                 elif result != '42%\n':
-                    self.semantics_error1 = 'Your answer is not correct.'
+                    error = 'Your answer is not correct.'
 
-        result = (self.semantics_error1 is None) and (self.syntax_error1 is None)
-        return result
+        success = error is None
+        return success, error
 
     def tutorial_sum(self):
+        error = None
         sum_txt = '../results/tutorial/sum.txt'
         if os.path.isfile(sum_txt):
             os.remove(sum_txt)
@@ -61,51 +62,56 @@ class Tutorial():
         try:
             sp.run(cmd.split(), stderr=sp.PIPE, check=True)
         except sp.CalledProcessError as e:
-            self.syntax_error2 = e.stderr.decode("utf-8")
-        if self.syntax_error2 is None:
+            error = e.stderr.decode("utf-8")
+        if error is None:
             if not os.path.isfile(sum_txt):
-                self.semantics_error2 = 'Your program did not produce a file in the proper location.'
+                error = 'Your program did not produce a file in the proper location.'
             else:
                 with open(sum_txt) as infile:
                     result = infile.read().strip()
                 if not result:
-                    self.semantics_error2 = 'There is nothing in the file you created.'
+                    error = 'There is nothing in the file you created.'
                 elif result != str(max_val):
-                    self.semantics_error2 = 'Your answer is not correct.'
+                    error = 'Your answer is not correct.'
 
-        result = (self.semantics_error2 is None) and (self.syntax_error2 is None)
-        print('semantics_error2: ', self.semantics_error2)
-        print('syntax_error2: ', self.syntax_error2)
-        return result
+        success = error is None
+        return success, error
 
     def tutorial_task1(self):
+        error = None
         new = self.temp_copy(self)
+
         try:
             user_import = importlib.import_module(new.split('.')[0])
             result1 = user_import.squared_sum([1, 2, 3])
             result2 = user_import.squared_sum([-1, 3])
-            if result1 == 14 and result2 == 10:
-                self.hint_solved1 = True
+            if result1 != 14 or result2 != 10:
+                error = 'Your answer is not correct.'
 
         except Exception:
-            print(traceback.format_exc())
+            error = traceback.format_exc()
 
         self.temp_del(self, new)
-        return self.hint_solved1
+        success = error is None
+        return success, error
 
     def tutorial_task2(self):
+        error = None
         new = self.temp_copy(self)
+
         try:
             user_import = importlib.import_module(new.split('.')[0])
-            result1 = user_import.seen([1, 2, 3], [1,2,3,4,4,5, 'what'])
+            result1 = set(user_import.seen([1, 2, 3], [1,2,3,4,4,5, 'what']))
             result2 = user_import.seen(['s', 9], ['s', 9])
-            if set(result1) == set(['what', 4, 5]) and result2 == []:
-                self.hint_solved2 = True
+            if result1 != set(['what', 4, 5]) or result2 != []:
+                error = 'Your answer is not correct.'
 
         except Exception:
-            print(traceback.format_exc())
+            error = traceback.format_exc()
+
         self.temp_del(self, new)
-        return self.hint_solved2
+        success = error is None
+        return success, error
 
     def temp_copy(self):
         """Creates a copy of a user file into the src dir to be imported"""
