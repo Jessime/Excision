@@ -15,11 +15,6 @@ from shutil import copyfile
 
 class Tutorial():
     script = None
-    error1 = None
-    hint_solved1 = False
-    hint_solved2 = False
-    syntax_error2 = None
-    semantics_error2 = None
 
     def tutorial_gc(self):
         error = None
@@ -37,10 +32,10 @@ class Tutorial():
                 error = 'Your program did not produce a file in the proper location.'
             else:
                 with open(gc_txt) as infile:
-                    result = infile.read()
+                    result = infile.read().strip()
                 if not result:
                     error = 'There is nothing in the file you created.'
-                elif result != '42%\n':
+                elif result != '42%':
                     error = 'Your answer is not correct.'
 
         success = error is None
@@ -129,9 +124,3 @@ class Tutorial():
         """Execute the method corresponding to func_name."""
         result = vars(self)[func_name](self)
         return result
-
-class Data():
-    """Resposible for keeping track of the state of the app."""
-
-    submission_form = None
-    script = None
