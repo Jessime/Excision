@@ -6,9 +6,9 @@ Analyzing structured data (Part I)
 
 images/pic03.jpg
 
-All portions of the mission have been going exactly as planned. You've got the location of the servers. Joe, the last field agent to go on a tour of the Theraptrix plant, swipes an employee access card on his way to the "restroom". Within four minutes, he's ducked inside the server room, inserted the 512 GB micro flashdrive he'd hidden in his shoe, copied the contents of one of the server disks, and returned to politely inform the employee that they must have dropped their badge on the ground at some point. It would have been ideal to access to more data, of course, but this flashdrive will have to do.
+All aspects of the mission were going exactly as planned. What could have happened? You learned the location of the servers. Joe, the last field agent to go on a tour of the Theraptrix plant, stole an employee access card on his way to the "restroom". Within minutes, he'd ducked inside the server room, inserted a flashdrive he'd hidden in his shoe and copied the contents of one of the server disks. While returning to the tour, he 'informed' the employee that they must have dropped their badge on the ground at some point. It would have been ideal to access to more data, of course, but the flashdrive should have been enough.
 
-It doesn't do. Joe was lucky to have gotten out of there at all, because you must have triggered some sort of alarm. Your best guess is that the Theraptrix security system doesn't allow unauthorized USBs. Upon looking at the contents of the USB and realizing that you've gained approximately 512 GB of pure garbage, you do three things. First, you make backup copies of the only two files which appear to be of any consequence. Second, you disconnect from Sherry's free WiFi and wipe your own system. Third, you pack up your team and leave Oregon.
+It wasn't. Joe was lucky to have gotten out of there at all, because he must have triggered an alarm. Your security team's best guess is that the Theraptrix security system doesn't allow unauthorized USBs. Upon looking at the contents of the USB and realizing that you've gained approximately 512 GB of what appears to be corrupted files, you do three things. First, you make backup copies of the only two files which appear to be of any consequence. Second, you disconnect from Sherry's free WiFi and wipe your own system. Some of those seemingly corrupted files were likely spyware. Third, you pack up your team and leave Oregon.
 
 
 All this work for two files. And not even that. The first file, entitled five_prime_colossus.pdb, now only contains a single line:
@@ -23,15 +23,13 @@ The second file, ENCFF239FSU.bed, appears to contain genomic coordinates. Given 
 
 Parse `ENCFF239FSU.bed` to find potential genomic locations of the Colossus protein. To do this, you are going to create `results3.bed`, which is a filtered version of individual lines from `ENCFF239FSU.bed`. Specifically, you are to find the five largest intervals from each chromosome, if and only if the interval is found on the positive strand.
 
-**Notes:**
+**Note(s):**
 
 The path to the bed file is `Excision/src/static/data/3/ENCFF239FSU.bed`
 
 ##### Example
 
-
 Contents of `ENCFF239FSU.bed`:
-
 
     chr1	230125030	230174106	ENST00000454058.2	0	+  
     chr1	29913143	29915337	ENST00000623731.1	0	+  
@@ -58,7 +56,6 @@ While this example is space separated, the real `ENCFF239FSU.bed` file will be s
     chr1  127401725  127470569  ENST00000509671.1  0  +  68844  
     chr3   86481942   86496996  ENST00000460586.1  0  +  15054  
     chr1   53947623   53974950  ENST00000558866.4  0  +  27327
-
 
 ---
 
