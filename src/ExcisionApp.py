@@ -59,10 +59,13 @@ def level_button():
     success=None
     error=None
     State.script = get_script_path()
+    button = request.args['button']
     if State.script is not None:
-        success, error = State.process_request(request.args['button'])
-        if success:
+        success, error = State.process_request(button)
+        if success and button == 'problem':
             State.update_config()
+    print('success:', success)
+    print('error:', error)
     return jsonify(success=success, error=error, next_url=State.lvl_title)
 
 @app.route('/tutorial_button')

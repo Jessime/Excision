@@ -48,7 +48,7 @@
               $.getJSON($SCRIPT_ROOT + '/level_button',
               {button : "problem"},
               function(data){
-                if(data.result){
+                if(data.success){
                   window.location.replace($SCRIPT_ROOT + data.next_url);
                 } else{
                   alert(data.error);
@@ -86,7 +86,7 @@
               $.getJSON($SCRIPT_ROOT + '/level_button',
               {button : "task1"},
               function(data){
-                if(data.result){
+                if(data.success){
                   $('#hint1').slideDown();
                 } else{
                   alert(data.error);
@@ -124,7 +124,7 @@
               $.getJSON($SCRIPT_ROOT + '/level_button',
               {button : "task2"},
               function(data){
-                if(data.result){
+                if(data.success){
                   $('#hint2').slideDown();
                 } else{
                   alert(data.error);
@@ -158,11 +158,11 @@
         </div>
         <script>
           $(document).ready(function() {
-            $('#task2').click(function() {
+            $('#task3').click(function() {
               $.getJSON($SCRIPT_ROOT + '/level_button',
-              {button : "task2"},
+              {button : "task3"},
               function(data){
-                if(data.result){
+                if(data.success){
                   $('#hint3').slideDown();
                 } else{
                   alert(data.error);
