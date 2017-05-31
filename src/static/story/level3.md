@@ -21,11 +21,11 @@ The second file, ENCFF239FSU.bed, appears to contain genomic coordinates. Given 
 
 ### Problem
 
-Parse `ENCFF239FSU.bed` to find potential genomic locations of the Colossus protein. To do this, you are going to create `results3.bed`, which is a filtered version of individual lines from `ENCFF239FSU.bed`. Specifically, you are to find the five largest intervals from each chromosome, if and only if the interval is found on the positive strand.
+Parse `ENCFF239FSU.bed` to find potential genomic locations of the Colossus protein. To do this, you are going to create `results/3.txt`, which is a filtered version of individual lines from `ENCFF239FSU.bed`. Specifically, you are to find the five largest intervals from each chromosome, if and only if the interval is found on the positive strand.
 
 **Note(s):**
 
-The path to the bed file is `Excision/src/static/data/3/ENCFF239FSU.bed`
+The path to the bed file is `Excision/src/static/data/3/ENCFF239FSU.bed`. This script does not need to accept any arguments.
 
 ##### Example
 

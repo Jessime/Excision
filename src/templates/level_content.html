@@ -44,19 +44,21 @@
         </div>
         <script>
           $(document).ready(function() {
-            $('#tutorial_sum').click(function() {
-              $.getJSON($SCRIPT_ROOT + '/tutorial_button',
-              {button : "tutorial_sum"},
+            $('#problem').click(function() {
+              $.getJSON($SCRIPT_ROOT + '/level_button',
+              {button : "problem"},
               function(data){
                 if(data.result){
-                  window.location.replace($SCRIPT_ROOT + '/launch');
-              };
+                  window.location.replace($SCRIPT_ROOT + data.next_url);
+                } else{
+                  alert(data.error);
+                }
               });
             });
           });
         </script>
         <div class="mdl-card__actions mdl-card--border">
-          <a id="tutorial_sum" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          <a id="problem" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
             Solve Problem
           </a>
         </div>
@@ -80,19 +82,21 @@
         </div>
         <script>
           $(document).ready(function() {
-            $('#tutorial_task1').click(function() {
-              $.getJSON($SCRIPT_ROOT + '/tutorial_button',
-              {button : "tutorial_task1"},
+            $('#task1').click(function() {
+              $.getJSON($SCRIPT_ROOT + '/level_button',
+              {button : "task1"},
               function(data){
                 if(data.result){
                   $('#hint1').slideDown();
-                };
+                } else{
+                  alert(data.error);
+                }
               });
             });
           });
         </script>
         <div class="mdl-card__actions mdl-card--border">
-          <a id="tutorial_task1" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          <a id="task1" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
             Submit Task
           </a>
         </div>
@@ -116,19 +120,21 @@
         </div>
         <script>
           $(document).ready(function() {
-            $('#tutorial_task2').click(function() {
-              $.getJSON($SCRIPT_ROOT + '/tutorial_button',
-              {button : "tutorial_task2"},
+            $('#task2').click(function() {
+              $.getJSON($SCRIPT_ROOT + '/level_button',
+              {button : "task2"},
               function(data){
                 if(data.result){
                   $('#hint2').slideDown();
-                };
+                } else{
+                  alert(data.error);
+                }
               });
             });
           });
         </script>
         <div class="mdl-card__actions mdl-card--border">
-          <a id="tutorial_task2" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          <a id="task2" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
             Submit Task
           </a>
         </div>
@@ -152,19 +158,21 @@
         </div>
         <script>
           $(document).ready(function() {
-            $('#tutorial_task3').click(function() {
-              $.getJSON($SCRIPT_ROOT + '/tutorial_button',
-              {button : "tutorial_task3"},
+            $('#task2').click(function() {
+              $.getJSON($SCRIPT_ROOT + '/level_button',
+              {button : "task2"},
               function(data){
                 if(data.result){
                   $('#hint3').slideDown();
-                };
+                } else{
+                  alert(data.error);
+                }
               });
             });
           });
         </script>
         <div class="mdl-card__actions mdl-card--border">
-          <a id="tutorial_task3" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          <a id="task3" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
             Submit Task
           </a>
         </div>

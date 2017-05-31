@@ -57,7 +57,7 @@
             <a class="mdl-navigation__link home" href="{{ url_for('tutorial')}}">Tutorial</a>
             <a class="mdl-navigation__link home" href="{{ url_for('about')}}">About</a>
             <a class="mdl-navigation__link home" href="{{ url_for('story')}}">Story</a>
-            <a class="mdl-navigation__link home" href="{{ url_for('launch')}}">Launch</a>
+            <a class="mdl-navigation__link home" href="{{ url_for('play', title=lvl_title)}}">Launch</a>
           </nav>
         </div>
       </header>
@@ -72,7 +72,7 @@
       </div>
       <main class="mdl-layout__content">
         <div style=" height: 100%;  text-align: center;">
-          <button onclick="location.href='{{ url_for('launch')}}'" style="top: 20%; height: 72px; font-size: 28;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">
+          <button onclick="location.href='{{ url_for('play', title=lvl_title)}}'" style="top: 20%; height: 72px; font-size: 28;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">
             Launch
           </button>
         </div>
