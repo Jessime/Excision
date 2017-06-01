@@ -85,11 +85,13 @@ The most fundamental package to the data science ecosystem in Python is `numpy`.
 
 ### Task
 
-Write `csv2tab` which, as the name implies, takes a .csv file and converts it to a tab-delimited file.
+Create a `parent_exists` function takes a path name (as a string) to a potential file as input. `parent_exists` should return one of two strings: if the file has already been created, return `"There is a file at that location."`, otherwise, it should return the name of the parent directory (the folder in which the file would have resided).
 
 #### Hint
 
-If you've completed the tutorial, apologies. You've already seen this hint:
+Although it's not used super commonly in bioinformatics scripts, the [`os`](https://docs.python.org/3/library/os.html) module can come in handy in a many situations. For this level's problem, try learning more about the `os.walk` function.
+
+This hint was also included in the tutorial, but it's worth mentioning again even if you have seen it:
 
 We'll introduce other ways to read data files, but numpy provides some basic help. Read up on  [np.loadtxt](https://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html) to get your data into an array.
 
