@@ -49,7 +49,7 @@
               {button : "problem"},
               function(data){
                 if(data.success){
-                  window.location.replace($SCRIPT_ROOT + data.next_url);
+                  window.location.replace($SCRIPT_ROOT + '/play/' + data.next_url);
                 } else{
                   alert(data.error);
                 }

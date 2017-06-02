@@ -280,7 +280,7 @@
                     {button : "tutorial_sum"},
                     function(data){
                       if(data.success){
-                        window.location.replace($SCRIPT_ROOT + '/launch');
+                        window.location.replace($SCRIPT_ROOT + '/play/' + data.next_url);
                     } else{
                       alert(data.error);
                     }

@@ -39,7 +39,7 @@ def play(title):
     sections = parse(infile)
     sections = {k:markup_str(v) if (k not in no_markup) else v for k,v in sections.items()}
 
-    return render_template('level_content.html', **sections)
+    return render_template('level_content.html', **sections, lvl_title=State.lvl_title)
 
 @app.route('/story')
 def story():
@@ -48,7 +48,7 @@ def story():
 @app.route('/about')
 def about():
     return render_template('about.html', lvl_title=State.lvl_title)
-    
+
 @app.route('/level_button')
 def level_button():
     result = False
@@ -72,7 +72,7 @@ def tutorial_button(): #TODO Merge into level_button?
     Tutorial.script = get_script_path() #TODO need to save?
     if Tutorial.script is not None:
         success, error = Tutorial.process_request(request.args['button'])
-    return jsonify(success=success, error=error)
+    return jsonify(success=success, error=error, next_url=State.lvl_title)
 
 @app.route('/tutorial')
 def tutorial():
