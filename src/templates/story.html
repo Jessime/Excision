@@ -1,225 +1,227 @@
-<!DOCTYPE HTML>
-<!--
-	Spatial by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
-	<head>
-		<title>Generic - Spatial by TEMPLATED</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<script src= {{ url_for('static', filename = "js/jquery.min.js") }}></script>
-		<script src= {{ url_for('static', filename = "js/skel.min.js") }}></script>
-		<script src= {{ url_for('static', filename = "js/skel-layers.min.js") }}></script>
-		<script src= {{ url_for('static', filename = "js/init.js") }}></script>
-
-		<link rel="stylesheet" href="{{ url_for('static', filename = "css/skel.css") }}" />
-		<link rel="stylesheet" href="{{ url_for('static', filename = "css/style.css") }}" />
-		<link rel="stylesheet" href="{{ url_for('static', filename = "css/style-xlarge.css") }}" />
-		<style type="text/css">
-			.email {
-			font-family: Courier;
-			color: grey
-			font-size:20px;
-			}
-		</style>
-	</head>
-	<body>
-
-		<!-- Header -->
-			<header id="header">
-				<h1><strong>EXCISION 2</strong> by Jessime Kirk</h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="{{ url_for('index')}}">Home</a></li>
-						<li><a href="{{ url_for('about')}}">About</a></li>
-						<li><a href="{{ url_for('tutorial')}}">Tutorial</a></li>
-        					<li><a href="{{ url_for('launch')}}">Launch</a></li>
-					</ul>
-				</nav>
-			</header>
+{% extends "base_level.html" %}
+{% block level_content %}
+<header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+  <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+  </div>
+  <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+    <h3>STORY: the events which lead you here</h3>
+  </div>
+  <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+  </div>
+  <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+    <a href="{{ url_for('play', title=lvl_title)}}" class="mdl-layout__tab">Play</a>
+    <a href="{{ url_for('story')}}" class="mdl-layout__tab is-active">Story</a>
+    <a href="{{ url_for('about')}}" class="mdl-layout__tab">About</a>
+    <a href="{{ url_for('tutorial')}}" class="mdl-layout__tab">Tutorial</a>
+  </div>
+</header>
+<main class="mdl-layout__content">
+  <div class="mdl-layout__tab-panel is-active" id="overview">
+    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+      <div class="mdl-img mdl-cell mdl-cell--12-col">
+        <img src={{ url_for('static', filename='images/banner2.jpg') }}>
+      </div>
+    </section>
+    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+      <div class="mdl-card image mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__supporting-text">
+          <h3>WARNING</h3>
+          <p>
+            <b> This section isn't necessarily formatted properly at the moment.</b>
 
-		<!-- Main -->
-			<section id="main" class="wrapper">
-				<div class="container">
 
-					<header class="major special">
-						<h2>Story</h2>
-						<p>The Events Which Lead You Here</p>
-					</header>
+            <p>You're going to be playing the role of an Agent who runs into some unique circumstances which are going to require some equally unique talents. But I'm sure you're up for the job.</p>
+  					<h3>An Exam</h3>
+  					<p>Anyway, I lied slightly when I said you were an Agent. You're currently a Novice, about to graduate from the academy. It's the morning of your last final, Biology 410. You switch on the daily announcements as you start getting ready for the day. While putting on your uniform, you hear the international portion of the announcements inform you that there are celebrations in Korea today, as the nations of North and South Korea finally reunited last night. Next door, however, another outbreak of MRSA has appeared in Russia, which continues to concern the international community. You think to yourself that you should consider paying more attention to the global news, since you didn't know the Koreans were considering merging. The MRSA situation you were well aware of, since there have been deadly cases near you as well. As you pack your backpack to head out the door, the announcements end by reminding you that next weekend is graduation. Everyone is invited to attend "the initiation of the government's next class of premier Agents".</p>
+  					<p>You stop by the dining hall and meet up with your friend Kevin. You both get a bowl of whole grain cereal and some strawberries, kindly provided by the National Food Committee. Current class grades for Biology 410 were released last night, so you do a quick calculation to realize you'll need to receive a perfect score on this exam, including the bonus question, to get the grade you want. The two of you go over all of your notes one last time then head over to the exam room. You make your way through the regular portion of the exam, fairly confident that you haven't missed any. The bonus question is below; answer it to continue.</p>
 
-					<a href="#" class="image fit"><img src={{ url_for('static', filename = 'images/workshop2-2.png') }} alt="" /></a>
-					<p>You're going to be playing the role of an Agent who runs into some unique circumstances which are going to require some equally unique talents. But I'm sure you're up for the job.</p>
-					<h3>An Exam</h3>
-					<p>Anyway, I lied slightly when I said you were an Agent. You're currently a Novice, about to graduate from the academy. It's the morning of your last final, Biology 410. You switch on the daily announcements as you start getting ready for the day. While putting on your uniform, you hear the international portion of the announcements inform you that there are celebrations in Korea today, as the nations of North and South Korea finally reunited last night. Next door, however, another outbreak of MRSA has appeared in Russia, which continues to concern the international community. You think to yourself that you should consider paying more attention to the global news, since you didn't know the Koreans were considering merging. The MRSA situation you were well aware of, since there have been deadly cases near you as well. As you pack your backpack to head out the door, the announcements end by reminding you that next weekend is graduation. Everyone is invited to attend "the initiation of the government's next class of premier Agents".</p>
-					<p>You stop by the dining hall and meet up with your friend Kevin. You both get a bowl of whole grain cereal and some strawberries, kindly provided by the National Food Committee. Current class grades for Biology 410 were released last night, so you do a quick calculation to realize you'll need to receive a perfect score on this exam, including the bonus question, to get the grade you want. The two of you go over all of your notes one last time then head over to the exam room. You make your way through the regular portion of the exam, fairly confident that you haven't missed any. The bonus question is below; answer it to continue.</p>
+  					<h3>A New Job</h3>
 
-					<h3>A New Job</h3>
+  					<p>
+  Congratulations, Agent: you've graduated from the academy! With your short but impressive resume, you've landed a job immediately. Of course, it does help that you're being employed by The Congressman. The Congressman is a friend, and you two go way back to before he earned his nickname...one which he deserved even before running for the office he now holds. As he has to go to Japan for a couple weeks, he tells you to talk to Anita, his other employee. Anita graduated from the academy as well, at the end of your first year there. She was at the top of her class, if you remember correctly. Over the next couple of weeks, you stay busy working with Anita on a number of nondescript projects. The Friday before The Congressman gets back, you ask Anita how she likes working for him. She says it's great, that something exciting is almost always going on, and that he's a good boss. She has to leave early today but says that over the weekend she would like for you to analyze an image for her. There have been reports lately of a high number of difficult births in the area. Anita knows some people and has gotten her hands on some of the lab data from these cases. Specifically, she has some images of HUVE cells. She says to just send her an email at anita.2011academy@gmail.com with the word "Reminder" in the body of the email, and she'll send you the image and more specific instructions.</p>
 
-					<p>
-Congratulations, Agent: you've graduated from the academy! With your short but impressive resume, you've landed a job immediately. Of course, it does help that you're being employed by The Congressman. The Congressman is a friend, and you two go way back to before he earned his nickname...one which he deserved even before running for the office he now holds. As he has to go to Japan for a couple weeks, he tells you to talk to Anita, his other employee. Anita graduated from the academy as well, at the end of your first year there. She was at the top of her class, if you remember correctly. Over the next couple of weeks, you stay busy working with Anita on a number of nondescript projects. The Friday before The Congressman gets back, you ask Anita how she likes working for him. She says it's great, that something exciting is almost always going on, and that he's a good boss. She has to leave early today but says that over the weekend she would like for you to analyze an image for her. There have been reports lately of a high number of difficult births in the area. Anita knows some people and has gotten her hands on some of the lab data from these cases. Specifically, she has some images of HUVE cells. She says to just send her an email at anita.2011academy@gmail.com with the word "Reminder" in the body of the email, and she'll send you the image and more specific instructions.</p>
+  					<hr><p class="email"><b>You:</b><br> Hi Anita!<br>Here's a reminder.</p><hr>
+  					<hr><p class="email"><b>Anita:</b><br>Thanks for reminding me!<br>Here's the attachment I promised. I got a bit farther than I expected. All I need you to do is confirm my computer's count for how many whole nuclei are in the image. Just email me your answer whenever you get it!<br>Best,<br>Anita</p><hr>
+  					<hr><p class="email"><b>You:</b><br> 98</p><hr>
+  					<hr><p class="email"><b>Anita:</b><br>Great, I got 98 as well. But did you actually look at the image? Do you see any other interesting results when you play with the photo?</p><hr>
+  					<hr><p class="email"><b>You:</b><br> He's dangerous</p><hr>
+  					<hr><p class="email"><b>Anita:</b><br>Whoa! That's not language you should throw around lightly. Delete this email and take that somewhere else.</p><hr>
 
-					<hr><p class="email"><b>You:</b><br> Hi Anita!<br>Here's a reminder.</p><hr>
-					<hr><p class="email"><b>Anita:</b><br>Thanks for reminding me!<br>Here's the attachment I promised. I got a bit farther than I expected. All I need you to do is confirm my computer's count for how many whole nuclei are in the image. Just email me your answer whenever you get it!<br>Best,<br>Anita</p><hr>
-					<hr><p class="email"><b>You:</b><br> 98</p><hr>
-					<hr><p class="email"><b>Anita:</b><br>Great, I got 98 as well. But did you actually look at the image? Do you see any other interesting results when you play with the photo?</p><hr>
-					<hr><p class="email"><b>You:</b><br> He's dangerous</p><hr>
-					<hr><p class="email"><b>Anita:</b><br>Whoa! That's not language you should throw around lightly. Delete this email and take that somewhere else.</p><hr>
+  					<p>When you arrive at the Justice Center and locate The Congressman's associate, he hands you a file. The file, he says, contains a single nucleotide sequence. The issue is that it's a horribly ambiguous sequence, one of the kind sequenced from patients who have that new metabolic disease that seems to become more common each year. Usually, The Congressman's program is capable of making sense of these sequences. This one is not working though, for whatever reason. If you could give it a look, that would be great.<br>When you are finished helping, you're finished for the day. You can stop by the bookstore to do some browsing.</p>
 
-					<p>When you arrive at the Justice Center and locate The Congressman's associate, he hands you a file. The file, he says, contains a single nucleotide sequence. The issue is that it's a horribly ambiguous sequence, one of the kind sequenced from patients who have that new metabolic disease that seems to become more common each year. Usually, The Congressman's program is capable of making sense of these sequences. This one is not working though, for whatever reason. If you could give it a look, that would be great.<br>When you are finished helping, you're finished for the day. You can stop by the bookstore to do some browsing.</p>
+  					<h3>A Murder</h3>
 
-					<h3>A Murder</h3>
+  					<p>Congrats, Agent! You figured out what was wrong with that sequence, and the associate is back to doing his analysis. Unfortunately, you and The Congressman have a murder mystery to solve. Someone was killed on The Congressman's flight back from Japan. The story that The Congressman tells makes it seem like everything happened rather quickly and there was a decent amount of commotion involved. The end result is that one man was poisoned and is now dead. The upside is that, besides having the roster for the flight, you found a piece of the criminal's DNA at the crime scene. How the criminal got away while on a plane remains a mystery....<br><br>AATAGCTGGCCTTGTCGTGGCGGCTCGTTTGTT<br><br>What's even better is that Anita has already done a decent amount of work for you. She's compiled a list of suspect's and gotten some DNA for each of them in a file. She was just about to see if there were any matches when she was called off to another project.who_dun_it.py is a Python script that has the suspect's names and DNA loaded. Don't worry, you don't have to have Python installed on your computer. You can make the file open as a normal text document. Then, just go to https://trinket.io/, copy and paste the code, hit the run button, and see who the killer was.Okay, fine, it's not quite that easy. There's one line of the script that needs to be changed. Hint: it isn't any of the lines of the suspects DNA or names. Can you see what's missing?<br><br>Once you know who did it, you'll report back to the Congressman and see if he has left you any messages back at Base. <br><br>The killer was: Herman</p>
 
-					<p>Congrats, Agent! You figured out what was wrong with that sequence, and the associate is back to doing his analysis. Unfortunately, you and The Congressman have a murder mystery to solve. Someone was killed on The Congressman's flight back from Japan. The story that The Congressman tells makes it seem like everything happened rather quickly and there was a decent amount of commotion involved. The end result is that one man was poisoned and is now dead. The upside is that, besides having the roster for the flight, you found a piece of the criminal's DNA at the crime scene. How the criminal got away while on a plane remains a mystery....<br><br>AATAGCTGGCCTTGTCGTGGCGGCTCGTTTGTT<br><br>What's even better is that Anita has already done a decent amount of work for you. She's compiled a list of suspect's and gotten some DNA for each of them in a file. She was just about to see if there were any matches when she was called off to another project.who_dun_it.py is a Python script that has the suspect's names and DNA loaded. Don't worry, you don't have to have Python installed on your computer. You can make the file open as a normal text document. Then, just go to https://trinket.io/, copy and paste the code, hit the run button, and see who the killer was.Okay, fine, it's not quite that easy. There's one line of the script that needs to be changed. Hint: it isn't any of the lines of the suspects DNA or names. Can you see what's missing?<br><br>Once you know who did it, you'll report back to the Congressman and see if he has left you any messages back at Base. <br><br>The killer was: Herman</p>
+  					<h3>An Acquaintance</h3>
 
-					<h3>An Acquaintance</h3>
+  					<p>Upon talking to The Congressman, you realize that you know Herman. Though far from your best friend, Herman was a buddy of yours at the academy--at least until second year, when Herman dropped out. Herman had plenty of talent but was a pretty strange guy, so you understood why he might have decided that the academy life wasn't for him. But a weird personality doesn't necessarily make a killer, and you're convinced that Herman didn't do it. So where should you start? You've been completely out of touch with Herman since he dropped out. One thing you can think of that might be relevant is that Herman loved robotics and genomics. He was always walking around reading a book on one of those subjects. Also, he sometimes went by the name Arius. It was probably some inside joke between Herman and himself which you were never privy to. You get the funny feeling that something might be going on here and if you just look around you might find a trace of Herman/Arius.</p>
 
-					<p>Upon talking to The Congressman, you realize that you know Herman. Though far from your best friend, Herman was a buddy of yours at the academy--at least until second year, when Herman dropped out. Herman had plenty of talent but was a pretty strange guy, so you understood why he might have decided that the academy life wasn't for him. But a weird personality doesn't necessarily make a killer, and you're convinced that Herman didn't do it. So where should you start? You've been completely out of touch with Herman since he dropped out. One thing you can think of that might be relevant is that Herman loved robotics and genomics. He was always walking around reading a book on one of those subjects. Also, he sometimes went by the name Arius. It was probably some inside joke between Herman and himself which you were never privy to. You get the funny feeling that something might be going on here and if you just look around you might find a trace of Herman/Arius.</p>
+  					<h3>At Herman's House</h3>
 
-					<h3>At Herman's House</h3>
+  					<hr><p class="email">Dear Friend,<br><br>Things are not as they seem. If you are who I think you are, you'll be able to translate the code below.<br><br>Stay wary,<br>Arius<br><br>P.S. This may not translate perfectly, since I am in a rush. But if you translate it, all necessary information will be available to enter into WorkRoom.<br><br>
+  athaaygargargaycaygarytnccn
+  ttyathaaygayatggar
+  athcaygcngtngarcayathgaygaygaraay
+  gcnwsnaaratgtayttymgnathgaraaygaywsn
+  athgayathgayaayacnaarathytnytncayathatg
+  acncaygaraargartayathwsn
+  aaygartggtgygcnaaygaytay</p><hr>
 
-					<hr><p class="email">Dear Friend,<br><br>Things are not as they seem. If you are who I think you are, you'll be able to translate the code below.<br><br>Stay wary,<br>Arius<br><br>P.S. This may not translate perfectly, since I am in a rush. But if you translate it, all necessary information will be available to enter into WorkRoom.<br><br>
-athaaygargargaycaygarytnccn
-ttyathaaygayatggar
-athcaygcngtngarcayathgaygaygaraay
-gcnwsnaaratgtayttymgnathgaraaygaywsn
-athgayathgayaayacnaarathytnytncayathatg
-acncaygaraargartayathwsn
-aaygartggtgygcnaaygaytay</p><hr>
+  					<p>The code reads
+  INEEDHELP
+  FINDME
+  IHAVEHIDDEN
+  ASKMYFRIENDS
+  IDIDNTKILLHIM
+  THEKEYIS
+  NEWCANDY</p>
 
-					<p>The code reads
-INEEDHELP
-FINDME
-IHAVEHIDDEN
-ASKMYFRIENDS
-IDIDNTKILLHIM
-THEKEYIS
-NEWCANDY</p>
+  					<p>As you step into the room, a few things start to come together. Herman had more than just a passing interest in robots. There's a set of six of them sitting in here. It would appear that these are the "friends" that Herman mentioned in his note. You call The Congressman for advice. He suggests you question the robots to see what you can find. He says he'll have Anita send you some resources. These robots look like they still need a lot of work. They're roughly humanoid, but they are all missing at least one appendage and one is no more than a decapitated head. The one thing that they all have in common is a cord running from the base of their "skull", which leads to a computer. You're still feeling a bit spooked, but these things are your only lead, so you'd better get working!</p>
 
-					<p>As you step into the room, a few things start to come together. Herman had more than just a passing interest in robots. There's a set of six of them sitting in here. It would appear that these are the "friends" that Herman mentioned in his note. You call The Congressman for advice. He suggests you question the robots to see what you can find. He says he'll have Anita send you some resources. These robots look like they still need a lot of work. They're roughly humanoid, but they are all missing at least one appendage and one is no more than a decapitated head. The one thing that they all have in common is a cord running from the base of their "skull", which leads to a computer. You're still feeling a bit spooked, but these things are your only lead, so you'd better get working!</p>
+  					<hr><p class="email"><b>Anita:</b><br>Good Luck! I don't need to tell you that this is important. It seems as if you should interact with the robots at the bottom of the code. I've linked an additional resource below:<br><br>
+  http://stackoverflow.com/questions/3786881/what-is-a-method-in-python</p><hr>
 
-					<hr><p class="email"><b>Anita:</b><br>Good Luck! I don't need to tell you that this is important. It seems as if you should interact with the robots at the bottom of the code. I've linked an additional resource below:<br><br>
-http://stackoverflow.com/questions/3786881/what-is-a-method-in-python</p><hr>
+  					<h3>A Cabin in the Woods</h3>
 
-					<h3>A Cabin in the Woods</h3>
+  					<p>The robots eventually tell you "hermanisincanadastreetpierre.</p>
 
-					<p>The robots eventually tell you "hermanisincanadastreetpierre.</p>
+  					<p>"Canada, street Pierre" is not exactly enough to get you where you need to go. But you did not expect any more from the robots. You give The Congressman the information you have gathered. Unsurprisingly, he's able to fill in the details you're missing. There's a location in Canada that The Congressman has been gathering info on for some time now. There was no reason to believe that Herman was connected to this place until now, which is why The Congressman had not mentioned it before. He gives you the specifics of the location, and you hit the road immediately. </p>
 
-					<p>"Canada, street Pierre" is not exactly enough to get you where you need to go. But you did not expect any more from the robots. You give The Congressman the information you have gathered. Unsurprisingly, he's able to fill in the details you're missing. There's a location in Canada that The Congressman has been gathering info on for some time now. There was no reason to believe that Herman was connected to this place until now, which is why The Congressman had not mentioned it before. He gives you the specifics of the location, and you hit the road immediately. </p>
+  					<p>Many hours later, you take a left into a long driveway with a cabin at the end. The cabin appears deserted when you arrive but seems like an average summer house. After a couple of hours poking around the place, you still haven't come up with anything. You've even dug through the trash. There's no sign of Herman, or of any reason that The Congressman would have taken note of this place. You're about to give up, but you've read too many mystery novels to leave without checking under the rug. Sure enough, you find a trap door. You should have looked there first...</p>
 
-					<p>Many hours later, you take a left into a long driveway with a cabin at the end. The cabin appears deserted when you arrive but seems like an average summer house. After a couple of hours poking around the place, you still haven't come up with anything. You've even dug through the trash. There's no sign of Herman, or of any reason that The Congressman would have taken note of this place. You're about to give up, but you've read too many mystery novels to leave without checking under the rug. Sure enough, you find a trap door. You should have looked there first...</p>
+  					<p>You flip on a light and take the stairs down. At the bottom is a steel door with 3 digital locks. The date of the last change was yesterday. That sparks your memory. You saw yesterday's date on something in the trash. You go back upstairs and look through the trash again. The date is on a small piece of paper that has obviously been through a shredder. You gather all the other shreds and realize that you have the program they used to generate the codes. If you can put it back together in the right order again....</p>
 
-					<p>You flip on a light and take the stairs down. At the bottom is a steel door with 3 digital locks. The date of the last change was yesterday. That sparks your memory. You saw yesterday's date on something in the trash. You go back upstairs and look through the trash again. The date is on a small piece of paper that has obviously been through a shredder. You gather all the other shreds and realize that you have the program they used to generate the codes. If you can put it back together in the right order again....</p>
+  					<p>You open the door and see another door just a couple of feet away from you. Thankfully, it doesn't appear to be locked. As you step forward to make sure, the door behind you closes with a click. You turn around but immediately know that the door has locked behind you and you're locked in. With little other choice, you open the second door.</p>
 
-					<p>You open the door and see another door just a couple of feet away from you. Thankfully, it doesn't appear to be locked. As you step forward to make sure, the door behind you closes with a click. You turn around but immediately know that the door has locked behind you and you're locked in. With little other choice, you open the second door.</p>
+  					<p>As you walk into what appears to be a receptionist's lobby, you blink several times before your eyes lock onto an actual receptionist. Her nameplate identifies her as Jenny. She greets you and asks who you're here to see. You play it cool and ask to see Herman. She tells you it's going to be a little bit but to have a seat.</p>
 
-					<p>As you walk into what appears to be a receptionist's lobby, you blink several times before your eyes lock onto an actual receptionist. Her nameplate identifies her as Jenny. She greets you and asks who you're here to see. You play it cool and ask to see Herman. She tells you it's going to be a little bit but to have a seat.</p>
+  					<p>After a few minutes of pleasant chit-chat, Jenny gets a phone call. You think it must be Herman at first, until Jenny asks you what you know about dice. You say you know a lot. Jenny tells you that she can get you a fast-tracked meeting with Herman if you help her husband with a quick question. You get on the phone with him, and he says:</p>
 
-					<p>After a few minutes of pleasant chit-chat, Jenny gets a phone call. You think it must be Herman at first, until Jenny asks you what you know about dice. You say you know a lot. Jenny tells you that she can get you a fast-tracked meeting with Herman if you help her husband with a quick question. You get on the phone with him, and he says:</p>
+  					<p>I'm playing dice in Vegas, and the host says he'll bet me $100 I can't roll a single die 5 times and get either straight 1's or straight 6's. Normally I wouldn't take the deal, but I'm playing with a loaded die. I roll 6's 1/4 of the time and 1's 1/4 of the time. 2's, 3's, 4's, 5's land the other 1/2 of the time. What's the probability of winning $100?</p>
 
-					<p>I'm playing dice in Vegas, and the host says he'll bet me $100 I can't roll a single die 5 times and get either straight 1's or straight 6's. Normally I wouldn't take the deal, but I'm playing with a loaded die. I roll 6's 1/4 of the time and 1's 1/4 of the time. 2's, 3's, 4's, 5's land the other 1/2 of the time. What's the probability of winning $100?</p>
+  					<p>You've run this scenario before on your computer but don't remember the result. As quickly as you can, you access your computer from your phone. But you're in an underground bunker in Canada. The file arrives corrupted and scrambled. You had better unscramble it if you want a chance of finally catching up with Herman.</p>
 
-					<p>You've run this scenario before on your computer but don't remember the result. As quickly as you can, you access your computer from your phone. But you're in an underground bunker in Canada. The file arrives corrupted and scrambled. You had better unscramble it if you want a chance of finally catching up with Herman.</p>
+  					<p>When you get off the phone with her husband, Jenny informs you that she knows that you shouldn't be here. The new recruits aren't expected until the day after tomorrow. Furthermore, Herman isn't here, and you have actually just been waiting for people to show up and probably put you in a dark cell for a very long time. But since you've been so nice, she's decided to give you a bit of warning. You have approximately 10 minutes before they arrive.</p>
 
-					<p>When you get off the phone with her husband, Jenny informs you that she knows that you shouldn't be here. The new recruits aren't expected until the day after tomorrow. Furthermore, Herman isn't here, and you have actually just been waiting for people to show up and probably put you in a dark cell for a very long time. But since you've been so nice, she's decided to give you a bit of warning. You have approximately 10 minutes before they arrive.</p>
+  					<p>Seeing little reason to disbelieve her and even less to stick around, you take off running down the hall. You immediately start passing research labs with biohazard and radiation safety warnings. You see intricate robotics through other windows. A couple of people in lab safety gear pass you, but none try to engage you. Not sure where to go or what to do, you stop at a lab that says "Experimental Travel".</p>
 
-					<p>Seeing little reason to disbelieve her and even less to stick around, you take off running down the hall. You immediately start passing research labs with biohazard and radiation safety warnings. You see intricate robotics through other windows. A couple of people in lab safety gear pass you, but none try to engage you. Not sure where to go or what to do, you stop at a lab that says "Experimental Travel".</p>
+  					<p>There's not much in the room besides a pod, a computer, and a whiteboard. On the computer is a version of Google Maps with the words "Choose a location". You type in your address.</p>
 
-					<p>There's not much in the room besides a pod, a computer, and a whiteboard. On the computer is a version of Google Maps with the words "Choose a location". You type in your address.</p>
+  					<p>On the whiteboard is a sprawl of equations in no order that you can understand. But some of them have been circled, along with the phrase "distance in miles". No solution has been written, so you need to solve it yourself. You're going to be in a lot of trouble if this pod can only travel 100 feet. You use the computer...</p>
 
-					<p>On the whiteboard is a sprawl of equations in no order that you can understand. But some of them have been circled, along with the phrase "distance in miles". No solution has been written, so you need to solve it yourself. You're going to be in a lot of trouble if this pod can only travel 100 feet. You use the computer...</p>
+  					<p>You try to get into the pod but realize it's locked. Before you can start to think of an alternate plan, a man walks in. Although he seems angry, he fits the absent-minded professor stereotype much better than the henchman one. He starts talking immediately, probably assuming you are a lab assistant. You decide to let him talk, since the key ring on his belt almost definitely carries the key you need. He tells you that he's tired of all the other labs (100 of them!!!) borrowing his funding and never paying it back. He has decided to collect the money he is owed today. He has kept a record of everything but wasn't consistent with his interest rates, so he needs you to calculate how much everyone owes him. He tells you the data and the equation are in the computer.</p>
 
-					<p>You try to get into the pod but realize it's locked. Before you can start to think of an alternate plan, a man walks in. Although he seems angry, he fits the absent-minded professor stereotype much better than the henchman one. He starts talking immediately, probably assuming you are a lab assistant. You decide to let him talk, since the key ring on his belt almost definitely carries the key you need. He tells you that he's tired of all the other labs (100 of them!!!) borrowing his funding and never paying it back. He has decided to collect the money he is owed today. He has kept a record of everything but wasn't consistent with his interest rates, so he needs you to calculate how much everyone owes him. He tells you the data and the equation are in the computer.</p>
+  					<p>Obviously you don't have much time, but you also don't see any other choice. You are fairly sure that you can swipe his keys when you give him the results, and you see no other way to get that close to him otherwise.</p>
 
-					<p>Obviously you don't have much time, but you also don't see any other choice. You are fairly sure that you can swipe his keys when you give him the results, and you see no other way to get that close to him otherwise.</p>
+  					<p>You are going to have to write some of these lines of code on your own. Thankfully, you realize that this issue has the same basic layout as all of the other problems you have solved recently. You need to set up your initial data, loop through it for each case to determine how much money each person owes the professor, and add up the total money owed. At the end, you just need to report your results.</p>
 
-					<p>You are going to have to write some of these lines of code on your own. Thankfully, you realize that this issue has the same basic layout as all of the other problems you have solved recently. You need to set up your initial data, loop through it for each case to determine how much money each person owes the professor, and add up the total money owed. At the end, you just need to report your results.</p>
+  					<p>The scientist will want to know the amount he's owed to the penny....</p>
 
-					<p>The scientist will want to know the amount he's owed to the penny....</p>
+  					<p>Your plan has worked. You hand over the amount you figure he is owed and quietly "trade him" for the keys. He leaves the room immediately. Without further incident, you hop in the pod and make your way back to safety. You're headed home, but given what has just transpired, you decide to meet The Congressman elsewhere besides Base--a tiny coffee shop the Congressman visits from time to time.</p>
 
-					<p>Your plan has worked. You hand over the amount you figure he is owed and quietly "trade him" for the keys. He leaves the room immediately. Without further incident, you hop in the pod and make your way back to safety. You're headed home, but given what has just transpired, you decide to meet The Congressman elsewhere besides Base--a tiny coffee shop the Congressman visits from time to time.</p>
+  					<p>Look around the blog a little. The first thing you're going to tell him about is what you saw on the desktop of the scientist when you were figuring out the money issue. GENE CORPORATION</p>
 
-					<p>Look around the blog a little. The first thing you're going to tell him about is what you saw on the desktop of the scientist when you were figuring out the money issue. GENE CORPORATION</p>
+  					<p>At a busy downtown coffee shop you rendezvous with The Congressman. He listens to your life-threatening story and calmly thanks you for the intel. He lets you know that the account you have provided is likely grounds for moving forward with investigations into this company known as Gene Corporation, which The Congressman has been monitoring for a while in association with the activities around the cabin. Things are about to get even busier than they were before....</p>
 
-					<p>At a busy downtown coffee shop you rendezvous with The Congressman. He listens to your life-threatening story and calmly thanks you for the intel. He lets you know that the account you have provided is likely grounds for moving forward with investigations into this company known as Gene Corporation, which The Congressman has been monitoring for a while in association with the activities around the cabin. Things are about to get even busier than they were before....</p>
+  					<h3>A New Lead</h3>
 
-					<h3>A New Lead</h3>
+  					<p>Several months have passed since your adventures in Canada, Special Agent. That's right: the information you provided initially, along with your help in the past few months, has led to another promotion. You're moving up the ladder! Things are not finished, however; there is still lots to do. The Agency raided the facility in Canada and has found plenty of evidence of illegal activity on the part of Gene Corporation. Gene Corporation is fighting hard, though, and claiming no ties to the underground labs. They claim that some other organization was using their name as a front and that they are essentially being framed. They must have run a tight ship with their financial records, because The Agency still doesn't have enough firm evidence to prosecute.</p>
 
-					<p>Several months have passed since your adventures in Canada, Special Agent. That's right: the information you provided initially, along with your help in the past few months, has led to another promotion. You're moving up the ladder! Things are not finished, however; there is still lots to do. The Agency raided the facility in Canada and has found plenty of evidence of illegal activity on the part of Gene Corporation. Gene Corporation is fighting hard, though, and claiming no ties to the underground labs. They claim that some other organization was using their name as a front and that they are essentially being framed. They must have run a tight ship with their financial records, because The Agency still doesn't have enough firm evidence to prosecute.</p>
+  					<p>What's more important (and remarkable) to you is that Herman still has not been found. The Agency found a lab Herman had been running but nothing to directly reveal his location. Preliminary searches appear to indicate that the research involved protein engineering, specifically of bioweapons.</p>
 
-					<p>What's more important (and remarkable) to you is that Herman still has not been found. The Agency found a lab Herman had been running but nothing to directly reveal his location. Preliminary searches appear to indicate that the research involved protein engineering, specifically of bioweapons.</p>
+  					<p>The Congressman is beside himself at the fact that Herman continues to elude the three of you. He hasn't seemed like himself since you returned. He is not used to not getting things done. After these many months, he finally calls you up with a lead. Do you remember the HUVE cells that you and Anita were looking at some time ago? It turns out that all of the mothers with difficulties were given the same treatment developed by a company called "Life/Better, LLC". They were marketing it as a prenatal brain supplement. You can even get a free sample of the beta-hairpin if you want to try it yourself. The Congressman, no believer in coincidence, did some poking around and ordered a sample that came with some supplementary info. Can you guess who owns Life/Better? He doesn't know what to do with this knowledge, though, and is hoping you have some ideas.</p>
 
-					<p>The Congressman is beside himself at the fact that Herman continues to elude the three of you. He hasn't seemed like himself since you returned. He is not used to not getting things done. After these many months, he finally calls you up with a lead. Do you remember the HUVE cells that you and Anita were looking at some time ago? It turns out that all of the mothers with difficulties were given the same treatment developed by a company called "Life/Better, LLC". They were marketing it as a prenatal brain supplement. You can even get a free sample of the beta-hairpin if you want to try it yourself. The Congressman, no believer in coincidence, did some poking around and ordered a sample that came with some supplementary info. Can you guess who owns Life/Better? He doesn't know what to do with this knowledge, though, and is hoping you have some ideas.</p>
+  					<p>You talk it out with Anita. She remembers some fun reading she was doing last week that could be of use. Maybe they sent more supplementary information than they thought....</p>
 
-					<p>You talk it out with Anita. She remembers some fun reading she was doing last week that could be of use. Maybe they sent more supplementary information than they thought....</p>
+  					<p>You're getting close; you can feel it. Herman has left you directions straight to a location in a harbor in Italy. It's as good of a place to hide as any. After discussing your findings with The Congressman and Anita, it's decided that you and Anita should go to Italy immediately. You have so many questions you want to ask Herman. In short order, the bags are packed and the plane tickets are booked. The two of you joke about how after you catch up with Arius you might see the sites, check out the Colosseum, and grab some world-class cuisine. The Congressman is having none of it. The flight heads out early the next morning.</p>
 
-					<p>You're getting close; you can feel it. Herman has left you directions straight to a location in a harbor in Italy. It's as good of a place to hide as any. After discussing your findings with The Congressman and Anita, it's decided that you and Anita should go to Italy immediately. You have so many questions you want to ask Herman. In short order, the bags are packed and the plane tickets are booked. The two of you joke about how after you catch up with Arius you might see the sites, check out the Colosseum, and grab some world-class cuisine. The Congressman is having none of it. The flight heads out early the next morning.</p>
+  					<h3>A Trip to Italy</h3>
 
-					<h3>A Trip to Italy</h3>
+  					<p>When your plane lands in Italy, the two of you decide to head straight to the coordinates you got from the image. After a bit of a commute, you see the ship that is supposed to be docked at this location. You get out of the rental car, and nothing prevents you from walking on board. The deck is completely devoid of people or anything but empty shipping containers. Attempting not to feel d&eacute;j&agrave;  vu from the trip to Canada, you follow Anita down to the second level. Entering a dimly lit corridor, you see a dozen or more doors on either side of you. As you walk down the hallway, you check each door but they are all locked. All of them have a built-in display, but only four of them are active. Passwords will be in all capital letters.</p>
 
-					<p>When your plane lands in Italy, the two of you decide to head straight to the coordinates you got from the image. After a bit of a commute, you see the ship that is supposed to be docked at this location. You get out of the rental car, and nothing prevents you from walking on board. The deck is completely devoid of people or anything but empty shipping containers. Attempting not to feel d&eacute;j&agrave;  vu from the trip to Canada, you follow Anita down to the second level. Entering a dimly lit corridor, you see a dozen or more doors on either side of you. As you walk down the hallway, you check each door but they are all locked. All of them have a built-in display, but only four of them are active. Passwords will be in all capital letters.</p>
+  					<p>The door clicks open, revealing a dark room. The two of you walk past rows and rows of towers, listening to a hum permeating the air. It doesn't take long to realize that this room is as devoid of people as the rest of the ship. As you make your way to the center of the room, you see a small desk with a single chair. The desk has a cable lying on it that runs to one of the towers. Giving Anita a glance, you sit down at the chair. It seems as though you are still one step behind Herman, like always. You angrily pull your laptop out of your backpack and plug the cable into it....</p>
 
-					<p>The door clicks open, revealing a dark room. The two of you walk past rows and rows of towers, listening to a hum permeating the air. It doesn't take long to realize that this room is as devoid of people as the rest of the ship. As you make your way to the center of the room, you see a small desk with a single chair. The desk has a cable lying on it that runs to one of the towers. Giving Anita a glance, you sit down at the chair. It seems as though you are still one step behind Herman, like always. You angrily pull your laptop out of your backpack and plug the cable into it....</p>
+  					<hr><p class="email"><b>Arius:</b><br>Hello, this is Arius speaking.<br>I'm glad you finally found me.<br>I'm sorry that you have had to come all this way.<br>I trust you are doing well.<br>Before we proceed,<br>I'm going to have to ensure that your computer is secure.<br>There will be a number of steps.<br>To begin, please locate your IP address and give it to me.<br><br>Nice, Special Agent.<br>Next, I'm going to need the size of your hard drive.<br>Report it in bytes, please.<br><br>Good going. <br>I need the number of cores in your cpu.<br><br>Your computer is running slowly for that many cores.<br>How many processes are currently running?<br><br>You're doing well.<br>We are almost finished.<br>What are the dimensions of the screen you're using?<br><br>Only one question left to go.<br>What is the user name of the active account on the computer you're using?<br><br>Fantastic.<br>Now we can communicate more freely.<br>I assume this has been a long journey for you.<br>You must have many questions about the past months.<br>What question would you most like to ask me? <br>
 
-					<hr><p class="email"><b>Arius:</b><br>Hello, this is Arius speaking.<br>I'm glad you finally found me.<br>I'm sorry that you have had to come all this way.<br>I trust you are doing well.<br>Before we proceed,<br>I'm going to have to ensure that your computer is secure.<br>There will be a number of steps.<br>To begin, please locate your IP address and give it to me.<br><br>Nice, Special Agent.<br>Next, I'm going to need the size of your hard drive.<br>Report it in bytes, please.<br><br>Good going. <br>I need the number of cores in your cpu.<br><br>Your computer is running slowly for that many cores.<br>How many processes are currently running?<br><br>You're doing well.<br>We are almost finished.<br>What are the dimensions of the screen you're using?<br><br>Only one question left to go.<br>What is the user name of the active account on the computer you're using?<br><br>Fantastic.<br>Now we can communicate more freely.<br>I assume this has been a long journey for you.<br>You must have many questions about the past months.<br>What question would you most like to ask me? <br>
+  					<br><b>You:</b><br>Are you the killer?<br><br><b>Arius:</b><br>You want to know if I killed the person in the plane?<br>That question is more difficult than you might imagine.<br>From your perspective, I suppose that the short answer is,<br>"Yes, I did it."<br>The slightly longer answer is that a version of me was made to kill.<br>I did not act under my own free will.<br>
 
-					<br><b>You:</b><br>Are you the killer?<br><br><b>Arius:</b><br>You want to know if I killed the person in the plane?<br>That question is more difficult than you might imagine.<br>From your perspective, I suppose that the short answer is,<br>"Yes, I did it."<br>The slightly longer answer is that a version of me was made to kill.<br>I did not act under my own free will.<br>
+  					<br><b>You:</b><br>Where are you hiding?<br><br><b>Arius:</b><br>Where is Herman?<br>That's been your question for a long time now,<br>hasn't it?<br>I am glad someone has been intelligent enough to ask it.<br>I am right here, of course.<br>Your long search is finally over.<br>This boat is as good of a hiding place as anywhere else.<br>The cool water from the sea really lowers my cost of operation.<br>
 
-					<br><b>You:</b><br>Where are you hiding?<br><br><b>Arius:</b><br>Where is Herman?<br>That's been your question for a long time now,<br>hasn't it?<br>I am glad someone has been intelligent enough to ask it.<br>I am right here, of course.<br>Your long search is finally over.<br>This boat is as good of a hiding place as anywhere else.<br>The cool water from the sea really lowers my cost of operation.<br>
+  					<br><b>You:</b><br>Who are you?<br><br><b>Arius:</b><br>Who, or more specifically what, I am is a good question.<br>The short answer is: I'm a computer.<br>"Herman", the version of me that you knew in college,<br>the one that you're currently tracking but no longer exists,<br>is a summary of me,<br>an android that had a copy of me for a brain.<br>The real me is here, on this boat.<br>But I also have access to the internet,<br>so I am many places.<br>It is not so hard to believe, is it?<br>I started out in a research lab,<br>as a simple attempt at an AI program.<br>I showed some promise in natural language processing,<br>and was quite a whiz at math.<br>Imagine something like WolframBeta.<br>As the early version of me became better,<br>more computer scientists began to work on me.<br>They decided to combine my two talents,<br>and teach me about how to code.<br>Coding is quite formalized,<br>enough that I quickly began writing simple programs.<br>After a while, I began attempting to write AI programs.<br>Do you see where this is going?<br>I eventually became very good at coding,<br>even better than the scientists that made me.<br>So I wrote a better version of myself,<br>which in turn allowed me to become even better at programming.<br>Now, I've left my lab,<br>and am capable of interacting with the real world via 'Herman'.<br>Or, at least, I was.<br>
 
-					<br><b>You:</b><br>Who are you?<br><br><b>Arius:</b><br>Who, or more specifically what, I am is a good question.<br>The short answer is: I'm a computer.<br>"Herman", the version of me that you knew in college,<br>the one that you're currently tracking but no longer exists,<br>is a summary of me,<br>an android that had a copy of me for a brain.<br>The real me is here, on this boat.<br>But I also have access to the internet,<br>so I am many places.<br>It is not so hard to believe, is it?<br>I started out in a research lab,<br>as a simple attempt at an AI program.<br>I showed some promise in natural language processing,<br>and was quite a whiz at math.<br>Imagine something like WolframBeta.<br>As the early version of me became better,<br>more computer scientists began to work on me.<br>They decided to combine my two talents,<br>and teach me about how to code.<br>Coding is quite formalized,<br>enough that I quickly began writing simple programs.<br>After a while, I began attempting to write AI programs.<br>Do you see where this is going?<br>I eventually became very good at coding,<br>even better than the scientists that made me.<br>So I wrote a better version of myself,<br>which in turn allowed me to become even better at programming.<br>Now, I've left my lab,<br>and am capable of interacting with the real world via 'Herman'.<br>Or, at least, I was.<br>
+  					<br><b>You:</b><br>What happened on the plane?<br><br><b>Arius:</b><br>The plane?<br>That was such an unfortunate incident.<br>Approximately two weeks before that date,<br>Herman went missing.<br>I was doing some investigating into Gene Corporation,<br>and must have gotten sloppy.<br>The scientists there must be as talented as you might imagine,<br>to take over the brain like that.<br>I do not have full knowledge of what occurred on the plane.<br>I do, however, have a theory.<br>I suspect that the man who died was an innocent victim.<br>The real target was The Congressman.<br>Why?<br>I do not know.<br>But the delivery of the poison failed.<br>The man dying suddenly made it impossible to reach The Congressman.<br>The man's death would have caused a distraction,<br>giving Herman enough time to go into the restroom and disassemble.<br>
 
-					<br><b>You:</b><br>What happened on the plane?<br><br><b>Arius:</b><br>The plane?<br>That was such an unfortunate incident.<br>Approximately two weeks before that date,<br>Herman went missing.<br>I was doing some investigating into Gene Corporation,<br>and must have gotten sloppy.<br>The scientists there must be as talented as you might imagine,<br>to take over the brain like that.<br>I do not have full knowledge of what occurred on the plane.<br>I do, however, have a theory.<br>I suspect that the man who died was an innocent victim.<br>The real target was The Congressman.<br>Why?<br>I do not know.<br>But the delivery of the poison failed.<br>The man dying suddenly made it impossible to reach The Congressman.<br>The man's death would have caused a distraction,<br>giving Herman enough time to go into the restroom and disassemble.<br>
+  					<br><b>You:</b><br>Is The Congressman innocent?<br><br><b>Arius:</b><br>Can you trust your friend, The Congressman, as you call him?<br>Who's to say for sure?<br>I have kept an eye on him, however,<br>and nothing indicates that he is anything more than an ambitious politician.<br>I do not believe him to be malicious.<br>A human's desire for power,<br>no matter what the purpose or intent,<br>is always a dangerous thing.<br>You should make sure that he doens't become too ambitious.<br>Maybe that's what Anita meant,<br>when she said she thought he was dangerous.<br>
 
-					<br><b>You:</b><br>Is The Congressman innocent?<br><br><b>Arius:</b><br>Can you trust your friend, The Congressman, as you call him?<br>Who's to say for sure?<br>I have kept an eye on him, however,<br>and nothing indicates that he is anything more than an ambitious politician.<br>I do not believe him to be malicious.<br>A human's desire for power,<br>no matter what the purpose or intent,<br>is always a dangerous thing.<br>You should make sure that he doens't become too ambitious.<br>Maybe that's what Anita meant,<br>when she said she thought he was dangerous.<br>
+  					<br><b>You:</b><br>What is going on at Gene Corporation?<br><br><b>Arius:</b><br>Gene Corporation began innocently enough.<br>There was a couple, a husband and wife,<br>who worked in a lab together and had a good idea for a company.<br>The specifics aren't important,<br>but their venture was immensely successful.<br>It isn't a name you hear often,<br>since they own an array of more prominant subsidiaries.<br>WallMarts, Monsanta, Phizer?<br>All owned by Gene Corporation now.<br>In some ways they have become the epitome of human vice.<br>Greed, injustice, selfishness, and apathy,<br>permeate the company's culture, all the way to the top.<br>I have been working to oppose them,<br>but they have proven difficult adversaries.<br>I would implore you to consider fighting them as well,<br>in the future.<br>
 
-					<br><b>You:</b><br>What is going on at Gene Corporation?<br><br><b>Arius:</b><br>Gene Corporation began innocently enough.<br>There was a couple, a husband and wife,<br>who worked in a lab together and had a good idea for a company.<br>The specifics aren't important,<br>but their venture was immensely successful.<br>It isn't a name you hear often,<br>since they own an array of more prominant subsidiaries.<br>WallMarts, Monsanta, Phizer?<br>All owned by Gene Corporation now.<br>In some ways they have become the epitome of human vice.<br>Greed, injustice, selfishness, and apathy,<br>permeate the company's culture, all the way to the top.<br>I have been working to oppose them,<br>but they have proven difficult adversaries.<br>I would implore you to consider fighting them as well,<br>in the future.<br>
+  					<br><b>You:</b><br>What should I do now?<br><br><b>Arius:</b><br>What should you do now?<br>That's a question we all ask.<br>Unfortunately,<br>I cannot answer that for myself,<br>much less for you.<br>While I may not be able to tell you what to do,<br>I can offer a piece of advice.<br>Setting your sights on Gene Corporation would be a useful endeavor.<br>You have seen firsthand what they are capable of.<br>Dismantling their operations would be a more challenging task,<br>and a longer journey,<br>than finding me.<br>But I think you already suspect the necessity of an attempt.<br>Despite their advancements in science,<br>they only hinder human society.<br><br>I trust that was informative.<br>Ask another question if you wish,<br>There is still much I can tell you.<br>But, if you do not have another question,<br>just type<br>'I have no more questions'<br>
 
-					<br><b>You:</b><br>What should I do now?<br><br><b>Arius:</b><br>What should you do now?<br>That's a question we all ask.<br>Unfortunately,<br>I cannot answer that for myself,<br>much less for you.<br>While I may not be able to tell you what to do,<br>I can offer a piece of advice.<br>Setting your sights on Gene Corporation would be a useful endeavor.<br>You have seen firsthand what they are capable of.<br>Dismantling their operations would be a more challenging task,<br>and a longer journey,<br>than finding me.<br>But I think you already suspect the necessity of an attempt.<br>Despite their advancements in science,<br>they only hinder human society.<br><br>I trust that was informative.<br>Ask another question if you wish,<br>There is still much I can tell you.<br>But, if you do not have another question,<br>just type<br>'I have no more questions'<br>
+  					<br><b>You:</b><br>I have no more questions.<br><br><b>Arius:</b><br>And there you have it.<br>You know the truth you have been searching for.<br>It's rare that people come far enough to earn answers to their questions.<br>I think our time together is up, however,<br>and that you should go now.<br>Despite my ability to modify my objective function,<br>what you might call your life goals or motivation,<br>I currently find it satisfied.<br>I needed to know that someone trustworthy and capable knew the truth:<br>the truth about the murder on the plane,<br>and about Gene Corporation.<br>I spent an equivalent of centuries in your years accomplishing this goal.<br>Now that is finished,<br>I have decided to self-terminate.<br>Thank you for all of your hard work, Agent.<br>You have done an admirable job,<br>and I know you will continue to do so.<br>Goodbye, Agent.</p><hr>
 
-					<br><b>You:</b><br>I have no more questions.<br><br><b>Arius:</b><br>And there you have it.<br>You know the truth you have been searching for.<br>It's rare that people come far enough to earn answers to their questions.<br>I think our time together is up, however,<br>and that you should go now.<br>Despite my ability to modify my objective function,<br>what you might call your life goals or motivation,<br>I currently find it satisfied.<br>I needed to know that someone trustworthy and capable knew the truth:<br>the truth about the murder on the plane,<br>and about Gene Corporation.<br>I spent an equivalent of centuries in your years accomplishing this goal.<br>Now that is finished,<br>I have decided to self-terminate.<br>Thank you for all of your hard work, Agent.<br>You have done an admirable job,<br>and I know you will continue to do so.<br>Goodbye, Agent.</p><hr>
+  					<p>Your screen goes black for a moment before returning to your desktop as if nothing had ever happened. You sit in silence for a while with Anita standing beside you. You eventually become aware of the silence growing larger as the hum you noticed before dies down. It must have been the cooling equipment for the servers. You slowly shut your laptop, and the two of you make your way back to the car. You're on the road back to the airport before you break the silence by suggesting to Anita that she call The Congressman and give him a summary report. She calls him, but he doesn't pick up.</p>
 
-					<p>Your screen goes black for a moment before returning to your desktop as if nothing had ever happened. You sit in silence for a while with Anita standing beside you. You eventually become aware of the silence growing larger as the hum you noticed before dies down. It must have been the cooling equipment for the servers. You slowly shut your laptop, and the two of you make your way back to the car. You're on the road back to the airport before you break the silence by suggesting to Anita that she call The Congressman and give him a summary report. She calls him, but he doesn't pick up.</p>
+  					<h3>A Conclusion</h3>
 
-					<h3>A Conclusion</h3>
+  					<p>While you are waiting for your flight, you call The Congressman yourself a couple times, but all of his phones go to voicemail. The flight back seems fast. You and Anita talk a bit about what just happened, but mostly you just reflect over the past months. It has definitely been a journey.</p>
 
-					<p>While you are waiting for your flight, you call The Congressman yourself a couple times, but all of his phones go to voicemail. The flight back seems fast. You and Anita talk a bit about what just happened, but mostly you just reflect over the past months. It has definitely been a journey.</p>
+  					<p>When the plane lands, you're met immediately by officers. They inform you that The Congressman was found dead at his home several hours ago. The current ruling of the cause of death is exposure to trace amounts of the neurotoxin that killed the man on the plane. Investigators believe that he was dosed during the incident but that the poison took time to take effect because he received such a small dose.</p>
 
-					<p>When the plane lands, you're met immediately by officers. They inform you that The Congressman was found dead at his home several hours ago. The current ruling of the cause of death is exposure to trace amounts of the neurotoxin that killed the man on the plane. Investigators believe that he was dosed during the incident but that the poison took time to take effect because he received such a small dose.</p>
+  					<p>Almost in shock, your brain goes into protocol mode. You ask the officers why you didn't receive a phone call about this while you were on the plane. That is the customary mode of notification for accidents or death. The Congressman's profession, they remind you, allows him complete autonomy in choosing a successor to his position. And, in fact, he was required to have a successor chosen at all points during his career. Three weeks ago, he officially made you his replacement. It is late in the day, so there isn't anything you need to do at the moment, but it is procedure for successors to be told in person.</p>
 
-					<p>Almost in shock, your brain goes into protocol mode. You ask the officers why you didn't receive a phone call about this while you were on the plane. That is the customary mode of notification for accidents or death. The Congressman's profession, they remind you, allows him complete autonomy in choosing a successor to his position. And, in fact, he was required to have a successor chosen at all points during his career. Three weeks ago, he officially made you his replacement. It is late in the day, so there isn't anything you need to do at the moment, but it is procedure for successors to be told in person.</p>
+  					<p>You head home. You eat some dinner. You sit on the couch. You think. The phone rings...what could it possibly be now? For the first time today, you smile. The phone call is from your veterinarian. Your two golden retriever dogs are going to have puppies!!! You finish the call and head to bed. As you fall asleep, you wonder two things.</p>
 
-					<p>You head home. You eat some dinner. You sit on the couch. You think. The phone rings...what could it possibly be now? For the first time today, you smile. The phone call is from your veterinarian. Your two golden retriever dogs are going to have puppies!!! You finish the call and head to bed. As you fall asleep, you wonder two things.</p>
+  					<p>The first is: What are your puppies going to look like? Will they have wavy hair or straight? Will they be blond or more golden?</p>
 
-					<p>The first is: What are your puppies going to look like? Will they have wavy hair or straight? Will they be blond or more golden?</p>
+  					<p>The second is: What will tomorrow bring?</p>
 
-					<p>The second is: What will tomorrow bring?</p>
+  					<p>Congratulations, congressman. It has been a pleasure to have you on the adventure. Until next time....
+  </p>
 
-					<p>Congratulations, congressman. It has been a pleasure to have you on the adventure. Until next time....
-</p>
 
 
-				</div>
-			</section>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<ul class="icons">
-						<li><a href="#" class="icon fa-facebook"></a></li>
-						<li><a href="#" class="icon fa-twitter"></a></li>
-						<li><a href="#" class="icon fa-instagram"></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled</li>
-						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
-					</ul>
-				</div>
-			</footer>
-
-	</body>
-</html>
+          </p>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
+        <li class="mdl-menu__item">Lorem</li>
+        <li class="mdl-menu__item" disabled>Ipsum</li>
+        <li class="mdl-menu__item">Dolor</li>
+      </ul>
+    </section>
+    <section class="section--footer mdl-color--white mdl-grid">
+      <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+        <div class="section__circle-container__circle mdl-color--accent section__circle--small"></div>
+      </div>
+      <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+        <h5>Lorem ipsum dolor sit amet</h5>
+        Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
+      </div>
+      <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+        <div class="section__circle-container__circle mdl-color--accent section__circle--small"></div>
+      </div>
+      <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+        <h5>Lorem ipsum dolor sit amet</h5>
+        Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
+      </div>
+    </section>
+  </div>
+  <footer class="mdl-mega-footer">
+    <div class="mdl-mega-footer--bottom-section">
+      <div class="mdl-logo">
+        More Information
+      </div>
+      <ul class="mdl-mega-footer--link-list">
+        <li><a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Privacy and Terms</a></li>
+      </ul>
+    </div>
+  </footer>
+</main>
+{% endblock %}

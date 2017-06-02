@@ -32,14 +32,6 @@ def markup_str(string):
 def index():
     return render_template('index.html', lvl_title=State.lvl_title)
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
-@app.route('/elements')
-def elements():
-    return render_template('elements.html')
-
 @app.route('/play/<title>')
 def play(title):
     infile = 'static/story/level{}.md'.format(State.lvl_num)
@@ -51,8 +43,12 @@ def play(title):
 
 @app.route('/story')
 def story():
-    return render_template('story.html')
+    return render_template('story.html', lvl_title=State.lvl_title)
 
+@app.route('/about')
+def about():
+    return render_template('about.html', lvl_title=State.lvl_title)
+    
 @app.route('/level_button')
 def level_button():
     result = False
@@ -83,8 +79,7 @@ def tutorial():
     return render_template('tutorial.html', **vars(Tutorial)) #TODO Do I still need to pass vars?
 
 def assert_py3():
-    if sys.version_info[0] != 3:
-        assert False, 'Python version must be 3.x'
+    assert sys.version_info[0] == 3, 'Python version must be 3.x'
 
 def get_script_path():
     cmd = 'python pick_file.py'.split() #HACK Macs don't like running PyQT in this program.
