@@ -6,13 +6,14 @@ Created on Tue Dec 20 15:50:23 2016
 """
 #TODO integrate this with play_levels and remove duplicated Code
 
+import sys
 import os
 import subprocess as sp
-import importlib
 import traceback
 import numpy as np
 
 from shutil import copyfile
+from importlib import import_module, reload
 
 class Tutorial():
     script = None
@@ -76,9 +77,12 @@ class Tutorial():
     def tutorial_task1(self):
         error = None
         new = self.temp_copy(self)
-
+        module_name = new.split('.')[0]
         try:
-            user_import = importlib.import_module(new.split('.')[0])
+            if module_name in sys.modules:
+                user_import = reload(sys.modules[module_name])
+            else:
+                user_import = import_module(module_name)
             result1 = user_import.squared_sum([1, 2, 3])
             result2 = user_import.squared_sum([-1, 3])
             if result1 != 14 or result2 != 10:
@@ -94,9 +98,12 @@ class Tutorial():
     def tutorial_task2(self):
         error = None
         new = self.temp_copy(self)
-
+        module_name = new.split('.')[0]
         try:
-            user_import = importlib.import_module(new.split('.')[0])
+            if module_name in sys.modules:
+                user_import = reload(sys.modules[module_name])
+            else:
+                user_import = import_module(module_name)
             result1 = set(user_import.seen([1, 2, 3], [1,2,3,4,4,5, 'what']))
             result2 = user_import.seen(['s', 9], ['s', 9])
             if result1 != set(['what', 4, 5]) or result2 != []:
