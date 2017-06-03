@@ -49,7 +49,7 @@ class State():
     script = None
     error_types = {'missing_file': 'Error: No file produced at Excision/results/{}.txt.',
                    'empty_file': 'Error: There is nothing in the file you created.',
-                   'bad_type': 'Error: Your answer cannot be converted into a {}.',
+                   'bad_type': 'Error: Your result may need to be a {} not a {}.',
                    'incorrect': 'Error: Your answer is incorrect.',
                    'task_test': 'Error: The function gave an incorrect answer on a test.',
                    'no_func': 'Error: The file does not contain the correct function name.'}
@@ -93,7 +93,7 @@ class State():
             error = e.stderr.decode("utf-8")
         return error
 
-    def check_results(self, outfile, error, ans):
+    def check_result(self, outfile, error, ans):
         with open(outfile) as outfile:
             result = outfile.read().strip()
         if not result:
@@ -117,10 +117,20 @@ class State():
             return success, error
 
         if error is None:
-            error = self.check_results(self, outfile, error, data['answer'])
+            error = self.check_result(self, outfile, error, data['answer'])
 
         success = error is None
         return success, error
+
+    def check_task_result(self, result, ans):
+        error = None
+        if result != ans:
+            error = self.error_types['task_test']
+            if type(result) != type(ans):
+                error = self.error_types['bad_type']
+                error = error.format(type(result), type(ans))
+
+        return error
 
     def try_running_function(self, new, data):
         error = None
@@ -133,9 +143,10 @@ class State():
             func = vars(user_import)[data['func']]
             for test, ans in zip(data['tests'], data['answers']):
                 result = func(*test)
-                if result != ans:
-                    error = self.error_types['task_test']
+                error = self.check_task_result(self, result, ans)
+                if error is not None:
                     break
+
         except Exception:
             error = format_exc()
         return error

@@ -4,7 +4,7 @@ Oregon Trail
 An introduction to arrays
 --------
 
-images/pic03.jpg
+images/banner1.jpg
 
 You walk into the office Monday morning and make an announcement. A team is going to head out to the Theraptrix plant as soon as they can get their bags packed. You'll lead the expedition with Anita, whom you've promoted to coordinate the investigation against Gene Corp.
 
