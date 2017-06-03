@@ -43,7 +43,13 @@ class State():
 
     PACKAGE = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
     config_path = os.path.join(PACKAGE, 'config.json')
-    config = json.load(open(config_path))
+
+    try:
+        config = json.load(open(config_path))
+    except FileNotFoundError:
+        config = {"current_level": {"num": 1, "title": "DECISIONS"}}
+        json.dump(config, open(config_path, 'w'))
+
     lvl_num = config['current_level']['num']
     lvl_title = config['current_level']['title']
     script = None

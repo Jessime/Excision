@@ -1,7 +1,7 @@
-Oregon Trail
+OREGON TRAIL
 =====
 
-An introduction to arrays
+an introduction to arrays
 --------
 
 images/banner1.jpg

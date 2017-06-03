@@ -1,7 +1,7 @@
 T
 =====
 
-Analyzing structured data (Part I)
+analyzing structured data (part I)
 --------
 
 images/pic03.jpg

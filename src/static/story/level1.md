@@ -1,7 +1,7 @@
-Decisions
+DECISIONS
 =====
 
-File parsing with a touch of statistics
+file parsing with a touch of statistics
 --------
 
 images/banner.jpg

@@ -22,7 +22,7 @@ def _task(sections, data, i):
     return sections
 
 def parse(infile):
-    with open(infile) as infile:
+    with open(infile, encoding='utf-8') as infile:
         data = infile.read()
     intermediate_names = ['head', 'problem', 'task1', 'task2', 'task3']
     intermediate_sections = data.split('\n---\n')
@@ -49,7 +49,7 @@ class Cat():
         outfile : str
             Location of new markdown file.
         """
-        with open(self.outpath_base.format(outfile), 'w') as outfile:
+        with open(self.outpath_base.format(outfile), 'w', encoding='utf-8') as outfile:
             for lf in sorted(self.level_files):
                 sections = parse(os.path.join('static/story', lf))
                 outfile.write('{}'.format(sections['title']) + '\n=====\n\n')
