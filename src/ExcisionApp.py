@@ -39,7 +39,7 @@ def play(title):
     sections = parse(infile)
     sections = {k:markup_str(v) if (k not in no_markup) else v for k,v in sections.items()}
 
-    return render_template('level_content.html', **sections, lvl_title=State.lvl_title)
+    return render_template('level_content.html', **sections)
 
 @app.route('/story')
 def story():

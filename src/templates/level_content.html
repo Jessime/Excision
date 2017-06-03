@@ -42,20 +42,49 @@
         <div class="mdl-card__supporting-text">
           {{problem}}
         </div>
+        <div id="correct_ans" class="mdl-card__actions reveal mdl-card--border">
+          <button id="show-dialog" type="button" class="mdl-button">Continue</button>
+        </div>
+        <dialog class="mdl-dialog">
+          <h4 class="mdl-dialog__title">Congratulations!</h4>
+          <div class="mdl-dialog__content">
+            <p>
+              You have successfully completed this level. Would you like to continue to the next level?
+            </p>
+          </div>
+          <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button continue">Continue</button>
+            <button type="button" class="mdl-button close">Stay</button>
+          </div>
+        </dialog>
         <script>
-          $(document).ready(function() {
-            $('#problem').click(function() {
-              $.getJSON($SCRIPT_ROOT + '/level_button',
-              {button : "problem"},
-              function(data){
-                if(data.success){
-                  window.location.replace($SCRIPT_ROOT + '/play/' + data.next_url);
-                } else{
-                  alert(data.error);
+        $(document).ready(function() {
+          $('#problem').click(function() {
+            $.getJSON($SCRIPT_ROOT + '/level_button',
+            {button : "problem"},
+            function(data){
+              if(data.success){
+                $('#correct_ans').slideDown();
+                var dialog = document.querySelector('dialog');
+                var showDialogButton = document.querySelector('#show-dialog');
+                if (! dialog.showModal) {
+                  dialogPolyfill.registerDialog(dialog);
                 }
-              });
+                showDialogButton.addEventListener('click', function() {
+                  dialog.showModal();
+                });
+                dialog.querySelector('.continue').addEventListener('click', function() {
+                  window.location.replace($SCRIPT_ROOT + '/play/' + data.next_url);
+                });
+                dialog.querySelector('.close').addEventListener('click', function() {
+                  dialog.close();
+                });
+            } else{
+              alert(data.error);
+            }
             });
           });
+        });
         </script>
         <div class="mdl-card__actions mdl-card--border">
           <a id="problem" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
