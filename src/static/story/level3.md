@@ -25,25 +25,26 @@ The second file, ENCFF239FSU.bed, appears to contain genomic coordinates. Given 
 
 Parse `ENCFF239FSU.bed` to find potential genomic locations of the Colossus protein. To do this, you are going to filter individual lines from `ENCFF239FSU.bed`. Specifically, you are to find the five largest intervals located on the positive strand of each chromosome.
 
-To validate that you have selected the proper rows, calculate the total length of all intervals you have selected. Write this integer to `results/3.txt`.
+To validate that you have selected the proper lines, calculate the sum of the original indices of all lines you have selected. Write this integer to `results/3.txt`.
 
 **Note(s):**
 
 * The path to the .bed file is `Excision/src/static/data/3/ENCFF239FSU.bed`. This script does not need to accept any arguments.
 * [Here's a link](https://genome.ucsc.edu/FAQ/FAQformat.html#format1) to a description of the .bed format.
+* Don't forget to use a 0 based index for the line numbers
 
 ##### Example
 
 Contents of `ENCFF239FSU.bed`:
 
-    chr1	230125030	230174106	ENST00000454058.2	0	+  
-    chr1	29913143	29915337	ENST00000623731.1	0	+  
-    chr1	61801712	61803634	ENST00000624542.1	0	+  
-    chr1	23567063	23573122	ENST00000454863.3	0	-  
-    chr1	82587312	82588411	ENST00000575085.1	0	+  
-    chr1	127401725	127470569	ENST00000509671.1	0	+  
-    chr3	86481942	86496996	ENST00000460586.1	0	+  
-    chr1	53947623	53974950	ENST00000558866.4	0	+  
+    chr1	230125030	230174106	ENST00000454058.2	0	+
+    chr1	29913143	29915337	ENST00000623731.1	0	+
+    chr1	61801712	61803634	ENST00000624542.1	0	+
+    chr1	23567063	23573122	ENST00000454863.3	0	-
+    chr1	82587312	82588411	ENST00000575085.1	0	+
+    chr1	127401725	127470569	ENST00000509671.1	0	+
+    chr3	86481942	86496996	ENST00000460586.1	0	+
+    chr1	53947623	53974950	ENST00000558866.4	0	+
 
 **Warning:**
 
@@ -55,7 +56,7 @@ While this example is space-separated, the real `ENCFF239FSU.bed` file will be s
 
 **Result:**
 
-    171575
+    21
 
 ---
 
@@ -95,4 +96,4 @@ H2
 
 #### Hint
 
-Even though the prompt implies that you want to keep track of certain rows, it isn't necessary to solve this problem. The task is simplified by only storing the proper intervals.  
+Even though the prompt implies that you want to keep track of certain rows, it isn't necessary to solve this problem. The task is simplified by only storing the proper intervals. 
