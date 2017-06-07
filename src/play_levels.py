@@ -1,9 +1,11 @@
 import os
+import sys
 import json
 import subprocess as sp
+import numpy as np
 
 from pickle import load
-from importlib import import_module
+from importlib import import_module, reload
 from shutil import copyfile
 from traceback import format_exc
 
@@ -130,7 +132,11 @@ class State():
 
     def check_task_result(self, result, ans):
         error = None
-        if result != ans:
+        if isinstance(ans, np.ndarray):
+            equal = np.array_equal(result, ans)
+        else:
+            equal = result == ans
+        if not equal:
             error = self.error_types['task_test']
             if type(result) != type(ans):
                 error = self.error_types['bad_type']
@@ -140,8 +146,12 @@ class State():
 
     def try_running_function(self, new, data):
         error = None
+        module_name = new.split('.')[0]
         try:
-            user_import = import_module(new.split('.')[0])
+            if module_name in sys.modules:
+                user_import = reload(sys.modules[module_name])
+            else:
+                user_import = import_module(module_name)
             if data['func'] not in vars(user_import):
                 error = self.error_types['no_func']
                 return error

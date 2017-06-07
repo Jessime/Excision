@@ -1,10 +1,10 @@
-T
+COLOSSUS
 =====
 
 analyzing structured data (part I)
 --------
 
-images/pic03.jpg
+images/level3.jpg
 
 All aspects of the mission were going exactly as planned. What went wrong?
 
@@ -23,24 +23,28 @@ The second file, ENCFF239FSU.bed, appears to contain genomic coordinates. Given 
 
 ### Problem
 
-Parse `ENCFF239FSU.bed` to find potential genomic locations of the Colossus protein. To do this, you are going to create `results/3.txt`, which is a filtered version of individual lines from `ENCFF239FSU.bed`. Specifically, you are to find the five largest intervals found on the positive strand of each chromosome.
+Parse `ENCFF239FSU.bed` to find potential genomic locations of the Colossus protein. To do this, you are going to filter individual lines from `ENCFF239FSU.bed`. Specifically, you should find the five largest intervals located on the positive strand of each chromosome.
+
+To validate that you have selected the proper lines, calculate the sum of the original indices (line numbers) of all lines you have selected. Write this integer to `results/3.txt`.
 
 **Note(s):**
 
-The path to the .bed file is `Excision/src/static/data/3/ENCFF239FSU.bed`. This script does not need to accept any arguments.
+* The path to the .bed file is `Excision/src/static/data/3/ENCFF239FSU.bed`. This script does not need to accept any arguments.
+* [Here's a link](https://genome.ucsc.edu/FAQ/FAQformat.html#format1) to a description of the .bed format.
+* Don't forget to use a 0-based index for the line numbers.
 
 ##### Example
 
 Contents of `ENCFF239FSU.bed`:
 
-    chr1	230125030	230174106	ENST00000454058.2	0	+  
-    chr1	29913143	29915337	ENST00000623731.1	0	+  
-    chr1	61801712	61803634	ENST00000624542.1	0	+  
-    chr1	23567063	23573122	ENST00000454863.3	0	-  
-    chr1	82587312	82588411	ENST00000575085.1	0	+  
-    chr1	127401725	127470569	ENST00000509671.1	0	+  
-    chr3	86481942	86496996	ENST00000460586.1	0	+  
-    chr1	53947623	53974950	ENST00000558866.4	0	+  
+    chr1	230125030	230174106	ENST00000454058.2	0	+
+    chr1	29913143	29915337	ENST00000623731.1	0	+
+    chr1	61801712	61803634	ENST00000624542.1	0	+
+    chr1	23567063	23573122	ENST00000454863.3	0	-
+    chr1	82587312	82588411	ENST00000575085.1	0	+
+    chr1	127401725	127470569	ENST00000509671.1	0	+
+    chr3	86481942	86496996	ENST00000460586.1	0	+
+    chr1	53947623	53974950	ENST00000558866.4	0	+
 
 **Warning:**
 
@@ -48,16 +52,11 @@ While this example is space-separated, the real `ENCFF239FSU.bed` file will be s
 
 **Execution:**
 
-`$ ./f.py a1`
+`$ ./longest_per_chr.py`
 
 **Result:**
 
-    chr1  230125030  230174106  ENST00000454058.2  0  +  49076  
-    chr1   29913143   29915337  ENST00000623731.1  0  +   2194  
-    chr1   61801712   61803634  ENST00000624542.1  0  +   1922  
-    chr1  127401725  127470569  ENST00000509671.1  0  +  68844  
-    chr3   86481942   86496996  ENST00000460586.1  0  +  15054  
-    chr1   53947623   53974950  ENST00000558866.4  0  +  27327
+    21
 
 ---
 
@@ -67,7 +66,17 @@ Write `is_nucleic_acid`, which, given a string, returns a bool indicating whethe
 
 #### Hint
 
-H1
+There are many ways to go about calculating the answer to this problem, and, in a fairly straightforward case like this, one method isn't necessarily better than another. Therefore, it's difficult to say, "You should use this function for this problem."
+
+In general, data science occupies a unique subset of the programming realm. The majority of programmers are software developers. They write code that is going to be used on a website that will get thousands of views a day, in an app being built by a team of a dozen people, or in a device that will literally endanger lives if a bug occurs. Over the last few decades, software developers have created many best practices for writing high-quality code. There are many online resources that will say, "This is the _right_ way to do this."
+
+Biologists are in a very different situation. They will write code that may only be run once, ever. They may never need to work on a code base with millions of lines or even work with another person on the same script. Essentially, biologists are using programming simply as a means to an end. It's a tool to let them address a biological question of interest. This is a very different goal from that of software developers, whose code is their product and livelihood.
+
+That said, I urge you to learn and use as many of these best practices as possible. There are reasons that they exist, and they may be beneficial in the long run, even if they don't seem necessary in the present. A simple example is documenting your code. It's easy to say to yourself, "I only need this once, and I'm too rushed to comment this code right now." But when you come back to the code a year from now because you're trying to write a manuscript, you are absolutely going to want documentation to exist.
+
+Another example is knowing about and using already existing libraries. You benefit no one (with the possible exception of yourself if there happens to be a learning opportunity) by rewriting something that already exists in Python's standard library or as a package you can get with `pip`. As a small aside, a module that I used to solve this level's problem was the [collections module](https://docs.python.org/3.6/library/collections.html#module-collections).  
+
+It is equally important, however, not to obsess over *the right way*. Do not let perfection be the enemy of good. Does it matter if your code is running in polynomial time and taking twice as much memory as it should? It almost certainly couldn't matter less. If it does matter later, you'll know it later. A month from when you wrote your original polynomial-time script, you may realize you want to put it in a for loop and run it a million times. THEN, it becomes appropriate to rewrite the algorithm in linear time. It almost certainly is NOT appropriate to rewrite a working script *just in case* you need the speed at some indeterminate time.
 
 ---
 
@@ -87,4 +96,4 @@ H2
 
 #### Hint
 
-H3
+Even though the prompt implies that you want to keep track of certain rows, it isn't necessary to solve this problem. The task is simplified by only storing the proper intervals.
