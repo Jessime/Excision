@@ -76,7 +76,7 @@ def tutorial_button(): #TODO Merge into level_button?
 
 @app.route('/tutorial')
 def tutorial():
-    return render_template('tutorial.html', **vars(Tutorial)) #TODO Do I still need to pass vars?
+    return render_template('tutorial.html', lvl_title=State.lvl_title) #TODO Do I still need to pass vars?
 
 def assert_py3():
     assert sys.version_info[0] == 3, 'Python version must be 3.x'

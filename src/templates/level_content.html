@@ -9,7 +9,7 @@
   <div class="mdl-layout--large-screen-only mdl-layout__header-row">
   </div>
   <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-    <a href="{{ url_for('index')}}" class="mdl-layout__tab is-active">Home</a>
+    <a href="{{ url_for('play', title=title)}}" class="mdl-layout__tab is-active">Play</a>
     <a href="{{ url_for('story')}}" class="mdl-layout__tab">Story</a>
     <a href="{{ url_for('about')}}" class="mdl-layout__tab">About</a>
     <a href="{{ url_for('tutorial')}}" class="mdl-layout__tab">Tutorial</a>
