@@ -45,6 +45,10 @@ Contents of `ENCFF239FSU.bed`:
     chr1	127401725	127470569	ENST00000509671.1	0	+
     chr3	86481942	86496996	ENST00000460586.1	0	+
     chr1	53947623	53974950	ENST00000558866.4	0	+
+    chr3	61801712	61803634	ENST00000465586.1	0	+
+    chr3	87881990	87883995	ENST00000466786.1	0	+
+    chr3	91488742	91876543	ENST00000460876.1	0	+
+    chr3	94876501	94888501	ENST00000460599.2	0	+
 
 **Warning:**
 
@@ -56,7 +60,7 @@ While this example is space-separated, the real `ENCFF239FSU.bed` file will be s
 
 **Result:**
 
-    21
+    59
 
 ---
 
@@ -86,7 +90,15 @@ Write `has_digit`, which, given a list of strings, returns a filtered list of st
 
 #### Hint
 
-H2
+A good way to increase your programming efficiency, especially long-term, is to figure out how to write a function. Or, more specifically, how to write a good function. If you're not comfortable with the technical details of function definitions, they are covered extensively in the [Python documentation](https://docs.python.org/3/tutorial/controlflow.html#defining-functions).
+
+But even if you know *how* to write a function, when should you? How much should go in a single function? At what point are you making your function definitions too small? These are difficult questions and have been asked [many](https://softwareengineering.stackexchange.com/questions/133404/what-is-the-ideal-length-of-a-method-for-you), [many](https://stackoverflow.com/questions/1170215/how-long-should-functions-methods-should-be-in-average), [many](https://stackoverflow.com/questions/475675/when-is-a-function-too-long) times. Even people who have been programming for decades vary in their suggestions.
+
+My personal approach is to think of a function as a paragraph, and each of the lines as a sentence. The name of the function acts almost as a topic sentence. The paragraph should be about one and only one thing. Just like in writing, that means that some functions are short, and some are long. It depends on how many sentences/lines it takes to convey your message.
+
+The [requests](https://github.com/requests/requests) package is one of the most popular Python modules out there. It's often cited as the first module a beginner programmer should read to understand "Pythonic code". If you browse around, you can see that the function lengths differ. The [api.py file](https://github.com/requests/requests/blob/master/requests/api.py) has no functions that are more than two lines long. But the [build_digest_headers](https://github.com/requests/requests/blob/master/requests/auth.py#L127) function is more than a page. A majority of functions are in between these lengths, and are a [handful of lines](https://github.com/requests/requests/blob/master/requests/models.py#L939).
+
+Again, you should write functions that do a single thing. When you come back to the function in three weeks, you'll have a pretty good idea what it does by the function name. And in six weeks, when you need it for another part of your project, you can just import it instead of rewriting.
 
 ---
 
@@ -96,4 +108,12 @@ H2
 
 #### Hint
 
-Even though the prompt implies that you want to keep track of certain rows, it isn't necessary to solve this problem. The task is simplified by only storing the proper intervals.
+One of the most important choices you have to make in this problem is what data structure to use. In other words, how do you store the information as you go along? One option is to use:
+
+    dict(str : list(tuple(int, int)))
+
+This hint isn't going to reveal exactly what information should be stored where, but here's an example piece of data to clarify the notation used above.
+
+    my_data = {'key1': [(12, 2), (90, 99)],
+               'key2': [(8, 16), (55, 55)]
+              }
