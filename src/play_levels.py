@@ -141,7 +141,7 @@ class State():
             error = self.error_types['task_test']
             if type(result) != type(ans):
                 error = self.error_types['bad_type']
-                error = error.format(type(result), type(ans))
+                error = error.format(type(ans), type(result))
 
         return error
 
