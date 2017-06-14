@@ -34,10 +34,10 @@ def index():
 
 @app.route('/play/<title>')
 def play(title):
-    titles_name_map = json.load(open('static/story/all_titles.md'))
-    lvl_num = titles_name_map[title]
+    title_ls = json.load(open('static/story/all_titles.md'))
+    lvl_num = title_ls.index(title) + 1
     State.lvl_num_active = lvl_num
-    completed_titles = [k for k, v in titles_name_map.items() if v <= State.lvl_num_top]
+    completed_titles = title_ls[:State.lvl_num_top]
     infile = 'static/story/level{}.md'.format(lvl_num)
     no_markup = {'title', 'subtitle', 'img'}
     sections = parse(infile)
@@ -107,4 +107,4 @@ def setup():
 
 if __name__ == "__main__":
     setup()
-    app.run(debug=False)
+    app.run(debug=True)
