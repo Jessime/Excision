@@ -1,14 +1,13 @@
 {% block level_select %}
-<a id="lvl_select" class="mdl-layout__tab">Level Select</a>
 <dialog id="ls_dialog" class="mdl-dialog">
-  <h4 class="mdl-dialog__title">Level Select</h4>
+  <h4 class="mdl-dialog__title">Select Level</h4>
   <div class="mdl-dialog__content">
     <p>
-      Select a level from the list below:
+      Choose a level to navigate to:
     </p>
     {% for ct in completed_titles %}
       <div class="mdl-dialog__actions--full-width">
-          <a href="{{ url_for('play', title=ct)}}">{{ ct }}</a>
+          <a href="{{ url_for('play', title=ct)}}">{{loop.index}}: {{ ct }}</a>
       </div>
     {% endfor %}
   </div>
