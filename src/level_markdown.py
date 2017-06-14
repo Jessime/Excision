@@ -6,6 +6,7 @@ Created on Fri Dec 30 02:18:10 2016
 
 """
 import os
+import json
 
 def _head(data):
     line_map = {0: 'title', 3: 'subtitle', 6: 'img'}
@@ -65,3 +66,10 @@ class Cat():
 
     def problems(self, outfile='all_problems'):
         self.concatenate(['problem'], outfile)
+
+    def titles(self, outfile='all_titles'):
+        title_nums = {}
+        for i, lf in enumerate(sorted(self.level_files)):
+            sections = parse(os.path.join('static/story', lf))
+            title_nums[sections['title']] = i+1
+        json.dump(title_nums, open(self.outpath_base.format(outfile), 'w', encoding='utf-8'))

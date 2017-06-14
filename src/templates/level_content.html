@@ -13,6 +13,7 @@
     <a href="{{ url_for('story')}}" class="mdl-layout__tab">Story</a>
     <a href="{{ url_for('about')}}" class="mdl-layout__tab">About</a>
     <a href="{{ url_for('tutorial')}}" class="mdl-layout__tab">Tutorial</a>
+    {% include "level_select.html" %}
   </div>
 </header>
 <main class="mdl-layout__content">
@@ -43,9 +44,9 @@
           {{problem}}
         </div>
         <div id="correct_ans" class="mdl-card__actions reveal mdl-card--border">
-          <button id="show-dialog" type="button" class="mdl-button">Continue</button>
+          <button id="show_ca_dialog" type="button" class="mdl-button">Continue</button>
         </div>
-        <dialog class="mdl-dialog">
+        <dialog id="ca_dialog" class="mdl-dialog">
           <h4 class="mdl-dialog__title">Congratulations!</h4>
           <div class="mdl-dialog__content">
             <p>
@@ -65,8 +66,8 @@
             function(data){
               if(data.success){
                 $('#correct_ans').slideDown();
-                var dialog = document.querySelector('dialog');
-                var showDialogButton = document.querySelector('#show-dialog');
+                var dialog = document.querySelector('#ca_dialog');
+                var showDialogButton = document.querySelector('#show_ca_dialog');
                 if (! dialog.showModal) {
                   dialogPolyfill.registerDialog(dialog);
                 }
