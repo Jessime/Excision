@@ -44,9 +44,9 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-pink.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = "css/roboto.css") }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = "css/material_icons.css") }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = "css/material.deep_purple-pink.min.css") }}">
     <link rel="stylesheet" href="{{ url_for('static', filename = "css/style_mdl.css") }}">
     <style>
     #help {
@@ -59,7 +59,7 @@
       z-index: 900;
     }
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename = "js/jquery.min.js") }}"></script>
     <script type=text/javascript> $SCRIPT_ROOT = {{ request.script_root|tojson|safe }}</script>
 </head>
   </head>
@@ -473,6 +473,6 @@
       </main>
     </div>
     <a href="https://github.com/Jessime/Excision/issues" target="_blank" id="help" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">Get Help</a>
-    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="{{ url_for('static', filename = "js/material.min.js") }}"></script>
   </body>
 </html>
