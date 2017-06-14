@@ -34,12 +34,18 @@ def index():
 
 @app.route('/play/<title>')
 def play(title):
-    infile = 'static/story/level{}.md'.format(State.lvl_num)
+    titles_name_map = json.load(open('static/story/all_titles.md'))
+    lvl_num = titles_name_map[title]
+    State.lvl_num_active = lvl_num
+    completed_titles = [k for k, v in titles_name_map.items() if v <= State.lvl_num_top]
+    infile = 'static/story/level{}.md'.format(lvl_num)
     no_markup = {'title', 'subtitle', 'img'}
     sections = parse(infile)
     sections = {k:markup_str(v) if (k not in no_markup) else v for k,v in sections.items()}
 
-    return render_template('level_content.html', **sections)
+    return render_template('level_content.html',
+                           completed_titles=completed_titles,
+                           **sections)
 
 @app.route('/story')
 def story():
@@ -51,14 +57,14 @@ def about():
 
 @app.route('/level_button')
 def level_button():
-    result = False
+    result=False
     success=None
     error=None
     State.script = get_script_path()
     button = request.args['button']
     if State.script is not None:
         success, error = State.process_request(button)
-        if success and button == 'problem':
+        if success and button == 'problem' and State.lvl_num_top == State.lvl_num_active:
             State.update_config()
     print('success:', success)
     print('error:', error)
@@ -66,7 +72,7 @@ def level_button():
 
 @app.route('/tutorial_button')
 def tutorial_button(): #TODO Merge into level_button?
-    result = False
+    result=False
     success=None
     error=None
     Tutorial.script = get_script_path() #TODO need to save?

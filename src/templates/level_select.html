@@ -1,0 +1,32 @@
+{% block level_select %}
+<a id="lvl_select" class="mdl-layout__tab">Level Select</a>
+<dialog id="ls_dialog" class="mdl-dialog">
+  <h4 class="mdl-dialog__title">Level Select</h4>
+  <div class="mdl-dialog__content">
+    <p>
+      Select a level from the list below:
+    </p>
+    {% for ct in completed_titles %}
+      <div class="mdl-dialog__actions--full-width">
+          <a href="{{ url_for('play', title=ct)}}">{{ ct }}</a>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="mdl-dialog__actions">
+    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent close">Close</button>
+  </div>
+</dialog>
+<script>
+  var dialog = document.querySelector('#ls_dialog');
+  var showDialogButton = document.querySelector('#lvl_select');
+  if (! dialog.showModal) {
+    dialogPolyfill.registerDialog(dialog);
+  }
+  showDialogButton.addEventListener('click', function() {
+    dialog.showModal();
+  });
+  dialog.querySelector('.close').addEventListener('click', function() {
+    dialog.close();
+  });
+</script>
+{% endblock %}

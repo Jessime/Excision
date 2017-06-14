@@ -1,0 +1,1 @@
+{"DECISIONS": 1, "OREGON TRAIL": 2, "COLOSSUS": 3, "T": 5}

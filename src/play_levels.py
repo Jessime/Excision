@@ -52,7 +52,8 @@ class State():
         config = {"current_level": {"num": 1, "title": "DECISIONS"}}
         json.dump(config, open(config_path, 'w'))
 
-    lvl_num = config['current_level']['num']
+    lvl_num_top = config['current_level']['num']
+    lvl_num_active = lvl_num_top
     lvl_title = config['current_level']['title']
     script = None
     error_types = {'missing_file': 'Error: No file produced at Excision/results/{}.txt.',
@@ -67,11 +68,11 @@ class State():
     @classmethod
     def update_config(self):
         """If the user sucessfully completes a level, save the game."""
-        self.lvl_num += 1
-        infile = 'static/story/level{}.md'.format(self.lvl_num)
+        self.lvl_num_top += 1
+        infile = 'static/story/level{}.md'.format(self.lvl_num_top)
         sections = parse(infile)
         self.lvl_title = sections['title']
-        self.config['current_level'] = {'num':self.lvl_num, 'title':self.lvl_title}
+        self.config['current_level'] = {'num':self.lvl_num_top, 'title':self.lvl_title}
         json.dump(self.config, open(self.config_path, 'w'))
 
     @classmethod
@@ -113,15 +114,15 @@ class State():
     def problem(self):
         success = False
         error = None
-        outfile = '../results/{}.txt'.format(self.lvl_num)
-        data = self.lvl_data[self.lvl_num]['problem']
+        outfile = '../results/{}.txt'.format(self.lvl_num_active) #TODO edit to represent current displayed problem; temp state?
+        data = self.lvl_data[self.lvl_num_active]['problem'] #TODO edit to represent current displayed problem; temp state?
         if os.path.isfile(outfile):
             os.remove(outfile)
 
         error = self.try_running_problem(self, data['cmd'].format(self.script))
 
         if not os.path.isfile(outfile) and error is None:
-            error = self.error_types['missing_file'].format(self.lvl_num)
+            error = self.error_types['missing_file'].format(self.lvl_num_active) #TODO edit to represent current displayed problem; temp state?
             return success, error
 
         if error is None:
@@ -170,7 +171,7 @@ class State():
     def task_test(self, task):
         error = None
         new = self.temp_copy(self)
-        data = self.lvl_data[self.lvl_num][task]
+        data = self.lvl_data[self.lvl_num_active][task] #TODO edit to represent current displayed problem; temp state?
         error = self.try_running_function(self, new, data)
         self.temp_del(self, new)
         success = error is None

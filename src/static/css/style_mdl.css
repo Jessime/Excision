@@ -46,7 +46,7 @@ html, body {
   display: none;
 }
 .mdl-demo .mdl-layout.is-small-screen .mdl-layout__tab-bar .mdl-button {
-  display: none;
+  display: visible; /*changed value to "visible" to allow button on small screen frameview; originally "none" as value - check for robustness*/
 }
 .mdl-demo .mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar,
 .mdl-demo .mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar-container {
