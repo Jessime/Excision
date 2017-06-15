@@ -93,4 +93,4 @@ def setup():
 
 if __name__ == "__main__":
     setup()
-    app.run(debug=True)
+    app.run(debug=False) #TODO get rid of this
