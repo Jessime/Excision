@@ -20,14 +20,16 @@ You and Anita can use the rest of the day for additional planning, as soon as yo
 
 ### Problem
 
-Write a program that takes an empty folder location as input. This folder will have multiple subfolders, each of which has a unknown name and contains two .csv files from one of your agents. Your program should collect all of these .csv files and use them to find the index and temperature of the hottest location in the Theraptrix factory. Write both the index and the average temperature (to the nearest integer) to `results/2.txt`.
+Write a program that takes an empty folder location as input. This folder will have multiple subfolders, each of which has a unknown name and contains two .csv files from one of your agents. Your program should collect all of these .csv files and use them to find the index and temperature of the hottest location in the Theraptrix factory. Write both the index and the average temperature (rounded to the nearest integer) to `results/2.txt`.
 
 There's one additional complication. Occasionally, the thermometers will fail to record a reading. If this is the case, the .csv file will register a 0. In order to deal with this missing data, replace it with **76**, as an imputation of 'room temperature'.
 
 
 **Note(s):**
 
-While you cannot know the names or the number of the incoming subfolders, you can assume there will be nothing in a folder besides necessary subfolders, and nothing in the subfolders besides two files, `pass1.csv` and `pass2.csv`.
+* While you cannot know the names or the number of the incoming subfolders, you can assume there will be nothing in a folder besides necessary subfolders, and nothing in the subfolders besides two files, `pass1.csv` and `pass2.csv`.
+
+* You do not have to worry about possible duplicates; there will be a single unique index for the average hottest temperature.
 
 ##### Example
 
