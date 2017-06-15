@@ -36,6 +36,22 @@ def parse(infile):
         sections = _task(sections, intermediate_sections['task{}'.format(i)], i)
     return sections
 
+def change_log():
+    #HACK This is pretty inflexible right now. CHANGELOG may develop
+
+    log = '../CHANGELOG.md'
+    with open(log, encoding='utf-8') as log:
+        changes = log.read()
+
+    sections = {}
+    current_changes = changes.split('\n---\n')[1]
+    version, rest = current_changes.split('### Added')
+    sections['version'] = version.strip('\n## ')
+    sections['added'], sections['fixed'] = rest.split('### Fixed')
+    sections = {k:v.strip() for k, v in sections.items()}
+    return sections
+
+
 class Cat():
 
     def __init__(self):

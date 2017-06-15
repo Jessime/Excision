@@ -7,26 +7,17 @@ Created on Fri Oct 23 18:52:28 2015
 
 import sys
 import os
-import markdown
 import subprocess as sp
 import json
 
 from webbrowser import open_new_tab
-from flask import Flask, Markup, render_template, redirect, request, jsonify
+from flask import Flask, render_template, redirect, request, jsonify
 from pprint import pprint
 
-#from pick_file import pick
 from play_levels import State
 from tutorial import Tutorial
-from level_markdown import parse
-
 
 app = Flask(__name__)
-
-def markup_str(string):
-    """Prepares a markdown formatted string for insertion into jinja template."""
-    markup = Markup(markdown.markdown(string))
-    return markup
 
 @app.route("/")
 def index():
@@ -35,14 +26,9 @@ def index():
 @app.route('/play/<title>')
 def play(title):
     title_ls = json.load(open('static/story/all_titles.md'))
-    lvl_num = title_ls.index(title) + 1
-    State.lvl_num_active = lvl_num
+    State.lvl_num_active = title_ls.index(title) + 1
     completed_titles = title_ls[:State.lvl_num_top]
-    infile = 'static/story/level{}.md'.format(lvl_num)
-    no_markup = {'title', 'subtitle', 'img'}
-    sections = parse(infile)
-    sections = {k:markup_str(v) if (k not in no_markup) else v for k,v in sections.items()}
-
+    sections = State.get_sections(State.lvl_num_active)
     return render_template('level_content.html',
                            completed_titles=completed_titles,
                            **sections)

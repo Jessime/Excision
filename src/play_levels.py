@@ -1,15 +1,17 @@
 import os
 import sys
 import json
+import markdown
 import subprocess as sp
 import numpy as np
 
+from flask import Markup
 from pickle import load
 from importlib import import_module, reload
 from shutil import copyfile
 from traceback import format_exc
 
-from level_markdown import parse
+from level_markdown import parse, change_log
 
 class State():
     """
@@ -64,6 +66,22 @@ class State():
                    'no_func': 'Error: The file does not contain the correct function name.'}
 
     lvl_data = load(open('levels.pkl', 'rb'))
+    changes = change_log()
+    _sections = None
+
+    @classmethod
+    def get_sections(self, lvl_num):
+        no_markup = {'title', 'subtitle', 'img'}
+        infile = 'static/story/level{}.md'.format(lvl_num)
+        sec_dict = parse(infile)
+        changes = change_log()
+        sec_dict = {**sec_dict, **changes}
+        marked_dict = {}
+        for k, v in sec_dict.items():
+            if k not in no_markup:
+                v = self.markup_str(self, v)
+            marked_dict[k] = v
+        return marked_dict
 
     @classmethod
     def update_config(self):
@@ -80,6 +98,11 @@ class State():
         """Execute the method corresponding to func_name."""
         result = vars(self)[func_name](self)
         return result
+
+    def markup_str(self, string):
+        """Prepares a markdown formatted string for insertion into jinja template."""
+        markup = Markup(markdown.markdown(string))
+        return markup
 
     def temp_copy(self):
         """Creates a copy of a user file into the src dir to be imported"""
