@@ -24,5 +24,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Current]
 
-This is where you should add changes as you go along.
-They will be shuttled into a version number just before the version is released.
+* Updated rounding in gc_calc.py

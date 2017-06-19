@@ -11,7 +11,7 @@ from sys import argv
 def calc(seq):
     """Calculate GC content of sequence as a percent."""
     gc = (seq.count('G')+seq.count('C'))/len(seq)
-    gc = '{}%\n'.format(str(int(gc*100)))
+    gc = '{}%\n'.format(str(int(round(gc*100))))
     out = '/home/jessime/Code/Excision/results/tutorial/gc.txt'
     with open(out, 'w') as outfile:
         #outfile.write('1') #Uncomment to test an incorrect answer

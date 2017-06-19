@@ -37,7 +37,7 @@ class Tutorial():
                     result = infile.read().strip()
                 if not result:
                     error = 'There is nothing in the file you created.'
-                elif result != '42%':
+                elif result != '43%':
                     error = 'Your answer is not correct.'
 
         success = error is None
