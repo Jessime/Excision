@@ -1,24 +1,25 @@
 T
 =====
 
-Sub
+analyzing structured data (part II)
 --------
 
 img
 
-"Colossus isn't the name of any protein in any database. Unless you count the supplement powder." Anita tells you. The two of you, along with the rest of the team, have spent the last week analyzing the genomic regions in the .bed file you retrieved from Oregon. Day after day you've crossed regions off your list. For the most part, the regions denoted known protein coding genes, none of which appear to have any real relationship to each other.
+"Colossus isn't the name of any protein in any database. Unless you count the supplement powder," Anita tells you. The two of you, along with the rest of the team, have spent the last week analyzing the genomic regions in the .bed file you retrieved from Oregon. Day after day you've crossed regions off your list. For the most part, the regions denoted locations near known protein coding genes, none of which appear to have any real relationship to each other.
 
-"Figures," you respond. You didn't expect the name to match anything, which is why Anita hadn't checked before now. You also note to yourself that you're being a little curt, probably because it's been an exasperating week, and ask Joe to make a coffee run for the team. Joe laughs and says he'll be back soon. You're about look one of the last regions, when your laptop shuts off on you. Of course; that's what you get for not charging the battery.  
+"Figures," you respond. You didn't expect the name to match anything, which is why Anita hadn't checked before now. You also note to yourself that you're being a little curt, probably because it's been an exasperating week, so ask Joe to make a coffee run for the team. Joe laughs and says he'll be back soon. You're about look one of the last regions, when your laptop shuts off on you. Of course; that's what you get for not charging the battery.  
 
-"Would you mind looking up 'chr2' 12345-678900? My computer just died," you ask Anita. She says she's on it, so you make a quick circuit around the office. A couple days ago, you decided to assign a few people to start investigating the Konrad brothers full time. You ask them how their doing, and they tell you that their systems should be fully functional by the end of the day, but that they don't have anything to report right now. The pair of agents you have working on Life/Better, LLC have a similar amount of material to report. And you know the rest of the team doesn't have anything, so you circle back to Anita.
+"Would you mind looking up 'chr2' 12345-678900? My computer just died," you ask Anita. She says she's on it, so you make a quick lap around the office. A couple days ago, you decided to assign a few people to start investigating the Konrad brothers full time. You ask them how their doing, and they tell you that their systems should be fully functional by the end of the day, but that they don't have anything to report right now. The pair of agents you have working on Life/Better, LLC have a similar amount of material to report. And you know the rest of the team doesn't have anything, so you circle back to Anita.
 
-"This is just a gene desert. As far as I can tell, it doesn't do anything and isn't tied to any functions, diseases or cancers," she informs you. Given the contents of the rest of the file, that doesn't make much sense. 
+"This is just a gene desert. As far as I can tell, it doesn't do anything and isn't tied to any functions, diseases or cancers," she informs you. Given the contents of the rest of the file, that doesn't make much sense.
 
 ---
 
 ### Problem
 
-P
+
+read file. filter for significance. filter for being in other file (list of names). Report the count of HepG2 and K562 cells left.
 
 **Notes:**
 
@@ -46,7 +47,15 @@ Contents of `f.txt`:
 
 ### Task
 
-T1
+Before you get started on this task, here is the documentation for [pandas](http://pandas.pydata.org/pandas-docs/stable/index.html), one of the most popular data analysis tools in Python. Use this documentation to write a function called `abc_df`. `abc_df` will take a numpy array as a parameter. The array will have a size of no greater than (26, 26). `abc_df` should return a `DataFrame` where the data of the `DataFrame` is the numpy array, and both the indices and the columns are labeled with letters. The result for a numpy array of shape (4,3) can be imagined as something like:
+
+|a|b|c|
+--- | --- | --- | ---
+a | 9|2|4
+b | 8|1|0
+c | 1|9|7
+d | 4|2|1
+
 
 #### Hint
 
@@ -56,7 +65,7 @@ H1
 
 ### Task
 
-T2
+Write `most_common_index`, a function which, when applied to a `DataFrame`, returns the count (i.e. the number of times the element occurs) of the index element which occurs most often.
 
 #### Hint
 
@@ -66,7 +75,7 @@ H2
 
 ### Task
 
-T3
+Create a function called `last_col_median`. Given a `DataFrame` as a parameter, `last_col_median` should attempt to find the median of the last column of the `DataFrame`. If the median cannot be found because the last column does not have a numeric data type, `last_col_median` should simply return `None`.
 
 #### Hint
 

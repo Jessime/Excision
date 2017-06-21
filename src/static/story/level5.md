@@ -6,7 +6,13 @@ Image processing and analysis
 
 img
 
-story
+That's when the men in masks walk in.
+
+You have no time to respond in any meaningful way, but you note that the silencers on their pistols likely explain how they got past the guards downstairs. Two of them head straight towards you, while the others fan out to control the rest of your coworkers. In your head, it doesn't seem like their moving that fast. It's more like your body is suddenly stuck in molasses. You do little to resist as one of them grabs your hands and throws you to the ground. The other presses a rag to your face. The last thing you hear before you black out is screaming, as if from another room.
+
+"Why is my right arm so sore?" That's the first thing you ask yourself.  
+
+You get kidnapped. These cells have been injected in your arm. You're investigating on yourself.
 
 ---
 
