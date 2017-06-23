@@ -20,7 +20,7 @@ You and Anita can use the rest of the day for additional planning, as soon as yo
 
 ### Problem
 
-Write a program that takes an empty folder location as input. This folder will have multiple subfolders, each of which has a unknown name and contains two .csv files from one of your agents. Your program should collect all of these .csv files and use them to find the index and temperature of the hottest location in the Theraptrix factory. Write both the index and the average temperature (rounded to the nearest integer) to `results/2.txt`.
+Write a program that takes an empty folder location as input. This folder will have multiple subfolders, each of which has an unknown name and contains two .csv files from one of your agents. Each of these .csv files represents a single, independent trial of temperature collection on the same grid of the Theraptrix factory. Your program should collect all of these .csv files and use them to find the index and temperature of the hottest location in the factory. Write both the index and the average temperature (rounded to the nearest integer) to `results/2.txt`.
 
 There's one additional complication. Occasionally, the thermometers will fail to record a reading. If this is the case, the .csv file will register a 0. In order to deal with this missing data, replace it with **76**, as an imputation of 'room temperature'.
 
@@ -28,6 +28,8 @@ There's one additional complication. Occasionally, the thermometers will fail to
 **Note(s):**
 
 * While you cannot know the names or the number of the incoming subfolders, you can assume there will be nothing in a folder besides necessary subfolders, and nothing in the subfolders besides two files, `pass1.csv` and `pass2.csv`.
+
+* Because each of the .csv files is an independent trial, it is fine to average together all of the .csv files from all subfolders into one heatmap.
 
 * You do not have to worry about possible duplicates; there will be a single unique index for the average hottest temperature.
 
@@ -87,7 +89,7 @@ The most fundamental package to the data science ecosystem in Python is `numpy`.
 
 ### Task
 
-Create a `parent_exists` function that takes a path name (as a string) to a potential file as input. `parent_exists` should return one of two strings. If the file has already been created, the function will return `"There is a file at that location."` Otherwise, it should return the name of the parent directory (the folder in which the file would have resided).
+Create a `parent_exists` function that takes a path name (as a string) to a potential file as input. `parent_exists` should return one of two strings. If the file has already been created, the function will return `"There is a file at that location."` Otherwise, it should return the top level name of the parent directory (just the name of the folder in which the file would have resided, not the full path).
 
 #### Hint
 

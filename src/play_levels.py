@@ -182,6 +182,7 @@ class State():
 
             func = vars(user_import)[data['func']]
             for test, ans in zip(data['tests'], data['answers']):
+                test = [p.copy() if isinstance(p, np.ndarray) else p for p in test]
                 result = func(*test)
                 error = self.check_task_result(self, result, ans)
                 if error is not None:
