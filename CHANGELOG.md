@@ -8,6 +8,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## 0.1.1
+
+### Added
+
+* Level 2 is more clear
+
+### Fixed
+
+* Updated rounding in gc_calc.py
+* Level 2, task 3 refreshes if incorrect answer is given.
+
+---
+
 ## 0.1.0
 
 ### Added

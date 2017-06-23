@@ -20,7 +20,7 @@ You and Anita can use the rest of the day for additional planning, as soon as yo
 
 ### Problem
 
-Write a program that takes an empty folder location as input. This folder will have multiple subfolders, each of which has a unknown name and contains two .csv files from one of your agents. Each of these .csv files represents a single independent trial of temperature collection on the same grid of the Theraptrix factory. Your program should collect all of these .csv files and use them to find the index and temperature of the hottest location in the factory. Write both the index and the average temperature (rounded to the nearest integer) to `results/2.txt`.
+Write a program that takes an empty folder location as input. This folder will have multiple subfolders, each of which has an unknown name and contains two .csv files from one of your agents. Each of these .csv files represents a single, independent trial of temperature collection on the same grid of the Theraptrix factory. Your program should collect all of these .csv files and use them to find the index and temperature of the hottest location in the factory. Write both the index and the average temperature (rounded to the nearest integer) to `results/2.txt`.
 
 There's one additional complication. Occasionally, the thermometers will fail to record a reading. If this is the case, the .csv file will register a 0. In order to deal with this missing data, replace it with **76**, as an imputation of 'room temperature'.
 
