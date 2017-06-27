@@ -1,4 +1,4 @@
-T
+ANOTHER DAY AT THE OFFICE
 =====
 
 analyzing structured data (part II)
@@ -16,38 +16,61 @@ img
 
 "What if they were looking for a gene insertion site", you hypothesize aloud. The total lack of connections between the contents of the sites would then make sense: just the fact that the site had contents was the connection.
 
-"Hmm... How about this theory, then," starts Anita. "What if they're looking for a site to add this Colossus protein, whatever it is? If that were the case, then I bet we could use Theraptrix's protein order forms for the past year and cross-reference those with the database we have of proteins which other researchers have inserted into this site. 
+"Hmm... How about this theory, then," starts Anita. "What if they're looking for a site to add this Colossus protein, whatever it is? If that were the case, then I bet we could use Theraptrix's protein order forms for the past year and cross-reference those with the database we have of proteins which other researchers have inserted into this site. We also have phenotype data for these experiments. Maybe they're will be a clue in there somewhere.
 
-"Sounds like a stretch to me." That's what you want to say. But you don't have any better ideas. So, you sit down and get to work.
+"Sounds like a stretch to me." That's what you want to say. But you don't have any better ideas. So instead, you sit down and get to work.
 
 ---
 
 ### Problem
 
+You have two files: `theraptrix_protein_orders.txt`, which contains a list of names of all the proteins that Theraptrix has purchased recently, and `locus_data.tab`, which contains tabular data of a series of experiments. The tab file has the following format:
 
-read file. filter for significance. filter for being in other file (list of names). Report the count of HepG2 and K562 cells left.
+1. **Unnamed Column:** Unique numbers for the experiments
+2. **Protein:** The name of the protein inserted into the locus. These names correspond to the names found in `theraptrix_protein_orders.txt`.
+3. **Cell Type:** The name of the cell line used in the experiment.
+4. **Exp p-value:** A p-value indicating how strongly the protein is expressed in the experiments
+5. **Exp Sig:** A boolean value indicating if the protein is expressed highly enough to meet the threshold for confidence in the experimental results.
+6. **'tumor', 'protein synthesis', 'lipid synthesis', 'growth', 'cell cycle', 'cytoskeletal activity', 'apoptosis':** Each of these columns represents how correlated the expression of the "Protein" in the "Cell Type" is with the given phenotype. For example: DD6X, when expressed in HSkMC cells, has a correlation value of 0.797 with "cytoskeletal activity". These correlation values are all between -1 and 1.
 
-**Notes:**
+Your program should read in both `locus_data.tab` and `theraptrix_protein_orders.txt`. Filter `locus_data.tab` by removing rows where the expression of the protein is not significant or the protein name is not in `theraptrix_protein_orders.txt`. Then, for each cell type within the filtered data set, average the correlation values of all proteins for each individual phenotype. Write the maximum averaged correlation value among all of the average values, along with the cell type and phenotype corresponding to this max value, to the file **/4.txt**.
 
-N
+
+**Note(s):**
+
+* Each protein is only measured once per cell type.
+* You need to find the average across all proteins in a cell type. For example, if proteins “A”, “B” and “C” were tested in K562 cells, you could do (“A”+”B”+”C”)/3
 
 ##### Example
 
+Contents of `theraptrix_protein_orders.txt`:
 
-Contents of `f.txt`:
+    CSTF2
+    CSTF2T
+    DDX3X
+    DDX55
 
+Contents of `locus_data.tab`
 
-    Contents
+      Protein Cell Type Exp p-value Exp Sig tumor growth apoptosis
+    0 CSTF2   SK-N-SH   0.011       True    -0.5  -0.4   -0.3
+    1 CSTF2T  SK-N-SH   0.032       True    0.1   0.2    0.3
+    2 DDX3X   SK-N-SH   0.061       False   0.3   0.2    0.4
+    3 CSTF2   K562      0.020       True    -0.9  -0.4   0.7
+    4 CSTF2T  K562      0.047       True    0.6   0.7    -0.3
+    5 DDX3X   K562      0.079       False   0.3   -0.5   0.2
+    6 ILF3   K562      0.019       True    0.1   0.2    0.8
 
+This minimal example is also provided [here as a file]().
 
 **Execution:**
 
-`$ ./f.py a1`
+`$ python pheno_corr.py locus_data.tab theraptrix_protein_orders.txt`
 
 **Result:**
 
-    Result
-
+    0.2
+    (K562, apoptosis)
 
 ---
 
@@ -65,7 +88,7 @@ d | 4|2|1
 
 #### Hint
 
-H1
+Yet another useful way to read in a file is the pandas [`read_csv`](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) method, or equivalently, [`read_table`](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_table.html). Pandas has numerous methods for I/O, so if you're going to be parsing a file into a `DataFrame`, alway check if Pandas as a built-in function before manually parsing the file. 
 
 ---
 

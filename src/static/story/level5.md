@@ -26,7 +26,6 @@ Pixel to nanometer conversion: width/height of 1 pixel = 0.15 nanometers
 
 The path to the images is `Excision/src/static/data/5/ims/`
 
-
 ##### Example
 
 Directory structure of `path/to/ims/`
