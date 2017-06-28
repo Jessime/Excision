@@ -65,11 +65,11 @@ Contents of `theraptrix.fa`:
     >OR3  
     CGGGTCACGT
 
-**Execution:**
+**Example Execution:**
 
 `$ ./mutations.py /path/to/reference.fa /path/to/control.fa /path/to/theraprix.fa`
 
-**Result:**
+**Example Result:**
 
     0.1012
 

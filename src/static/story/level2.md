@@ -66,11 +66,11 @@ Contents of `temperatures-casey/pass2.csv`:
     73,61
     73,72
 
-**Execution:**
+**Example Execution:**
 
 `$ ./temp_map.py /path/to/level2/`
 
-**Result:**
+**Example Result:**
 
     (1, 0)
     79

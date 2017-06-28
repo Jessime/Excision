@@ -27,11 +27,11 @@ Contents of `f.txt`:
     Contents
 
 
-**Execution:**
+**Example Execution:**
 
 `$ ./f.py a1`
 
-**Result:**
+**Example Result:**
 
     Result
 

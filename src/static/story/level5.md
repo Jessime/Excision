@@ -48,11 +48,11 @@ Contents of `sim_2.png`
 images/level5_ims_md/sim_2.png
 
 
-**Execution:**
+**Example Execution:**
 
 `$ ./image_proc.py /path/to/ims/`
 
-**Result:**
+**Example Result:**
 
     [21.15, 43.7175, 106.7175]
 

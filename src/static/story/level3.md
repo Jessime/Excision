@@ -54,11 +54,11 @@ Contents of `ENCFF239FSU.bed`:
 
 While this example is space-separated, the real `ENCFF239FSU.bed` file will be separated with tab characters (i.e., \t).
 
-**Execution:**
+**Example Execution:**
 
 `$ ./longest_per_chr.py`
 
-**Result:**
+**Example Result:**
 
     59
 
