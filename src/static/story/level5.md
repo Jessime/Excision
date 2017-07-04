@@ -1,19 +1,40 @@
-T
+CAPTURE
 =====
 
-Image processing and analysis
+image processing and analysis
 --------
 
-img
+images/level5.jpg
 
 That's when the men in masks walk in.
 
 You have no time to respond in any meaningful way, but you note that the silencers on their pistols likely explain how they got past the guards downstairs. Two of them head straight towards you, while the others fan out to control the rest of your coworkers. In your head, it doesn't seem like their moving that fast. It's more like your body is suddenly stuck in molasses. You do little to resist as one of them grabs your hands and throws you to the ground. The other presses a rag to your face. The last thing you hear before you black out is screaming, as if from another room.
 
-"Why is my right arm so sore?" That's the first thing you ask yourself.  
+"Why is my right arm so sore?" That's the first thing you ask yourself. You open your eyes and take a look around. You're in small room that appears to be a combination of a holding cell and a basic laboratory. You're lying on a cot in the corner with a sink in front of you and a toilet to the left. On the other side of the room, only a few paces away, is a table with a microscope, a computer, and other basic lab equipment. Separating you from the table is a chain link fence. You get up and, while rubbing your arm, do a quick tour around the room. There isn't much you missed in your first assessment, so you sit back down on your cot and wait.  
 
-You get kidnapped. These cells have been injected in your arm. You're investigating on yourself.
+After several hours you're back up and pacing around. The pain in your arm seems to be spreading. You've just completed another lap when the sliding window in the door opens. A man sticks his face in and looks around, making eye contact with you.
 
+"Would you, uh, mind moving to the back of the cell, please?" he asks.
+
+Wordlessly, you do what he says. He steps in with a tray of food in his hands and a gun on his belt. He is a massive guy, and there's no way you'd be able to get it from him in this tiny space.
+
+"Here's some food," he says, handing you the tray. "I guess I need to see your arm while you eat?" Somehow he makes this comes out as a question. While you're eating the guy takes a tissue sample from your right arm. You're not sure if it's the soreness in your arm or the guy's shaky hands that makes the biopsy so painful.
+
+"What's your name," you decide to ask.
+
+"Mmm... Max," he responds.
+
+Max takes your tissue sample to the other side of the room, turns on the computer, and sticks the sample under the scope. He's muttering to himself as he does, but you can't make out what he's saying.
+
+You try to get more information out of him, "Where are we?"
+
+"I don't think I'm allowed to say," Max says as a picture of a collection of cells appear on the screen. You remember enough from your Cell Bio. lab at the academy to know that somethings wrong with these cells. As far as you can tell, Max seems to tweak some settings, undo his work, pause to mutter to himself, then repeat the cycle.
+
+This time, it's your turn to be hesitant, "Do you need some help?"
+
+Max turns around to look at you, then looks at the ground. "This is my, uh, second week on the job... I'm a little, er, out of my element. This isn't the type of place where you get... rewarded for asking questions. So, uh, yea. I could use some help. I guess you'll probably have to stay on that side of the room though."
+
+"Well, what do you have to do?"
 ---
 
 ### Problem

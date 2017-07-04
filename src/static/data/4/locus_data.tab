@@ -1,4 +1,4 @@
-	Protein	Cell Type	Expression p-value	Expression Sig	tumor	protein synthesis	lipid synthesis	growth	cell cycle	cytoskeletal activity	apoptosis
+	Protein	Cell Type	Exp p-value	Exp Sig	tumor	protein synthesis	lipid synthesis	growth	cell cycle	cytoskeletal activity	apoptosis
 0	AGGF1	HSkMC	0.000543633	TRUE	-0.228043299	-0.01051677	0.97891604	-0.151223998	-0.370243951	-0.162084649	-0.035606688
 1	AUH	HSkMC	6.51E-06	TRUE	-0.964251879	0.992789334	0.289464473	-0.427530388	-0.29900667	-0.48434187	-0.069002197
 2	BCCIP	HSkMC	1.34E-15	TRUE	0.73293934	0.275973361	-0.90085833	0.420792507	-0.609577028	-0.492992208	-0.883033532

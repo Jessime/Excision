@@ -41,7 +41,6 @@ All of the files mentioned above can be found in the `Excision/src/static/data/1
 
 ##### Example
 
-
 Contents of `reference.fa`:
 
     >reference_sequence  
