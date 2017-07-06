@@ -90,27 +90,29 @@ An RGB image at its most basic form is a 3D array of size height x width x 3. Th
 
 3. **Luminosity Method:** Using a pre-formulated equation to calculate a weighted average accounting for human perceptions of color. Humans typically are more sensitive to light in the green spectrum, so this channel is weighted more in this calculation. Different weighting values have been disputed over the years : <pre> 0.3R + 0.59G + 0.11B </pre>  
 
-Create a function that takes in a 3D array of size height x width x 3 representing R, G, B channels as input and returns a 2D array of size height x width containing the grayscale component calculated using the luminosity method formula above.
+Create a function, `color2grey`, that takes in a 3D array of size height x width x 3 representing R, G, B channels as input and returns a 2D array of size height x width containing the grayscale component calculated using the luminosity method formula above.
 
 #### Hint
 
-https://pillow.readthedocs.io/en/4.1.x/reference/Image.html
+While it is possible to just use numpy arrays to store image data, packages have been written to provide extra convienence. One of the most popular is called `Pillow`, which provides an [`Image`](https://pillow.readthedocs.io/en/4.1.x/reference/Image.html) class.
 
 ---
 
 ### Task
 
-Write a function called “square_means”. This function should take the following input arguments: a 2D square array of numbers and a single integer value representing the dimension of a square window to tile the input array with. This function will be used to calculating mean values in the input array for each individual block in the array determined by the input window size. For example, if the square array “sq_arr” is passed in and has the dimensions 25x25, and the window size “window” has the value 5, then a mean value must be calculated for each 5x5 block in “sq_arr”. These individual blocks should not have overlap. It can be assumed that the input array’s dimension, N, (for an array of size NxN) is perfectly divisible by the window value, w (i.e. N % w = 0) .The function should return as output a list of the mean values ordered by mean values calculated across the first row of windows, then descending in rows.
+Write a function called `square_means`. This function should take the following input arguments: a 2D square array of numbers and a single integer value representing the dimension of a square window to tile the input array with. This function will be used to calculating mean values in the input array for each individual block in the array determined by the input window size. For example, if the square array `sq_arr` is passed in and has a shape (25,25), and the window size `window` has the value 5, then a mean value must be calculated for each 5x5 block in `sq_arr`. These individual blocks should not have overlap. It can be assumed that the input array’s dimension, N, (for an array of size NxN) is perfectly divisible by the window value, w (i.e. N % w = 0). The function should return as output an array of the mean values ordered by mean values calculated across the first row of windows, then descending in rows.
 
 #### Hint
 
-https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter
+Another foundational package for scientific computing in Python is [scipy](). It provides a lot of functionality that we aren't going to get into now, but a [here's a filter function](https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter) that you can apply here.  
+
+Also, [this is a fun image](https://qph.ec.quoracdn.net/main-qimg-42e32657dd966f717e7f3c8ee7a151c1-c) demonstrating how all of these packages tie into each other.
 
 ---
 
 ### Task
 
-Make a function named “zeros_ones” that takes as input a 1D array of integers of any length. The function should find and return two lists where the first output list stores those indices indicating the positions of all elements equal to zero in the input array and the second list indicates the positions of all elements equal to one in the input array. The input array could contain any integer greater than or equal to zero.
+Make a function named `compress` that takes a 1D numpy array, `full`, as a parameter. Calculate a second 1D array that represents the [run-length encoding](https://en.wikipedia.org/wiki/Run-length_encoding) of `full`. `compress` should return a list of two elements. The first element should be the size of the full length array measured in bytes, and the second element should be the size of the compressed array, also in bytes.
 
 #### Hint
 

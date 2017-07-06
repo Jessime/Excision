@@ -70,7 +70,7 @@ This minimal example is also provided [here as a file](https://github.com/Jessim
 **Example Result:**
 
     0.2
-    (K562, apoptosis)
+    ('K562', 'apoptosis')
 
 ---
 
