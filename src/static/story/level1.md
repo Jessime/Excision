@@ -41,7 +41,6 @@ All of the files mentioned above can be found in the `Excision/src/static/data/1
 
 ##### Example
 
-
 Contents of `reference.fa`:
 
     >reference_sequence  
@@ -65,11 +64,11 @@ Contents of `theraptrix.fa`:
     >OR3  
     CGGGTCACGT
 
-**Execution:**
+**Example Execution:**
 
 `$ ./mutations.py /path/to/reference.fa /path/to/control.fa /path/to/theraprix.fa`
 
-**Result:**
+**Example Result:**
 
     0.1012
 

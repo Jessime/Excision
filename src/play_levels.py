@@ -4,6 +4,7 @@ import json
 import markdown
 import subprocess as sp
 import numpy as np
+import pandas as pd
 
 from flask import Markup
 from pickle import load
@@ -158,6 +159,8 @@ class State():
         error = None
         if isinstance(ans, np.ndarray):
             equal = np.array_equal(result, ans)
+        elif isinstance(ans, pd.DataFrame):
+            equal = ans.equals(result)
         else:
             equal = result == ans
         if not equal:

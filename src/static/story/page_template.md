@@ -29,11 +29,11 @@ Contents of file.txt:
 Hello from file.txt
 ```
 
-**Execution:**
+**Example Execution:**
 
 `$ /path/to/python_script.py arg1 arg2`
 
-**Result:**
+**Example Result:**
 
 ```
 The resulting output of the program you just wrote and executed when using the example data.
