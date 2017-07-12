@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## 0.3.1
+
+### Added
+
+* N/A
+
+### Fixed
+
+* Small bug fixes on level 5.
+
+---
+
 ## 0.3.0
 
 ### Added
