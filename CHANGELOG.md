@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## 0.3.0
+
+### Added
+
+* Level 5 is now live
+
+### Fixed
+
+* Ambiguity on level 4 (including in example result)
+
+---
+
 ## 0.2.0
 
 ### Added
