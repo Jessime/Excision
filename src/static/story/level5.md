@@ -40,14 +40,13 @@ Max turns around to look at you, then looks at the ground. "This is my, uh, seco
 
 ### Problem
 
-Write a .py file that takes a string as input. This string is a file path to a directory containing a sequence of .png image files. This program should load the .png images as grayscale and apply several image processing steps to each frame. First, apply a median filter using a 5x5 pixel window to filter out any background noise. Next, mask the image by setting pixel values below the average of the dynamic range to zero. Then, calculate the cumulative area (in microns) of the remaining object(s). After these steps have been applied to each frame, print the list of areas to `results/5.txt`.
+Write a .py file that takes a string as input. This string is a file path to a directory containing a sequence of .png image files. This program should load the .png images as grayscale and apply several image processing steps to each frame. First, apply a median filter using a 5x5 pixel window to filter out any background noise. Next, mask the image by taking the arithmetic mean of the highest and lowest observed pixel values, then setting pixel values below that mean to zero. Then, calculate the cumulative area (in microns) of the remaining object(s). After these steps have been applied to each frame, print the list of areas to `results/5.txt`.
 
 **Note(s):**
 
-* Unlike task 2, the windows of the median filter will overlap.
-* The dynamic range is the range of pixel values.
+* Unlike in task 2, the windows of the median filter will overlap.
 * Assume that the width and height of 1 pixel are each 1.5 microns.
-* Truncate each area by converting them to integers.
+* Truncate each area by converting it to integers.
 
 ##### Example
 
@@ -58,7 +57,7 @@ Directory structure of `path/to/ims/`:
         ├── image_1.png
         ├── image_2.png
 
-Here are the contents of [`path/to/ims/`](https://github.com/Jessime/Excision/tree/master/src/static/images/level5_ims_md).
+[Here](https://github.com/Jessime/Excision/tree/master/src/static/images/level5_ims_md) are the contents of `path/to/ims/`.
 
 **Example Execution:**
 
@@ -96,7 +95,7 @@ For example, if `sq_arr` has a shape (25,25) and `window` is 5, then a mean valu
 
 #### Hint
 
-Another foundational package for scientific computing in Python is [`scipy`](https://docs.scipy.org/doc/scipy-0.19.1/reference/index.html). It provides a lot of functionality that we aren't going to get into now, but it does provide a useful [ndimage](https://docs.scipy.org/doc/scipy/reference/ndimage.html) module. While you're free to use this module on this problem, please do **NOT** use the `median_filter` function.
+Another foundational package for scientific computing in Python is [`scipy`](https://docs.scipy.org/doc/scipy-0.19.1/reference/index.html). It provides a lot of functionality that we aren't going to get into now, but it does provide a useful [`ndimage`](https://docs.scipy.org/doc/scipy/reference/ndimage.html) module. While you're free to use this module on this problem, please do **NOT** use the `median_filter` function.
 
 Instead, use [Pillow's filter function](http://pillow.readthedocs.io/en/3.4.x/reference/ImageFilter.html#PIL.ImageFilter.MedianFilter).  
 
