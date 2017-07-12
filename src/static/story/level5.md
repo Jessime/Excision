@@ -47,6 +47,7 @@ Write a .py file that takes a string as input. This string is a file path to a d
 * Unlike in task 2, the windows of the median filter will overlap.
 * Assume that the width and height of 1 pixel are each 1.5 microns.
 * Truncate each area by converting it to integers.
+* Expect this script to take approximately 15 seconds to run once you submit it.
 
 ##### Example
 

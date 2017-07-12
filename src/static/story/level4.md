@@ -8,7 +8,7 @@ images/level4.jpg
 
 "Colossus isn't the name of any protein in any database, unless you count this supplement powder I found online," Anita tells you. The two of you, along with the rest of the team, have spent the last week analyzing the genomic regions in the .bed file you retrieved from Oregon. Day after day you've crossed regions off your list. For the most part, the regions denoted locations near known protein-coding genes, none of which appear to have any real relationship to each other.
 
-"Figures," you respond. You didn't expect the name to match anything, which is why Anita hadn't checked before now. You also note to yourself that you're being a little curt, probably because it's been an exasperating week, so you ask Joe to make a coffee run for the team. Joe laughs and says he'll be back soon. You're about to look at one of the last regions when your laptop shuts off on you. Of course! That's what you get for not charging the battery.  
+"Figures," you respond. You didn't expect the name to match anything, which is why Anita hadn't checked before now. You also note to yourself that you're being a little curt, probably because it's been an exasperating week, so you ask Joe to make a coffee run for the team. Joe laughs and says he'll be back soon. You're about to look at one of the last regions when your laptop shuts off on you. Of course! That's what you get for not charging the battery.
 
 "Would you mind looking up chromosome 12, base pairs 123045 through 378909?" you ask Anita. "My computer just died." She says she's on it, so you make a quick lap around the office. A couple days ago, you decided to assign a few people to start investigating the Konrad brothers full-time. You ask them how they're doing, and they tell you that their systems should be fully functional by the end of the day. But they don't have anything to report at the moment. The pair of agents you have working on Life/Better, LLC, has a similar amount of material to report. And you know the rest of the team doesn't have anything, so you circle back to Anita.
 
@@ -33,13 +33,14 @@ You have two files: `theraptrix_protein_orders.txt`, which contains a list of na
 5. **Exp Sig:** A boolean value indicating if the protein is expressed highly enough to meet the threshold for confidence in the experimental results.
 6. **'tumor', 'protein synthesis', 'lipid synthesis', 'growth', 'cell cycle', 'cytoskeletal activity', 'apoptosis':** Each of these columns represents how correlated the expression of the "Protein" in the "Cell Type" is with the given phenotype. For example, DD6X, when expressed in HSkMC cells, has a correlation value of 0.797 with "cytoskeletal activity".
 
-Your program should take both `locus_data.tab` and `theraptrix_protein_orders.txt` as parameters. Filter `locus_data.tab` by removing rows where the expression of the protein is not significant or the protein name is not in `theraptrix_protein_orders.txt`. Then, for each cell type within the filtered data set, average the correlation values of all proteins for each individual phenotype. Write the maximum average correlation value among all of the average values, along with the cell type and phenotype corresponding to this max value, to the file `results/4.txt`.
+Your program should take paths to both `locus_data.tab` and `theraptrix_protein_orders.txt` as parameters. Filter `locus_data.tab` by removing rows where the expression of the protein is not significant or the protein name is not in `theraptrix_protein_orders.txt`. Then, for each cell type within the filtered data set, average the correlation values of all proteins for each individual phenotype. Write the maximum average correlation value (rounded to 3 decimals) among all of the average values, along with the cell type and phenotype corresponding to this max value, to the file `results/4.txt`.
 
 
 **Note(s):**
 
 * Each protein is only measured once per cell type.
 * You need to find the average across all proteins in a cell type. For example, if proteins “A”, “B”, and “C” were tested in K562 cells, you could do (“A”+”B”+”C”)/3.
+* To summarize, you're asking, "Which single phenotype is most strongly displayed in which single cell type when these proteins are expressed?"
 
 ##### Example
 
@@ -65,18 +66,18 @@ This minimal example is also provided [here as a file](https://github.com/Jessim
 
 **Example Execution:**
 
-`$ python pheno_corr.py locus_data.tab theraptrix_protein_orders.txt`
+`$ python pheno_corr.py /path/to/locus_data.tab /path/to/theraptrix_protein_orders.txt`
 
 **Example Result:**
 
-    0.2
+    0.200
     ('K562', 'apoptosis')
 
 ---
 
 ### Task
 
-Before you get started on this task, [here is the documentation](http://pandas.pydata.org/pandas-docs/stable/index.html) for `pandas`, one of the most popular data analysis tools in Python. Use this documentation to write a function called `abc_df`. `abc_df` will take a `numpy` array as a parameter. The array will have a shape of no greater than (26, 26). `abc_df` should return a `DataFrame` where the data of the `DataFrame` is the `numpy` array and both the indices and the columns are labeled with letters.
+Before you get started on this task, [here is the documentation](http://pandas.pydata.org/pandas-docs/stable/index.html) for `pandas`, one of the most popular data analysis tools in Python. Use this documentation to write a function called `abc_df`. `abc_df` will take a 2D `numpy` array as a parameter. The array will have a shape of no greater than (26, 26). `abc_df` should return a `DataFrame` where the data of the `DataFrame` is the `numpy` array and both the indices and the columns are labeled with letters.
 
 #### Hint
 
@@ -87,6 +88,8 @@ Yet another useful way to read in a file is the pandas [`read_csv`](https://pand
 ### Task
 
 Write `most_common_index`, a function which, when applied to a `DataFrame`, returns the count (i.e., the number of times the element occurs) of the index element which occurs most often. The maximum count will be unique.
+
+Note: If you're used to R, pandas DataFrames are slightly different in that they allow an index to be duplicated. R requires all index values to be unique.
 
 #### Hint
 
