@@ -40,33 +40,25 @@ Max turns around to look at you, then looks at the ground. "This is my, uh, seco
 
 ### Problem
 
-Write a .py file that takes a string as input. This string is a file path to a directory containing a sequence of .png image files. This program should store the .png images as grayscale and apply several image processing steps to each frame. First, apply a median filter using a 5x5 pixel window to filter out any background noise. Next, mask the image by setting the lower 50% of pixel values to zero. Then, calculate the cumulative area (in nanometers) of the remaining object(s). After these steps have been applied to each frame, print the list of areas to `results/5.txt`.
+Write a .py file that takes a string as input. This string is a file path to a directory containing a sequence of .png image files. This program should load the .png images as grayscale and apply several image processing steps to each frame. First, apply a median filter using a 5x5 pixel window to filter out any background noise. Next, mask the image by setting pixel values below the average of the dynamic range to zero. Then, calculate the cumulative area (in microns) of the remaining object(s). After these steps have been applied to each frame, print the list of areas to `results/5.txt`.
 
 **Note(s):**
 
-* Assume that the width and height of 1 pixel are each 0.15 nanometers.
+* Unlike task 2, the windows of the median filter will overlap.
+* The dynamic range is the range of pixel values.
+* Assume that the width and height of 1 pixel are each 1.5 microns.
+* Truncate each area by converting them to integers.
 
 ##### Example
 
 Directory structure of `path/to/ims/`:
 
         /path/to/ims/
-        ├── sim_0.png
-        ├── sim_1.png
-        ├── sim_2.png
+        ├── image_0.png
+        ├── image_1.png
+        ├── image_2.png
 
-Contents of `sim_0.png`:
-
-images/level5_ims_md/sim_0.png
-
-Contents of `sim_1.png`:
-
-images/level5_ims_md/sim_1.png
-
-Contents of `sim_2.png`:
-
-images/level5_ims_md/sim_2.png
-
+Here are the contents of [`path/to/ims/`](https://github.com/Jessime/Excision/tree/master/src/static/images/level5_ims_md).
 
 **Example Execution:**
 
@@ -74,20 +66,19 @@ images/level5_ims_md/sim_2.png
 
 **Example Result:**
 
-    [21.15, 43.7175, 106.7175]
-
+    [2115, 4371, 10671]
 
 ---
 
 ### Task
 
-An RGB image in its most basic form is a 3D array of shape (height, width, 3). The height and width are representative of the image size, and the 3 represents the R, G, or B channel values of a pixel at a given coordinate index. A grayscale image only has one channel to indicate color; therefore, it is typically stored in a 2D array. When converting an RGB image to a grayscale image, the 3 color channels must be collapsed into a single channel to indicate the pixel value. There are three common techniques for performing this operation:  
+An RGB image in its most basic form is a 3D array of shape (height, width, 3). The height and width are representative of the image size, and the 3 represents the R, G, or B channel values of a pixel at a given coordinate index. A grayscale image only has one channel to indicate color; therefore, it is typically stored in a 2D array. When converting an RGB image to a grayscale image, the 3 color channels must be collapsed into a single channel to indicate the pixel value. There are three common techniques for performing this operation:
 
-1. **Averaging Method:** Average the R, G, and B components. <pre>(R + G + B)/3  </pre>
+1. **Averaging Method:** Average the R, G, and B components. <pre>(R + G + B)/3</pre>
 
-2. **Lightness Method:** Average the highest value of the three channels with the lowest value of the three channels. <pre>(max(R, G, B) + min(R, G, B))/2  </pre>
+2. **Lightness Method:** Average the highest value of the three channels with the lowest value of the three channels. <pre>(max(R, G, B) + min(R, G, B))/2</pre>
 
-3. **Luminosity Method:** Use a pre-formulated equation to calculate a weighted average accounting for human perceptions of color. Humans are typically more sensitive to light in the green spectrum, so this channel is weighted more in this calculation. (Different weighting values have been disputed over the years .) <pre> 0.3R + 0.59G + 0.11B </pre>  
+3. **Luminosity Method:** Use a pre-formulated equation to calculate a weighted average accounting for human perceptions of color. Humans are typically more sensitive to light in the green spectrum, so this channel is weighted more in this calculation. (Different weighting values have been disputed over the years.) <pre> 0.3R + 0.59G + 0.11B </pre>
 
 Create a function, `color2gray`, that takes an RGB image as a 3D array of shape (height, width, 3) as input and returns a 2D array of shape (height, width) containing the grayscale value calculated using the luminosity method  above.
 
@@ -105,15 +96,17 @@ For example, if `sq_arr` has a shape (25,25) and `window` is 5, then a mean valu
 
 #### Hint
 
-Another foundational package for scientific computing in Python is [`scipy`](https://docs.scipy.org/doc/scipy-0.19.1/reference/index.html). It provides a lot of functionality that we aren't going to get into now, but [here's a filter function](https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter) that you can apply here.  
+Another foundational package for scientific computing in Python is [`scipy`](https://docs.scipy.org/doc/scipy-0.19.1/reference/index.html). It provides a lot of functionality that we aren't going to get into now, but it does provide a useful [ndimage](https://docs.scipy.org/doc/scipy/reference/ndimage.html) module. While you're free to use this module on this problem, please do **NOT** use the `median_filter` function.
 
-Also, [this is a fun image](https://qph.ec.quoracdn.net/main-qimg-42e32657dd966f717e7f3c8ee7a151c1-c) demonstrating how all of these packages tie into each other.
+Instead, use [Pillow's filter function](http://pillow.readthedocs.io/en/3.4.x/reference/ImageFilter.html#PIL.ImageFilter.MedianFilter).  
+
+Also, [this is a fun image](https://qph.ec.quoracdn.net/main-qimg-42e32657dd966f717e7f3c8ee7a151c1-c) demonstrating how all of these scientific computing packages tie into each other.
 
 ---
 
 ### Task
 
-Make a function named `compress` that takes a 1D `numpy` array, `full`, as a parameter. Calculate a second 1D array that represents the [run-length encoding](https://en.wikipedia.org/wiki/Run-length_encoding) of `full`. `compress` should return a list of two elements. The first element should be the size of the full length array measured in bytes, and the second element should be the size of the compressed array, also in bytes.
+Make a function named `compress` that takes a 1D `numpy` array, `full`, as a parameter. Calculate a second 1D array that represents the [run-length encoding](https://en.wikipedia.org/wiki/Run-length_encoding) of `full`. `compress` should return the encoded array.
 
 #### Hint
 You can use [`count_nonzero`](https://docs.scipy.org/doc/numpy-1.12.0/reference/generated/numpy.count_nonzero.html) for this problem. In more complicated scenarios, you would need the more general [`where`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html) function.
