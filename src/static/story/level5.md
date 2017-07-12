@@ -96,17 +96,15 @@ For example, if `sq_arr` has a shape (25,25) and `window` is 5, then a mean valu
 
 #### Hint
 
-Another foundational package for scientific computing in Python is [`scipy`](https://docs.scipy.org/doc/scipy-0.19.1/reference/index.html). It provides a lot of functionality that we aren't going to get into now, but it does provide a useful [`ndimage`](https://docs.scipy.org/doc/scipy/reference/ndimage.html) module. While you're free to use this module on this problem, please do **NOT** use the `median_filter` function.
+Another foundational package for scientific computing in Python is [`scipy`](https://docs.scipy.org/doc/scipy-0.19.1/reference/index.html). It provides a lot of functionality that we aren't going to get into now, but [here's a filter function](https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter) that you can apply here.  
 
-Instead, use [Pillow's filter function](http://pillow.readthedocs.io/en/3.4.x/reference/ImageFilter.html#PIL.ImageFilter.MedianFilter).  
-
-Also, [this is a fun image](https://qph.ec.quoracdn.net/main-qimg-42e32657dd966f717e7f3c8ee7a151c1-c) demonstrating how all of these scientific computing packages tie into each other.
+  Also, [this is a fun image](https://qph.ec.quoracdn.net/main-qimg-42e32657dd966f717e7f3c8ee7a151c1-c) demonstrating how all of these packages tie into each other.
 
 ---
 
 ### Task
 
-Make a function named `compress` that takes a 1D `numpy` array, `full`, as a parameter. Calculate a second 1D array that represents the [run-length encoding](https://en.wikipedia.org/wiki/Run-length_encoding) of `full`. `compress` should return the encoded array.
+Make a function named `compress` that takes a 1D `numpy` array, `full`, as a parameter. Calculate and return a second 1D array, `encoded` that represents the [run-length encoding](https://en.wikipedia.org/wiki/Run-length_encoding) of `full`. In `encoded`, every even element of `encoded` should represent a count, and every odd element should represent a value from `full`.
 
 #### Hint
 You can use [`count_nonzero`](https://docs.scipy.org/doc/numpy-1.12.0/reference/generated/numpy.count_nonzero.html) for this problem. In more complicated scenarios, you would need the more general [`where`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html) function.
