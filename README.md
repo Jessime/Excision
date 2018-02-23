@@ -6,7 +6,7 @@ Applied Bioinformatics and Computational Biology with Python.
 
 CodeStories is the most engaging and efficient way to learn basic data analysis.
 
-The course is centered around an engaging storyline (you're a secret agent) and is broken into a series of levels.
+The course is centered around an engaging storyline (you're a secret agent!) and is broken into a series of levels.
 Each level contain a primary problem which teaches you a single concept or skill.
 To solve the problem, and make it to the next level, you'll write and submit code, which will be automatically validated.
 If you initially can’t solve the problem, a series of optional tasks are available for each level.
@@ -14,7 +14,7 @@ You can complete tasks to receive a hint related to the main problem.
 
 Check out the link below to see the app in action:
 
-[![CodeStories homepage](https://imgur.com/apqqcGQ)](https://youtu.be/x_UIoTYjglE)
+[![CodeStories homepage](https://imgur.com/apqqcGQ.png)](https://youtu.be/x_UIoTYjglE)
 
 # Who is this for?
 
@@ -28,6 +28,15 @@ You should be comfortable with:
 * functions
 
 ## What we'll cover
+
+The course currently consists of six levels. Expect each to take a week, depending on your previous experience and schedule.
+
+1. File parsing
+2. An introduction to arrays
+3. Analyzing structured data (part I)
+4. Analyzing structured data (part II)
+5. Image analysis with arrays
+6. Object oriented programming
 
 # How do I use it?
 
